@@ -194,6 +194,18 @@ td.mono { font-family: var(--mono); font-size: 13px; }
   font-size: 16px; padding: 4px 8px; border-radius: 4px; transition: all 0.15s;
 }
 .btn-delete:hover { color: var(--red); background: var(--red-bg); }
+.btn-edit {
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  font-size: 13px; padding: 4px 8px; border-radius: 4px; transition: all 0.15s;
+}
+.btn-edit:hover { color: var(--accent); background: var(--accent-glow); }
+.add-section.editing { border-color: var(--accent); }
+.btn-cancel {
+  background: none; border: 1px solid var(--border); color: var(--text-dim);
+  padding: 10px 16px; border-radius: 8px; cursor: pointer; font-family: var(--font);
+  font-size: 13px; transition: all 0.2s;
+}
+.btn-cancel:hover { border-color: var(--text-dim); color: var(--text); }
 
 /* Dividend add */
 .dividend-form { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
@@ -366,7 +378,8 @@ td.mono { font-family: var(--mono); font-size: 13px; }
             <option value="HRK">HRK</option>
           </select>
         </div>
-        <button class="btn-add" onclick="addHolding()">Add</button>
+        <button class="btn-cancel" id="cancelEditBtn" onclick="cancelEdit()" style="display:none">Cancel</button>
+        <button class="btn-add" id="addSaveBtn" onclick="addHolding()">Add</button>
       </div>
     </div>
   </div>
@@ -441,6 +454,7 @@ let holdings = JSON.parse(localStorage.getItem('pf_holdings') || '[]');
 let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
+let editingIdx = null; // null = adding new, number = editing existing
 
 const BROKER_COLORS = { revolut: '#0666eb', ibkr: '#d32f2f', zse: '#2e7d32', t212: '#00c853' };
 const BROKER_LABELS = { revolut: 'Revolut', ibkr: 'IBKR', zse: 'ZSE', t212: 'Trading 212' };
@@ -620,7 +634,10 @@ function renderHoldings() {
       <td class="right mono">${priceStr}</td>
       <td class="right mono">${fmt(val)}</td>
       <td class="right"><span class="gain-pill ${cls}">${sign}${fmt(gain.abs)}<br><span style="font-size:10px">${sign}${gain.pct.toFixed(2)}%</span></span></td>
-      <td><button class="btn-delete" onclick="deleteHolding(${h._i})" title="Remove">×</button></td>
+      <td style="white-space:nowrap">
+        <button class="btn-edit" onclick="editHolding(${h._i})" title="Edit">✎</button>
+        <button class="btn-delete" onclick="deleteHolding(${h._i})" title="Remove">×</button>
+      </td>
     </tr>`;
   }).join('');
 }
@@ -667,14 +684,17 @@ function addHolding() {
     return;
   }
 
-  // Convert invested to EUR if needed, then calculate avg cost
   const investedEUR = toEUR(invested, currency);
   const avgCostEUR = investedEUR / shares;
 
-  holdings.push({ ticker, name, broker, shares, avgCost: avgCostEUR, invested: investedEUR });
+  if (editingIdx !== null) {
+    holdings[editingIdx] = { ...holdings[editingIdx], ticker, name, broker, shares, avgCost: avgCostEUR, invested: investedEUR };
+    cancelEdit();
+  } else {
+    holdings.push({ ticker, name, broker, shares, avgCost: avgCostEUR, invested: investedEUR });
+  }
   save();
 
-  // Clear form
   document.getElementById('addTicker').value = '';
   document.getElementById('addName').value = '';
   document.getElementById('addShares').value = '';
@@ -682,6 +702,34 @@ function addHolding() {
 
   render();
   loadPricesFromFile().then(count => { if (count > 0) render(); });
+}
+
+function editHolding(idx) {
+  editingIdx = idx;
+  const h = holdings[idx];
+  document.getElementById('addTicker').value = h.ticker;
+  document.getElementById('addName').value = h.name || '';
+  document.getElementById('addBroker').value = h.broker;
+  document.getElementById('addShares').value = h.shares;
+  document.getElementById('addInvested').value = (h.invested || getHoldingCost(h)).toFixed(2);
+  document.getElementById('addCurrency').value = 'EUR';
+  document.querySelector('.add-section h3').textContent = `✎ Edit ${h.ticker}`;
+  document.getElementById('addSaveBtn').textContent = 'Save Changes';
+  document.getElementById('cancelEditBtn').style.display = '';
+  document.querySelector('.add-section').classList.add('editing');
+  document.querySelector('.add-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cancelEdit() {
+  editingIdx = null;
+  document.querySelector('.add-section h3').textContent = '+ Add Holding';
+  document.getElementById('addSaveBtn').textContent = 'Add';
+  document.getElementById('cancelEditBtn').style.display = 'none';
+  document.querySelector('.add-section').classList.remove('editing');
+  document.getElementById('addTicker').value = '';
+  document.getElementById('addName').value = '';
+  document.getElementById('addShares').value = '';
+  document.getElementById('addInvested').value = '';
 }
 
 function deleteHolding(idx) {
