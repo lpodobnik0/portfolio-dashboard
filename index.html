@@ -333,7 +333,8 @@ td.mono { font-family: var(--mono); font-size: 13px; }
             <th class="sortable right" onclick="setSort('invested')">Invested</th>
             <th class="sortable right" onclick="setSort('price')">Price</th>
             <th class="sortable right" onclick="setSort('value')">Value</th>
-            <th class="sortable right" onclick="setSort('gain')">Gain/Loss</th>
+            <th class="sortable right" onclick="setSort('gainPct')">Gain %</th>
+            <th class="sortable right" onclick="setSort('gainAbs')">Gain €</th>
             <th></th>
           </tr>
         </thead>
@@ -476,7 +477,8 @@ function sortValue(h, col) {
     case 'invested': return getHoldingCost(h);
     case 'price':    return prices[h.ticker]?.price || 0;
     case 'value':    return getHoldingValue(h);
-    case 'gain':     return getHoldingGain(h).pct;
+    case 'gainPct':  return getHoldingGain(h).pct;
+    case 'gainAbs':  return getHoldingGain(h).abs;
     default:         return 0;
   }
 }
@@ -664,7 +666,8 @@ function renderHoldings() {
       <td class="right mono">${fmt(invested)}</td>
       <td class="right mono">${priceStr}</td>
       <td class="right mono">${fmt(val)}</td>
-      <td class="right"><span class="gain-pill ${cls}">${sign}${fmt(gain.abs)}<br><span style="font-size:10px">${sign}${gain.pct.toFixed(2)}%</span></span></td>
+      <td class="right"><span class="gain-pill ${cls}">${sign}${gain.pct.toFixed(2)}%</span></td>
+      <td class="right"><span class="gain-pill ${cls}">${sign}${fmt(gain.abs)}</span></td>
       <td style="white-space:nowrap">
         <button class="btn-edit" onclick="editHolding(${h._i})" title="Edit">✎</button>
         <button class="btn-delete" onclick="deleteHolding(${h._i})" title="Remove">×</button>
@@ -674,7 +677,7 @@ function renderHoldings() {
 
   // Update header arrows after body is set
   try {
-    const cols = ['ticker','broker','shares','invested','price','value','gain'];
+    const cols = ['ticker','broker','shares','invested','price','value','gainPct','gainAbs'];
     document.querySelectorAll('#holdingsHeader th.sortable').forEach((th, i) => {
       th.classList.toggle('sort-active', cols[i] === sortCol);
       th.querySelector('.sort-arrow')?.remove();
