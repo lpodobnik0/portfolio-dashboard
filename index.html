@@ -680,6 +680,7 @@ function addHolding() {
   document.getElementById('addInvested').value = '';
 
   render();
+  loadPricesFromFile().then(count => { if (count > 0) render(); });
 }
 
 function deleteHolding(idx) {
