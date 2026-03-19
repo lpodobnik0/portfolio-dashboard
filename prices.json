@@ -1,73 +1,73 @@
 {
-  "updated": "2026-03-19T19:21:16Z",
+  "updated": "2026-03-19T19:25:05Z",
   "prices": {
     "AGNC": {
-      "price": 10.365,
+      "price": 10.345,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.74,
+      "price": 62.7,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 208.33,
+      "price": 208.26,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 179.35,
+      "price": 179.33,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 47.47,
+      "price": 47.39,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 32.095,
+      "price": 31.995,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.82,
+      "price": 5.785,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 7.265,
+      "price": 7.255,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 119.75,
+      "price": 120.054,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.555,
+      "price": 1.545,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 24.83,
+      "price": 24.8,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 61.17,
+      "price": 61.13,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 6.87,
+      "price": 6.885,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 481.16,
+      "price": 481.38,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -90,6 +90,11 @@
       "price": 7.0896,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
+    },
+    "EUNY": {
+      "price": 16.54,
+      "currency": "EUR",
+      "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
       "price": 12.626,
@@ -116,18 +121,38 @@
       "currency": "EUR",
       "name": "OVH"
     },
+    "BATS": {
+      "price": 4355.0,
+      "currency": "GBp",
+      "name": "BRITISH AMERICAN TOBACCO PLC OR"
+    },
+    "LGEN": {
+      "price": 241.3,
+      "currency": "GBp",
+      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
+    },
+    "TW.": {
+      "price": 89.68,
+      "currency": "GBp",
+      "name": "TAYLOR WIMPEY PLC ORD 1P"
+    },
+    "DGE": {
+      "price": 1402.0,
+      "currency": "GBp",
+      "name": "DIAGEO PLC ORD 28 101/108P"
+    },
     "AVCN": {
       "price": 0.17,
       "currency": "CAD",
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4661.0,
+      "price": 4661.7,
       "currency": "USD",
       "name": "Gold Apr 26"
     },
     "XAG": {
-      "price": 72.51,
+      "price": 72.5,
       "currency": "USD",
       "name": "Silver May 26"
     },
