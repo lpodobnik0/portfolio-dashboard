@@ -1,6 +1,66 @@
 {
-  "updated": "2026-03-19T18:09:07Z",
+  "updated": "2026-03-19T18:26:00Z",
   "prices": {
+    "AGNC": {
+      "price": 10.285,
+      "currency": "USD",
+      "name": "AGNC Investment Corp."
+    },
+    "O": {
+      "price": 62.6,
+      "currency": "USD",
+      "name": "Realty Income Corporation"
+    },
+    "AMZN": {
+      "price": 207.37,
+      "currency": "USD",
+      "name": "Amazon.com, Inc."
+    },
+    "NVDA": {
+      "price": 178.79,
+      "currency": "USD",
+      "name": "NVIDIA Corporation"
+    },
+    "CRSP": {
+      "price": 46.95,
+      "currency": "USD",
+      "name": "CRISPR Therapeutics AG"
+    },
+    "IONQ": {
+      "price": 32.2,
+      "currency": "USD",
+      "name": "IonQ, Inc."
+    },
+    "LXEO": {
+      "price": 5.715,
+      "currency": "USD",
+      "name": "Lexeo Therapeutics, Inc."
+    },
+    "BRK.B": {
+      "price": 479.81,
+      "currency": "USD",
+      "name": "Berkshire Hathaway Inc. New"
+    },
+    "VUSA": {
+      "price": 93.338,
+      "currency": "GBP",
+      "name": "VANGUARD FUNDS PLC VANGUARD S&P"
+    },
+    "VWCE": {
+      "price": 144.28,
+      "currency": "EUR",
+      "name": "Vanguard FTSE All-World U.ETF R"
+    },
+    "VUAA": {
+      "price": 126.8,
+      "currency": "USD",
+      "name": "VANGUARD FUNDS PLC VANGUARD S&P"
+    },
+    "ACS": {
+      "price": 105.1,
+      "currency": "EUR",
+      "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
+    },
     "IES": {
       "price": 5.078,
       "currency": "EUR",
