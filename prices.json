@@ -1,43 +1,43 @@
 {
-  "updated": "2026-03-19T18:32:19Z",
+  "updated": "2026-03-19T18:33:41Z",
   "prices": {
     "AGNC": {
-      "price": 10.28,
+      "price": 10.285,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.58,
+      "price": 62.61,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 207.17,
+      "price": 207.2,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 178.895,
+      "price": 178.83,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 46.8,
+      "price": 46.77,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 32.195,
+      "price": 32.19,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.705,
+      "price": 5.72,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "BRK.B": {
-      "price": 479.264,
+      "price": 479.355,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -71,10 +71,15 @@
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
-    "CAS": {
-      "price": 25.053,
+    "XAU": {
+      "price": 4610.4,
       "currency": "USD",
-      "name": "Simplify China A Shares PLUS In"
+      "name": "Gold Apr 26"
+    },
+    "XAG": {
+      "price": 71.385,
+      "currency": "USD",
+      "name": "Silver May 26"
     },
     "IES": {
       "price": 5.078,
