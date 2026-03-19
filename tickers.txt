@@ -17,6 +17,13 @@ NVDA
 CRSP
 IONQ
 LXEO
+QUBT
+NBIS
+LCTX
+DOCS
+D
+QS
+PINN
 
 # ── US stocks with special Yahoo Finance format ──
 BRK.B=BRK-B
@@ -26,14 +33,23 @@ VUSA=VUSA.L
 VWCE=VWCE.DE
 VUAA=VUAA.L
 EXIO=IDVA.AS
+EUNY=EUNY.AS
+FUSA=FUSA.DE
 
 # ── European stocks ──────────────────────────
 DG=DG.PA
 ACS=ACS.MC
+FORTUM=FORTUM.HE
+OVH=OVH.PA
+
+# ── Canadian stocks ──────────────────────────
+AVCN=AVCN.TO
 
 # ── Precious metals ──────────────────────────
 XAU=GC=F
 XAG=SI=F
 
-# ── Croatian / Other ─────────────────────────
+# ── Croatian (ZSE) ───────────────────────────
 IES=ISP.MI
+HT-RA=HT-R-A.ZA
+IG-R-A=IG-R-A.ZA
