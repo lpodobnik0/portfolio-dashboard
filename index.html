@@ -679,11 +679,6 @@ function addHolding() {
   document.getElementById('addShares').value = '';
   document.getElementById('addInvested').value = '';
 
-  // Try fetching price
-  fetchPrice(ticker).then(result => {
-    if (result) { prices[ticker] = result; save(); render(); }
-  });
-
   render();
 }
 
