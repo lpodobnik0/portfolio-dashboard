@@ -1,11 +1,35 @@
 # Format: TICKER or TICKER=YAHOO_TICKER
 # Use TICKER=YAHOO_TICKER when your dashboard ticker differs from Yahoo Finance's.
-# The price is fetched from Yahoo Finance but stored under your dashboard ticker.
+# The price is stored under your dashboard ticker so the dashboard matches automatically.
 #
 # Tips:
-#   US stocks:      AAPL, MSFT, TSLA
+#   US stocks:      AAPL, MSFT, TSLA (no suffix needed)
 #   EU stocks:      ISP.MI (Intesa Milan), AIR.PA (Airbus Paris)
 #   ZSE (Croatia):  HT.ZA, PODR.ZA, ATGR.ZA
-#   ETFs:           VWCE.DE, CSPX.L
+#   ETFs on Xetra:  VWCE.DE, EXIO.DE
+#   ETFs on London: VUSA.L, VUAA.L
 
+# ── US stocks ────────────────────────────────
+AGNC
+SQU
+O
+AMZN
+NVDA
+CRSP
+IONQ
+LXEO
+
+# ── US stocks with special Yahoo Finance format ──
+BRK.B=BRK-B
+
+# ── European ETFs ────────────────────────────
+VUSA=VUSA.L
+VWCE=VWCE.DE
+VUAA=VUAA.L
+EXIO=EXIO.DE
+
+# ── European stocks ──────────────────────────
+ACS=ACS.MC
+
+# ── Croatian / Other ─────────────────────────
 IES=ISP.MI
