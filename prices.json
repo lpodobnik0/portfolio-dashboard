@@ -1,6 +1,12 @@
 {
-  "updated": "2026-03-19T17:08:12Z",
-  "prices": {},
+  "updated": "2026-03-19T17:38:06Z",
+  "prices": {
+    "IES": {
+      "price": 5.078,
+      "currency": "EUR",
+      "name": "INTESA SANPAOLO"
+    }
+  },
   "fx": {
     "USD": 1.147748,
     "GBP": 0.864118,
