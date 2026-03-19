@@ -65,11 +65,35 @@ jobs:
                   raise ValueError(f"no price in Stooq response: {row}")
               return {'price': price, 'currency': 'EUR', 'name': key}
 
+          def fetch_zse(key, ticker):
+              import datetime
+              # ticker format: {ISIN}.ZSE  e.g. HRHT00RA0005.ZSE
+              isin = ticker.upper().replace('.ZSE', '')
+              today = datetime.date.today()
+              from_date = (today - datetime.timedelta(days=10)).strftime('%Y-%m-%d')
+              to_date = today.strftime('%Y-%m-%d')
+              url = (f'https://rest.zse.hr/web/Bvt9fe2peQ7pwpyYqODM'
+                     f'/security-history/XZAG/{isin}/{from_date}/{to_date}/json?language=EN')
+              req = urllib.request.Request(url, headers=HEADERS)
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  data = json.loads(r.read())
+              if not data:
+                  raise ValueError(f"empty ZSE history for ISIN {isin}")
+              # Sort by date descending, pick the most recent trading day
+              records = sorted(data, key=lambda r: r.get('date', ''), reverse=True)
+              latest = records[0]
+              price = float(latest.get('last_price') or latest.get('vwap_price') or 0)
+              if not price:
+                  raise ValueError(f"no price in ZSE record: {latest}")
+              return {'price': price, 'currency': 'EUR', 'name': key}
+
           prices = {}
           for key, source_ticker in ticker_map.items():
               try:
-                  use_stooq = source_ticker.upper().endswith('.ZS')
-                  if use_stooq:
+                  upper = source_ticker.upper()
+                  if upper.endswith('.ZSE'):
+                      result = fetch_zse(key, source_ticker)
+                  elif upper.endswith('.ZS'):
                       result = fetch_stooq(key, source_ticker)
                   else:
                       result = fetch_yahoo(key, source_ticker)

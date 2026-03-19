@@ -54,9 +54,9 @@ AVCN=AVCN.TO
 XAU=GC=F
 XAG=SI=F
 
-# ── Croatian (ZSE) — uses Stooq (.ZS suffix) ─
-# Workflow automatically uses Stooq for .ZS tickers
+# ── Croatian (ZSE) — uses ZSE REST API (.ZSE suffix = ISIN) ─
+# Workflow fetches via rest.zse.hr for .ZSE tickers
 IES=ISP.MI
-HT-RA=HT-RA.ZS
-IG-R-A=IG-RA.ZS
-TOK-R-A=TOK-RA.ZS
+HT-RA=HRHT00RA0005.ZSE
+IG-R-A=HRIG00RA0009.ZSE
+TOK-R-A=HRTOK0RA0001.ZSE
