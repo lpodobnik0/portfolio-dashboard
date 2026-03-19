@@ -33,7 +33,7 @@ VUSA=VUSA.L
 VWCE=VWCE.DE
 VUAA=VUAA.L
 EXIO=IDVA.AS
-EUNY=EUNY.AS
+EUNY=EUNY.DE
 FUSA=FUSA.DE
 
 # ── European stocks ──────────────────────────
@@ -41,6 +41,12 @@ DG=DG.PA
 ACS=ACS.MC
 FORTUM=FORTUM.HE
 OVH=OVH.PA
+
+# ── UK stocks (London Stock Exchange) ────────
+BATS=BATS.L
+LGEN=LGEN.L
+TW.=TW.L
+DGE=DGE.L
 
 # ── Canadian stocks ──────────────────────────
 AVCN=AVCN.TO
@@ -53,3 +59,4 @@ XAG=SI=F
 IES=ISP.MI
 HT-RA=HT-R-A.ZA
 IG-R-A=IG-R-A.ZA
+TOK-R-A=TOK-R-A.ZA
