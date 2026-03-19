@@ -23,10 +23,9 @@ LCTX
 DOCS
 D
 QS
-PINN
-
 # ── US stocks with special Yahoo Finance format ──
 BRK.B=BRK-B
+PINN=PINN.V
 
 # ── European ETFs ────────────────────────────
 VUSA=VUSA.L
@@ -55,8 +54,9 @@ AVCN=AVCN.TO
 XAU=GC=F
 XAG=SI=F
 
-# ── Croatian (ZSE) ───────────────────────────
+# ── Croatian (ZSE) — uses Stooq (.ZS suffix) ─
+# Workflow automatically uses Stooq for .ZS tickers
 IES=ISP.MI
-HT-RA=HT-R-A.ZA
-IG-R-A=IG-R-A.ZA
-TOK-R-A=TOK-R-A.ZA
+HT-RA=HT-RA.ZS
+IG-R-A=IG-RA.ZS
+TOK-R-A=TOK-RA.ZS
