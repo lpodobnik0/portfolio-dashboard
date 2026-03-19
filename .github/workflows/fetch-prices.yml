@@ -77,10 +77,12 @@ jobs:
               req = urllib.request.Request(url, headers=HEADERS)
               with urllib.request.urlopen(req, timeout=15) as r:
                   data = json.loads(r.read())
-              if not data:
+              # Response is {"history": [...], "symbol": "...", ...}
+              history = data.get('history') if isinstance(data, dict) else data
+              if not history:
                   raise ValueError(f"empty ZSE history for ISIN {isin}")
               # Sort by date descending, pick the most recent trading day
-              records = sorted(data, key=lambda r: r.get('date', ''), reverse=True)
+              records = sorted(history, key=lambda r: r.get('date', ''), reverse=True)
               latest = records[0]
               price = float(latest.get('last_price') or latest.get('vwap_price') or 0)
               if not price:
