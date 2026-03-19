@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0a0e17"/>
+  <!-- Grid lines -->
+  <line x1="80" y1="180" x2="432" y2="180" stroke="#1e2d3d" stroke-width="2"/>
+  <line x1="80" y1="256" x2="432" y2="256" stroke="#1e2d3d" stroke-width="2"/>
+  <line x1="80" y1="332" x2="432" y2="332" stroke="#1e2d3d" stroke-width="2"/>
+  <!-- Chart line -->
+  <polyline
+    points="80,340 146,300 200,310 260,230 310,250 370,160 432,140"
+    fill="none" stroke="#3b82f6" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Glow under line (area) -->
+  <polygon
+    points="80,340 146,300 200,310 260,230 310,250 370,160 432,140 432,380 80,380"
+    fill="url(#grad)" opacity="0.25"/>
+  <!-- Dot at end -->
+  <circle cx="432" cy="140" r="14" fill="#3b82f6"/>
+  <circle cx="432" cy="140" r="8" fill="#fff"/>
+  <!-- Gradient def -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
