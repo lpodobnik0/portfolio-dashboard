@@ -39,8 +39,15 @@ jobs:
                   with urllib.request.urlopen(req, timeout=10) as r:
                       data = json.loads(r.read())
                   meta = data['chart']['result'][0]['meta']
+                  # Try multiple price fields — Yahoo Finance field name varies by market state
+                  price = (meta.get('regularMarketPrice') or
+                           meta.get('chartPreviousClose') or
+                           meta.get('previousClose'))
+                  if not price:
+                      print(f"  {ticker}: FAILED — no price field found. Available: {list(meta.keys())}")
+                      continue
                   prices[ticker] = {
-                      'price': meta['regularMarketPrice'],
+                      'price': price,
                       'currency': meta.get('currency', 'USD'),
                       'name': meta.get('shortName', ticker)
                   }
