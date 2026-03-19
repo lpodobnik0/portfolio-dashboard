@@ -645,19 +645,6 @@ function renderHoldings() {
     return (va - vb) * sortDir;
   });
 
-  // Update header arrows
-  document.querySelectorAll('#holdingsHeader th.sortable').forEach(th => {
-    th.classList.remove('sort-active');
-    th.querySelectorAll('.sort-arrow').forEach(el => el.remove());
-  });
-  const cols = ['ticker','broker','shares','invested','price','value','gain'];
-  const activeIdx = cols.indexOf(sortCol);
-  if (activeIdx >= 0) {
-    const th = document.querySelectorAll('#holdingsHeader th.sortable')[activeIdx];
-    th.classList.add('sort-active');
-    th.insertAdjacentHTML('beforeend', `<i class="sort-arrow">${sortDir === 1 ? '↑' : '↓'}</i>`);
-  }
-
   body.innerHTML = sorted.map(h => {
     const p = prices[h.ticker];
     const priceDisplay = p ? fmt(toEUR(p.price, p.currency || 'EUR')) : '—';
@@ -682,6 +669,18 @@ function renderHoldings() {
       </td>
     </tr>`;
   }).join('');
+
+  // Update header arrows after body is set
+  try {
+    const cols = ['ticker','broker','shares','invested','price','value','gain'];
+    document.querySelectorAll('#holdingsHeader th.sortable').forEach((th, i) => {
+      th.classList.toggle('sort-active', cols[i] === sortCol);
+      th.querySelector('.sort-arrow')?.remove();
+      if (cols[i] === sortCol) {
+        th.insertAdjacentHTML('beforeend', `<i class="sort-arrow">${sortDir === 1 ? '↑' : '↓'}</i>`);
+      }
+    });
+  } catch(e) { console.warn('Header sort update failed', e); }
 }
 
 function renderDividends() {
