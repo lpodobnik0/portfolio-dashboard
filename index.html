@@ -255,6 +255,13 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 .modal-actions button { padding: 8px 16px; border-radius: 8px; cursor: pointer; font-family: var(--font); font-size: 13px; }
 .modal-actions .btn-primary { background: var(--accent); color: #fff; border: none; }
 .modal-actions .btn-secondary { background: none; border: 1px solid var(--border); color: var(--text-dim); }
+.file-pick-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 12px; border-radius: 10px; cursor: pointer;
+  border: 2px dashed var(--border); color: var(--text-dim); font-size: 14px;
+  font-family: var(--font); transition: all 0.2s; user-select: none;
+}
+.file-pick-btn:hover, .file-pick-btn.has-file { border-color: var(--accent); color: var(--text); }
 
 /* Loading spinner */
 .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; }
@@ -497,7 +504,22 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 <div class="modal-overlay" id="importModal">
   <div class="modal">
     <h3>Import Data</h3>
-    <p style="font-size:13px;color:var(--text-dim);margin-bottom:12px">Paste your exported JSON below. This will replace all current data.</p>
+    <p style="font-size:13px;color:var(--text-dim);margin-bottom:16px">This will replace all current data.</p>
+
+    <!-- File pick (best on mobile) -->
+    <label class="file-pick-btn" id="filePickLabel">
+      <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="handleImportFile(event)">
+      📂 Choose file
+    </label>
+    <div id="filePickName" style="font-size:12px;color:var(--text-dim);margin:8px 0 12px;min-height:16px"></div>
+
+    <!-- Divider -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+      <span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">or paste JSON</span>
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+    </div>
+
     <textarea id="importText" placeholder='Paste JSON here...'></textarea>
     <div class="modal-actions">
       <button class="btn-secondary" onclick="closeImportModal()">Cancel</button>
@@ -891,20 +913,50 @@ function switchTab(tab) {
 
 // ——— Export / Import ———
 function exportData() {
-  const data = JSON.stringify({ holdings, dividends, prices }, null, 2);
-  const blob = new Blob([data], { type: 'application/json' });
+  const filename = `portfolio-${new Date().toISOString().slice(0,10)}.json`;
+  const json = JSON.stringify({ holdings, dividends, prices }, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+
+  // Use Web Share API on mobile if available (lets you AirDrop, WhatsApp, email etc.)
+  if (navigator.canShare && navigator.canShare({ files: [new File([blob], filename, { type: 'application/json' })] })) {
+    navigator.share({ files: [new File([blob], filename, { type: 'application/json' })] })
+      .catch(() => downloadBlob(blob, filename)); // fallback if user cancels share sheet
+    return;
+  }
+  downloadBlob(blob, filename);
+}
+
+function downloadBlob(blob, filename) {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `portfolio-${new Date().toISOString().slice(0,10)}.json`;
+  a.download = filename;
   a.click();
 }
 
-function showImportModal() { document.getElementById('importModal').classList.add('show'); }
+function showImportModal() {
+  document.getElementById('importText').value = '';
+  document.getElementById('filePickName').textContent = '';
+  document.getElementById('filePickLabel').classList.remove('has-file');
+  document.getElementById('importModal').classList.add('show');
+}
 function closeImportModal() { document.getElementById('importModal').classList.remove('show'); }
+
+function handleImportFile(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const label = document.getElementById('filePickLabel');
+  const nameEl = document.getElementById('filePickName');
+  nameEl.textContent = '📄 ' + file.name;
+  label.classList.add('has-file');
+  const reader = new FileReader();
+  reader.onload = ev => { document.getElementById('importText').value = ev.target.result; };
+  reader.readAsText(file);
+}
 
 function importData() {
   try {
     const data = JSON.parse(document.getElementById('importText').value);
+    if (!data.holdings && !data.dividends) throw new Error('Unrecognised format');
     if (data.holdings) holdings = data.holdings;
     if (data.dividends) dividends = data.dividends;
     if (data.prices) prices = data.prices;
@@ -912,7 +964,7 @@ function importData() {
     closeImportModal();
     render();
   } catch(e) {
-    alert('Invalid JSON. Please check the format.');
+    alert('Could not import — make sure you picked/pasted the correct portfolio JSON file.');
   }
 }
 
