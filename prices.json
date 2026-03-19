@@ -1,43 +1,73 @@
 {
-  "updated": "2026-03-19T19:12:47Z",
+  "updated": "2026-03-19T19:21:16Z",
   "prices": {
     "AGNC": {
-      "price": 10.36,
+      "price": 10.365,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.78,
+      "price": 62.74,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 208.69,
+      "price": 208.33,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 179.57,
+      "price": 179.35,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 48.125,
+      "price": 47.47,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 32.38,
+      "price": 32.095,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.905,
+      "price": 5.82,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
+    "QUBT": {
+      "price": 7.265,
+      "currency": "USD",
+      "name": "Quantum Computing Inc."
+    },
+    "NBIS": {
+      "price": 119.75,
+      "currency": "USD",
+      "name": "Nebius Group N.V."
+    },
+    "LCTX": {
+      "price": 1.555,
+      "currency": "USD",
+      "name": "Lineage Cell Therapeutics, Inc."
+    },
+    "DOCS": {
+      "price": 24.83,
+      "currency": "USD",
+      "name": "Doximity, Inc."
+    },
+    "D": {
+      "price": 61.17,
+      "currency": "USD",
+      "name": "Dominion Energy, Inc."
+    },
+    "QS": {
+      "price": 6.87,
+      "currency": "USD",
+      "name": "QuantumScape Corporation"
+    },
     "BRK.B": {
-      "price": 480.991,
+      "price": 481.16,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -61,6 +91,11 @@
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
+    "FUSA": {
+      "price": 12.626,
+      "currency": "EUR",
+      "name": "Fidelity US Quality Income ETFR"
+    },
     "DG": {
       "price": 126.15,
       "currency": "EUR",
@@ -71,13 +106,28 @@
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
+    "FORTUM": {
+      "price": 22.05,
+      "currency": "EUR",
+      "name": "Fortum Corporation"
+    },
+    "OVH": {
+      "price": 8.805,
+      "currency": "EUR",
+      "name": "OVH"
+    },
+    "AVCN": {
+      "price": 0.17,
+      "currency": "CAD",
+      "name": "AVICANNA INC"
+    },
     "XAU": {
-      "price": 4649.2,
+      "price": 4661.0,
       "currency": "USD",
       "name": "Gold Apr 26"
     },
     "XAG": {
-      "price": 72.035,
+      "price": 72.51,
       "currency": "USD",
       "name": "Silver May 26"
     },
