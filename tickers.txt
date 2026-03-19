@@ -30,7 +30,10 @@ EXSG=EXSG.DE
 # ── European stocks ──────────────────────────
 DG=DG.PA
 ACS=ACS.MC
-CAS
+
+# ── Precious metals ──────────────────────────
+XAU=GC=F
+XAG=SI=F
 
 # ── Croatian / Other ─────────────────────────
 IES=ISP.MI
