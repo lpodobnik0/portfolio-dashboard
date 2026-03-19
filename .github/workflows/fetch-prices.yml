@@ -24,36 +24,43 @@ jobs:
               print("tickers.txt not found — nothing to do")
               exit(0)
 
+          # Parse tickers — supports "TICKER" or "DASHBOARD_KEY=YAHOO_TICKER" format
           with open('tickers.txt') as f:
-              tickers = [t.strip().upper() for t in f if t.strip() and not t.startswith('#')]
+              raw = [t.strip() for t in f if t.strip() and not t.startswith('#')]
+          ticker_map = {}  # dashboard_key -> yahoo_ticker
+          for entry in raw:
+              if '=' in entry:
+                  key, yahoo = entry.split('=', 1)
+                  ticker_map[key.strip().upper()] = yahoo.strip().upper()
+              else:
+                  ticker_map[entry.upper()] = entry.upper()
 
-          print(f"Fetching {len(tickers)} tickers: {tickers}")
+          print(f"Fetching {len(ticker_map)} tickers: {ticker_map}")
 
           HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
 
           prices = {}
-          for ticker in tickers:
+          for key, yahoo_ticker in ticker_map.items():
               try:
-                  url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d'
+                  url = f'https://query1.finance.yahoo.com/v8/finance/chart/{yahoo_ticker}?interval=1d&range=1d'
                   req = urllib.request.Request(url, headers=HEADERS)
                   with urllib.request.urlopen(req, timeout=10) as r:
                       data = json.loads(r.read())
                   meta = data['chart']['result'][0]['meta']
-                  # Try multiple price fields — Yahoo Finance field name varies by market state
                   price = (meta.get('regularMarketPrice') or
                            meta.get('chartPreviousClose') or
                            meta.get('previousClose'))
                   if not price:
-                      print(f"  {ticker}: FAILED — no price field found. Available: {list(meta.keys())}")
+                      print(f"  {key} ({yahoo_ticker}): FAILED — no price field. Keys: {list(meta.keys())}")
                       continue
-                  prices[ticker] = {
+                  prices[key] = {
                       'price': price,
                       'currency': meta.get('currency', 'USD'),
-                      'name': meta.get('shortName', ticker)
+                      'name': meta.get('shortName', yahoo_ticker)
                   }
-                  print(f"  {ticker}: {prices[ticker]['price']} {prices[ticker]['currency']} ({prices[ticker]['name']})")
+                  print(f"  {key} ({yahoo_ticker}): {prices[key]['price']} {prices[key]['currency']} ({prices[key]['name']})")
               except Exception as e:
-                  print(f"  {ticker}: FAILED — {e}")
+                  print(f"  {key} ({yahoo_ticker}): FAILED — {e}")
               time.sleep(0.3)
 
           # Fetch EUR FX rates
@@ -79,7 +86,7 @@ jobs:
           with open('prices.json', 'w') as f:
               json.dump(result, f, indent=2)
 
-          print(f"\nSaved prices.json with {len(prices)}/{len(tickers)} prices")
+          print(f"\nSaved prices.json with {len(prices)}/{len(ticker_map)} prices")
           EOF
 
       - name: Commit prices.json
