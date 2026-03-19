@@ -129,8 +129,14 @@ body::before {
 /* Holdings table */
 .table-wrap {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
+/* Sticky ticker column so you always see which row you're on while scrolling */
+thead th:first-child, tbody td:first-child {
+  position: sticky; left: 0; z-index: 2;
+  background: var(--bg-card);
+}
+tbody tr:hover td:first-child { background: var(--bg-card-hover); }
 table { width: 100%; border-collapse: collapse; }
 thead th {
   font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
@@ -257,15 +263,54 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 .info-banner .close-btn { margin-left: auto; cursor: pointer; opacity: 0.6; }
 .info-banner .close-btn:hover { opacity: 1; }
 
-/* Responsive */
+/* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 768px) {
-  .summary-row { grid-template-columns: 1fr; }
   .form-row { flex-direction: column; }
   .form-group { width: 100%; }
-  .form-group input, .form-group select { width: 100%; }
+  .form-group input, .form-group select { width: 100% !important; }
   table { font-size: 12px; }
-  thead th, tbody td { padding: 10px 10px; }
-  .summary-card .value { font-size: 22px; }
+}
+
+@media (max-width: 640px) {
+  .app { padding: 14px 12px 72px; }
+
+  /* Header */
+  .header { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 20px; padding-bottom: 14px; }
+  .header h1 { font-size: 18px; }
+  .header-actions { width: 100%; display: grid; grid-template-columns: 1fr auto auto auto; gap: 6px; }
+  .header-actions button { padding: 9px 8px; font-size: 12px; text-align: center; white-space: nowrap; }
+
+  /* Summary — 2-col on mobile */
+  .summary-row { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 18px; }
+  .summary-card { padding: 14px 12px; }
+  .summary-card .label { font-size: 9px; letter-spacing: 0.8px; }
+  .summary-card .value { font-size: 17px; letter-spacing: -0.5px; }
+  .summary-card .sub { font-size: 11px; }
+  /* Dividends card spans full width on mobile */
+  .summary-card.dividends { grid-column: 1 / -1; }
+
+  /* Broker bar */
+  .broker-legend { gap: 8px; }
+  .broker-legend span { font-size: 11px; }
+
+  /* Tabs */
+  .tabs { width: 100%; display: flex; }
+  .tab { flex: 1; padding: 8px 4px; font-size: 12px; text-align: center; }
+
+  /* Table: no need to wrap text, let it scroll */
+  thead th, tbody td { padding: 10px 12px; white-space: nowrap; }
+  .broker-tag { font-size: 9px; padding: 2px 6px; }
+
+  /* Form */
+  .add-section { padding: 16px 14px; }
+  .add-section h3 { font-size: 14px; }
+  .form-group label { font-size: 10px; }
+  .form-group input, .form-group select { padding: 11px 12px; font-size: 14px; border-radius: 10px; }
+  .btn-add, .btn-cancel { padding: 11px 16px; font-size: 14px; border-radius: 10px; width: 100%; text-align: center; }
+
+  /* Bigger touch targets for edit/delete */
+  .btn-delete { font-size: 18px; padding: 6px 10px; }
+  .btn-edit { font-size: 14px; padding: 6px 10px; }
 }
 </style>
 </head>
