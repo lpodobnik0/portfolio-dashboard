@@ -517,9 +517,11 @@ async function loadPricesFromFile() {
 
 function toEUR(amount, currency) {
   if (!amount || isNaN(amount)) return 0;
+  // GBp = pence (1/100 of a pound) — Yahoo Finance returns UK stocks in pence
+  if (currency === 'GBp' || currency === 'GBX') amount = amount / 100, currency = 'GBP';
   if (currency === 'EUR') return amount;
   const rate = fxRates[currency];
-  if (!rate || isNaN(rate) || rate === 0) return amount; // treat as EUR if rate missing
+  if (!rate || isNaN(rate) || rate === 0) return amount;
   return amount / rate;
 }
 
