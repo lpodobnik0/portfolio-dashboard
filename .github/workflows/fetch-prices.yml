@@ -1,0 +1,84 @@
+name: Fetch Stock Prices
+
+on:
+  schedule:
+    # Every 30 min, Mon–Fri, 7am–5pm UTC (covers EU and US market hours)
+    - cron: '0,30 7-17 * * 1-5'
+  workflow_dispatch: # Allow manual trigger from the GitHub UI
+
+jobs:
+  fetch-prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch prices and FX rates
+        run: |
+          python3 << 'EOF'
+          import json, urllib.request, time, os
+
+          if not os.path.exists('tickers.txt'):
+              print("tickers.txt not found — nothing to do")
+              exit(0)
+
+          with open('tickers.txt') as f:
+              tickers = [t.strip().upper() for t in f if t.strip() and not t.startswith('#')]
+
+          print(f"Fetching {len(tickers)} tickers: {tickers}")
+
+          HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+
+          prices = {}
+          for ticker in tickers:
+              try:
+                  url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d'
+                  req = urllib.request.Request(url, headers=HEADERS)
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      data = json.loads(r.read())
+                  meta = data['chart']['result'][0]['meta']
+                  prices[ticker] = {
+                      'price': meta['regularMarketPrice'],
+                      'currency': meta.get('currency', 'USD'),
+                      'name': meta.get('shortName', ticker)
+                  }
+                  print(f"  {ticker}: {prices[ticker]['price']} {prices[ticker]['currency']} ({prices[ticker]['name']})")
+              except Exception as e:
+                  print(f"  {ticker}: FAILED — {e}")
+              time.sleep(0.3)
+
+          # Fetch EUR FX rates
+          fx = {'USD': 1.08, 'GBP': 0.85, 'HRK': 7.53}
+          try:
+              req = urllib.request.Request('https://open.er-api.com/v6/latest/EUR', headers=HEADERS)
+              with urllib.request.urlopen(req, timeout=10) as r:
+                  data = json.loads(r.read())
+              if data.get('rates'):
+                  fx['USD'] = data['rates'].get('USD', fx['USD'])
+                  fx['GBP'] = data['rates'].get('GBP', fx['GBP'])
+                  fx['HRK'] = data['rates'].get('HRK', fx['HRK'])
+                  print(f"FX rates: {fx}")
+          except Exception as e:
+              print(f"FX fetch failed (using defaults): {e}")
+
+          result = {
+              'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+              'prices': prices,
+              'fx': fx
+          }
+
+          with open('prices.json', 'w') as f:
+              json.dump(result, f, indent=2)
+
+          print(f"\nSaved prices.json with {len(prices)}/{len(tickers)} prices")
+          EOF
+
+      - name: Commit prices.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prices.json
+          git diff --staged --quiet || git commit -m "chore: update prices $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

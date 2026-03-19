@@ -1,0 +1,11 @@
+# One Yahoo Finance ticker per line.
+# Add a new line here whenever you add a holding in the dashboard,
+# then push — GitHub Actions will start fetching that price automatically.
+#
+# Tips:
+#   US stocks:      AAPL, MSFT, TSLA
+#   EU stocks:      ISP.MI (Intesa Milan), AIR.PA (Airbus Paris)
+#   ZSE (Croatia):  HT.ZA, PODR.ZA, ATGR.ZA
+#   ETFs:           VWCE.DE, CSPX.L
+
+IES.MI
