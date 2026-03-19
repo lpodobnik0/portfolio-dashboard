@@ -461,11 +461,13 @@ let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 let editingIdx = null; // null = adding new, number = editing existing
-let sortCol = 'value';
-let sortDir = -1; // -1 = desc, 1 = asc
+let sortCol = localStorage.getItem('pf_sortCol') || 'value';
+let sortDir = parseInt(localStorage.getItem('pf_sortDir') || '-1');
 
 function setSort(col) {
   if (sortCol === col) { sortDir *= -1; } else { sortCol = col; sortDir = col === 'ticker' || col === 'broker' ? 1 : -1; }
+  localStorage.setItem('pf_sortCol', sortCol);
+  localStorage.setItem('pf_sortDir', sortDir);
   renderHoldings();
 }
 
