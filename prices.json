@@ -1,43 +1,43 @@
 {
-  "updated": "2026-03-19T18:26:00Z",
+  "updated": "2026-03-19T18:32:19Z",
   "prices": {
     "AGNC": {
-      "price": 10.285,
+      "price": 10.28,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.6,
+      "price": 62.58,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 207.37,
+      "price": 207.17,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 178.79,
+      "price": 178.895,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 46.95,
+      "price": 46.8,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 32.2,
+      "price": 32.195,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.715,
+      "price": 5.705,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "BRK.B": {
-      "price": 479.81,
+      "price": 479.264,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -56,10 +56,25 @@
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
+    "EXSG": {
+      "price": 20.84,
+      "currency": "EUR",
+      "name": "iSh.EO ST.Sel.Div.30 U.ETF DE I"
+    },
+    "DG": {
+      "price": 126.15,
+      "currency": "EUR",
+      "name": "VINCI"
+    },
     "ACS": {
       "price": 105.1,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
+    },
+    "CAS": {
+      "price": 25.053,
+      "currency": "USD",
+      "name": "Simplify China A Shares PLUS In"
     },
     "IES": {
       "price": 5.078,
@@ -70,6 +85,7 @@
   "fx": {
     "USD": 1.147748,
     "GBP": 0.864118,
+    "CAD": 1.575122,
     "HRK": 7.5345
   }
 }
