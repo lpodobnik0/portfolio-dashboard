@@ -11,7 +11,6 @@
 
 # ── US stocks ────────────────────────────────
 AGNC
-SQU
 O
 AMZN
 NVDA
@@ -26,10 +25,12 @@ BRK.B=BRK-B
 VUSA=VUSA.L
 VWCE=VWCE.DE
 VUAA=VUAA.L
-EXIO=EXIO.DE
+EXSG=EXSG.DE
 
 # ── European stocks ──────────────────────────
+DG=DG.PA
 ACS=ACS.MC
+CAS
 
 # ── Croatian / Other ─────────────────────────
 IES=ISP.MI

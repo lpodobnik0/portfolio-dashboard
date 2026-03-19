@@ -64,7 +64,7 @@ jobs:
               time.sleep(0.3)
 
           # Fetch EUR FX rates
-          fx = {'USD': 1.08, 'GBP': 0.85, 'HRK': 7.53}
+          fx = {'USD': 1.08, 'GBP': 0.85, 'CAD': 1.56, 'HRK': 7.53}
           try:
               req = urllib.request.Request('https://open.er-api.com/v6/latest/EUR', headers=HEADERS)
               with urllib.request.urlopen(req, timeout=10) as r:
@@ -72,6 +72,7 @@ jobs:
               if data.get('rates'):
                   fx['USD'] = data['rates'].get('USD', fx['USD'])
                   fx['GBP'] = data['rates'].get('GBP', fx['GBP'])
+                  fx['CAD'] = data['rates'].get('CAD', fx['CAD'])
                   fx['HRK'] = data['rates'].get('HRK', fx['HRK'])
                   print(f"FX rates: {fx}")
           except Exception as e:

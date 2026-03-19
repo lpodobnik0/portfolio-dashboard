@@ -362,6 +362,7 @@ td.mono { font-family: var(--mono); font-size: 13px; }
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
             <option value="GBP">GBP</option>
+            <option value="CAD">CAD</option>
             <option value="HRK">HRK</option>
           </select>
         </div>
@@ -439,7 +440,7 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 let holdings = JSON.parse(localStorage.getItem('pf_holdings') || '[]');
 let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
-let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"HRK":7.53}');
+let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 
 const BROKER_COLORS = { revolut: '#0666eb', ibkr: '#d32f2f', zse: '#2e7d32', t212: '#00c853' };
 const BROKER_LABELS = { revolut: 'Revolut', ibkr: 'IBKR', zse: 'ZSE', t212: 'Trading 212' };
