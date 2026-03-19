@@ -1,43 +1,43 @@
 {
-  "updated": "2026-03-19T18:51:51Z",
+  "updated": "2026-03-19T19:12:47Z",
   "prices": {
     "AGNC": {
-      "price": 10.279,
+      "price": 10.36,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.6,
+      "price": 62.78,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 206.94,
+      "price": 208.69,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 178.165,
+      "price": 179.57,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 46.67,
+      "price": 48.125,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 31.88,
+      "price": 32.38,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.69,
+      "price": 5.905,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "BRK.B": {
-      "price": 479.25,
+      "price": 480.991,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -56,6 +56,11 @@
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
+    "EXIO": {
+      "price": 7.0896,
+      "currency": "EUR",
+      "name": "iShares EURO STOXX Select Divid"
+    },
     "DG": {
       "price": 126.15,
       "currency": "EUR",
@@ -67,12 +72,12 @@
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "XAU": {
-      "price": 4609.3,
+      "price": 4649.2,
       "currency": "USD",
       "name": "Gold Apr 26"
     },
     "XAG": {
-      "price": 71.33,
+      "price": 72.035,
       "currency": "USD",
       "name": "Silver May 26"
     },
