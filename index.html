@@ -136,7 +136,12 @@ thead th {
   font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
   color: var(--text-muted); padding: 14px 16px; text-align: left;
   border-bottom: 1px solid var(--border); font-weight: 500;
+  user-select: none;
 }
+thead th.sortable { cursor: pointer; }
+thead th.sortable:hover { color: var(--text); }
+thead th.sort-active { color: var(--accent); }
+thead th .sort-arrow { margin-left: 4px; opacity: 0.6; font-style: normal; }
 thead th.right, tbody td.right { text-align: right; }
 tbody tr { border-bottom: 1px solid rgba(30,45,61,0.5); transition: background 0.15s; }
 tbody tr:hover { background: var(--bg-card-hover); }
@@ -321,14 +326,14 @@ td.mono { font-family: var(--mono); font-size: 13px; }
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>Ticker</th>
-            <th>Broker</th>
-            <th class="right">Shares</th>
-            <th class="right">Invested</th>
-            <th class="right">Price</th>
-            <th class="right">Value</th>
-            <th class="right">Gain/Loss</th>
+          <tr id="holdingsHeader">
+            <th class="sortable" onclick="setSort('ticker')">Ticker</th>
+            <th class="sortable" onclick="setSort('broker')">Broker</th>
+            <th class="sortable right" onclick="setSort('shares')">Shares</th>
+            <th class="sortable right" onclick="setSort('invested')">Invested</th>
+            <th class="sortable right" onclick="setSort('price')">Price</th>
+            <th class="sortable right" onclick="setSort('value')">Value</th>
+            <th class="sortable right" onclick="setSort('gain')">Gain/Loss</th>
             <th></th>
           </tr>
         </thead>
@@ -455,6 +460,26 @@ let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 let editingIdx = null; // null = adding new, number = editing existing
+let sortCol = 'value';
+let sortDir = -1; // -1 = desc, 1 = asc
+
+function setSort(col) {
+  if (sortCol === col) { sortDir *= -1; } else { sortCol = col; sortDir = col === 'ticker' || col === 'broker' ? 1 : -1; }
+  renderHoldings();
+}
+
+function sortValue(h, col) {
+  switch(col) {
+    case 'ticker':   return h.ticker;
+    case 'broker':   return h.broker;
+    case 'shares':   return h.shares || 0;
+    case 'invested': return getHoldingCost(h);
+    case 'price':    return prices[h.ticker]?.price || 0;
+    case 'value':    return getHoldingValue(h);
+    case 'gain':     return getHoldingGain(h).pct;
+    default:         return 0;
+  }
+}
 
 const BROKER_COLORS = { revolut: '#0666eb', ibkr: '#d32f2f', zse: '#2e7d32', t212: '#00c853' };
 const BROKER_LABELS = { revolut: 'Revolut', ibkr: 'IBKR', zse: 'ZSE', t212: 'Trading 212' };
@@ -613,8 +638,25 @@ function renderHoldings() {
   }
   empty.style.display = 'none';
 
-  // Sort by value descending
-  const sorted = holdings.map((h, i) => ({ ...h, _i: i })).sort((a, b) => getHoldingValue(b) - getHoldingValue(a));
+  // Sort by active column
+  const sorted = holdings.map((h, i) => ({ ...h, _i: i })).sort((a, b) => {
+    const va = sortValue(a, sortCol), vb = sortValue(b, sortCol);
+    if (typeof va === 'string') return va.localeCompare(vb) * sortDir;
+    return (va - vb) * sortDir;
+  });
+
+  // Update header arrows
+  document.querySelectorAll('#holdingsHeader th.sortable').forEach(th => {
+    th.classList.remove('sort-active');
+    th.querySelectorAll('.sort-arrow').forEach(el => el.remove());
+  });
+  const cols = ['ticker','broker','shares','invested','price','value','gain'];
+  const activeIdx = cols.indexOf(sortCol);
+  if (activeIdx >= 0) {
+    const th = document.querySelectorAll('#holdingsHeader th.sortable')[activeIdx];
+    th.classList.add('sort-active');
+    th.insertAdjacentHTML('beforeend', `<i class="sort-arrow">${sortDir === 1 ? '↑' : '↓'}</i>`);
+  }
 
   body.innerHTML = sorted.map(h => {
     const p = prices[h.ticker];
