@@ -99,6 +99,7 @@ body::before {
 .summary-card.total::before { background: linear-gradient(90deg, var(--accent), #8b5cf6); }
 .summary-card.gain::before { background: var(--green); }
 .summary-card.dividends::before { background: var(--yellow); }
+.summary-card.realized::before { background: #a78bfa; }
 .summary-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); margin-bottom: 8px; }
 .summary-card .value { font-family: var(--mono); font-size: 28px; font-weight: 600; letter-spacing: -1px; }
 .summary-card .sub { font-family: var(--mono); font-size: 13px; margin-top: 4px; }
@@ -243,6 +244,9 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 .sync-banner.ok { background: rgba(72,187,120,0.15); color: #68d391; border: 1px solid rgba(72,187,120,0.3); }
 .sync-banner.warn { background: rgba(246,173,85,0.15); color: #f6ad55; border: 1px solid rgba(246,173,85,0.3); }
 .currency-hint { font-size: 11px; opacity: 0.55; font-weight: 400; }
+.action-tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.action-tag.buy { background: rgba(72,187,120,0.15); color: #68d391; }
+.action-tag.sell { background: rgba(252,129,74,0.15); color: #fc814a; }
 .csv-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; }
 .csv-badge.new { background: rgba(72,187,120,0.2); color: #68d391; }
 .csv-badge.dup { background: rgba(160,160,160,0.15); color: var(--text-muted); }
@@ -319,8 +323,7 @@ td.mono { font-family: var(--mono); font-size: 13px; }
   .summary-card .label { font-size: 9px; letter-spacing: 0.8px; }
   .summary-card .value { font-size: 17px; letter-spacing: -0.5px; }
   .summary-card .sub { font-size: 11px; }
-  /* Dividends card spans full width on mobile */
-  .summary-card.dividends { grid-column: 1 / -1; }
+  /* 4 cards = perfect 2×2 grid on mobile — no overrides needed */
 
   /* Broker bar */
   .broker-legend { gap: 8px; }
@@ -387,6 +390,11 @@ td.mono { font-family: var(--mono); font-size: 13px; }
       <div class="value" id="totalDividends">€0.00</div>
       <div class="sub neutral" id="dividendCount">0 payments</div>
     </div>
+    <div class="summary-card realized">
+      <div class="label">Realized P&amp;L</div>
+      <div class="value" id="totalRealized">€0.00</div>
+      <div class="sub neutral" id="realizedCount">0 trades</div>
+    </div>
   </div>
 
   <div class="broker-bar-container">
@@ -398,6 +406,7 @@ td.mono { font-family: var(--mono); font-size: 13px; }
   <div class="tabs">
     <button class="tab active" data-tab="holdings" onclick="switchTab('holdings')">Holdings</button>
     <button class="tab" data-tab="dividends" onclick="switchTab('dividends')">Dividends</button>
+    <button class="tab" data-tab="trades" onclick="switchTab('trades')">Trades</button>
   </div>
 
   <div id="holdingsTab">
@@ -532,6 +541,85 @@ td.mono { font-family: var(--mono); font-size: 13px; }
   </div>
 </div>
 
+  <div id="tradesTab" style="display:none">
+    <div class="table-wrap">
+      <div class="dividend-total" id="tradesTotalRow">Realized P&amp;L: €0.00</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Ticker</th>
+            <th>Action</th>
+            <th class="right">Shares</th>
+            <th class="right">Price (€)</th>
+            <th class="right">Total (€)</th>
+            <th class="right">Realized P&amp;L</th>
+            <th>Broker</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tradesBody"></tbody>
+      </table>
+      <div class="empty" id="tradesEmpty">
+        <div class="icon">🔄</div>
+        <p>No trades logged yet. Add manually or <strong>Import CSV</strong> from your broker.</p>
+      </div>
+    </div>
+
+    <div class="add-section dividend-form">
+      <div class="div-form-header">
+        <h3>+ Add Trade</h3>
+        <button class="btn-sync" onclick="showTradesCSVModal()">📥 Import CSV</button>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="tradeDate" style="width:160px">
+        </div>
+        <div class="form-group">
+          <label>Ticker</label>
+          <select id="tradeTicker" onchange="onTradeTickerChange()" style="width:130px">
+            <option value="">— pick —</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Action</label>
+          <select id="tradeAction" onchange="onTradeActionChange()" style="width:100px">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Shares</label>
+          <input type="number" id="tradeShares" placeholder="0" step="any" style="width:100px" oninput="calcTradeTotal()">
+        </div>
+        <div class="form-group">
+          <label>Price (€)</label>
+          <input type="number" id="tradePrice" placeholder="0.00" step="any" style="width:110px" oninput="calcTradeTotal()">
+        </div>
+        <div class="form-group">
+          <label>Total (€)</label>
+          <input type="number" id="tradeTotal" placeholder="0.00" step="any" style="width:120px" readonly style="opacity:0.7">
+        </div>
+        <div class="form-group" id="tradePnlGroup" style="display:none">
+          <label>Realized P&amp;L (€)</label>
+          <input type="number" id="tradePnl" placeholder="0.00" step="any" style="width:120px">
+        </div>
+        <div class="form-group">
+          <label>Broker</label>
+          <select id="tradeBroker">
+            <option value="revolut">Revolut</option>
+            <option value="ibkr">IBKR</option>
+            <option value="zse">ZSE</option>
+            <option value="t212">Trading 212</option>
+          </select>
+        </div>
+        <button class="btn-add" onclick="addTrade()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CSV Dividend Import modal -->
 <div class="modal-overlay" id="csvImportModal">
   <div class="modal" style="max-width:680px;width:95vw">
@@ -605,6 +693,7 @@ let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 let divHistory = {}; // ticker -> [{date, amount (per share, native currency), currency}]
+let trades = JSON.parse(localStorage.getItem('pf_trades') || '[]'); // [{date,ticker,action,shares,price,total,realizedPnl,broker}]
 let editingIdx = null; // null = adding new, number = editing existing
 let sortCol = localStorage.getItem('pf_sortCol') || 'value';
 let sortDir = parseInt(localStorage.getItem('pf_sortDir') || '-1');
@@ -636,6 +725,7 @@ const BROKER_LABELS = { revolut: 'Revolut', ibkr: 'IBKR', zse: 'ZSE', t212: 'Tra
 function save() {
   localStorage.setItem('pf_holdings', JSON.stringify(holdings));
   localStorage.setItem('pf_dividends', JSON.stringify(dividends));
+  localStorage.setItem('pf_trades', JSON.stringify(trades));
   localStorage.setItem('pf_prices', JSON.stringify(prices));
   localStorage.setItem('pf_fx', JSON.stringify(fxRates));
 }
@@ -705,6 +795,7 @@ function render() {
   renderBrokerBar();
   renderHoldings();
   renderDividends();
+  renderTrades();
 }
 
 function getHoldingValue(h) {
@@ -751,6 +842,13 @@ function renderSummary() {
 
   document.getElementById('totalDividends').textContent = fmt(totalDiv);
   document.getElementById('dividendCount').textContent = `${dividends.length} payment${dividends.length !== 1 ? 's' : ''}`;
+
+  const totalRealized = trades.filter(t => t.action === 'sell' && t.realizedPnl != null).reduce((s, t) => s + (t.realizedPnl || 0), 0);
+  const sellCount = trades.filter(t => t.action === 'sell').length;
+  const realizedEl = document.getElementById('totalRealized');
+  realizedEl.textContent = (totalRealized >= 0 ? '+' : '') + fmt(totalRealized);
+  realizedEl.className = 'value ' + (totalRealized >= 0 ? 'pos' : 'neg');
+  document.getElementById('realizedCount').textContent = `${sellCount} sell${sellCount !== 1 ? 's' : ''} · ${trades.filter(t=>t.action==='buy').length} buy${trades.filter(t=>t.action==='buy').length!==1?'s':''}`;
 }
 
 function renderBrokerBar() {
@@ -873,6 +971,244 @@ function renderDividends() {
       <td><button class="btn-delete" onclick="deleteDividend(${origIdx})" title="Remove">×</button></td>
     </tr>`;
   }).join('');
+}
+
+function renderTrades() {
+  const body = document.getElementById('tradesBody');
+  const empty = document.getElementById('tradesEmpty');
+  const totalRow = document.getElementById('tradesTotalRow');
+
+  const totalRealized = trades.filter(t => t.action === 'sell' && t.realizedPnl != null)
+    .reduce((s, t) => s + t.realizedPnl, 0);
+  totalRow.textContent = `Realized P&L: ${totalRealized >= 0 ? '+' : ''}${fmt(totalRealized)}`;
+
+  // Rebuild ticker dropdown
+  const sel = document.getElementById('tradeTicker');
+  if (sel) {
+    const prev = sel.value;
+    const tickers = [...new Set(holdings.map(h => h.ticker))].sort();
+    sel.innerHTML = '<option value="">— pick —</option>' +
+      tickers.map(t => `<option value="${t}"${t === prev ? ' selected' : ''}>${t}</option>`).join('') +
+      '<option value="_other">Other…</option>';
+  }
+
+  if (trades.length === 0) { body.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  const sorted = [...trades].sort((a, b) => b.date.localeCompare(a.date));
+  body.innerHTML = sorted.map(t => {
+    const origIdx = trades.indexOf(t);
+    const pnlCell = t.action === 'sell' && t.realizedPnl != null
+      ? `<span class="${t.realizedPnl >= 0 ? 'pos' : 'neg'}">${t.realizedPnl >= 0 ? '+' : ''}${fmt(t.realizedPnl)}</span>`
+      : '<span style="opacity:0.35">—</span>';
+    return `<tr>
+      <td class="mono">${t.date}</td>
+      <td class="mono">${esc(t.ticker)}</td>
+      <td><span class="action-tag ${t.action}">${t.action}</span></td>
+      <td class="right mono">${(t.shares || 0).toLocaleString(undefined, {maximumFractionDigits:6})}</td>
+      <td class="right mono">${t.price != null ? fmt(t.price) : '—'}</td>
+      <td class="right mono">${fmt(t.total || 0)}</td>
+      <td class="right mono">${pnlCell}</td>
+      <td><span class="broker-tag ${t.broker}">${BROKER_LABELS[t.broker] || t.broker}</span></td>
+      <td><button class="btn-delete" onclick="deleteTrade(${origIdx})" title="Remove">×</button></td>
+    </tr>`;
+  }).join('');
+}
+
+// ——— Trade actions ———
+function onTradeTickerChange() {
+  const ticker = document.getElementById('tradeTicker').value;
+  if (!ticker || ticker === '_other') return;
+  const h = holdings.find(h => h.ticker === ticker);
+  if (h) document.getElementById('tradeBroker').value = h.broker;
+  // Pre-fill current price
+  const p = prices[ticker];
+  if (p?.price) {
+    const priceEUR = toEUR(p.price, p.currency || 'EUR');
+    document.getElementById('tradePrice').value = priceEUR.toFixed(4);
+    calcTradeTotal();
+  }
+  onTradeActionChange();
+}
+
+function onTradeActionChange() {
+  const action = document.getElementById('tradeAction').value;
+  const pnlGroup = document.getElementById('tradePnlGroup');
+  pnlGroup.style.display = action === 'sell' ? '' : 'none';
+  if (action === 'sell') {
+    // Auto-calculate P&L from avgCost
+    const ticker = document.getElementById('tradeTicker').value;
+    const h = holdings.find(h => h.ticker === ticker);
+    if (h) {
+      const shares = parseFloat(document.getElementById('tradeShares').value) || 0;
+      const price = parseFloat(document.getElementById('tradePrice').value) || 0;
+      const avgCost = getHoldingCost(h) / (h.shares || 1);
+      const pnl = (price - avgCost) * shares;
+      if (!isNaN(pnl)) document.getElementById('tradePnl').value = pnl.toFixed(2);
+    }
+  }
+}
+
+function calcTradeTotal() {
+  const shares = parseFloat(document.getElementById('tradeShares').value) || 0;
+  const price = parseFloat(document.getElementById('tradePrice').value) || 0;
+  if (shares && price) {
+    document.getElementById('tradeTotal').value = (shares * price).toFixed(2);
+    onTradeActionChange(); // recalc P&L if sell
+  }
+}
+
+function addTrade() {
+  const date = document.getElementById('tradeDate').value;
+  const selVal = document.getElementById('tradeTicker').value;
+  const ticker = (selVal === '_other'
+    ? prompt('Enter ticker manually:')?.trim().toUpperCase()
+    : selVal?.toUpperCase()
+  );
+  const action = document.getElementById('tradeAction').value;
+  const shares = parseFloat(document.getElementById('tradeShares').value);
+  const price = parseFloat(document.getElementById('tradePrice').value);
+  const total = parseFloat(document.getElementById('tradeTotal').value) || (shares * price);
+  const broker = document.getElementById('tradeBroker').value;
+  const pnlRaw = document.getElementById('tradePnl').value;
+  const realizedPnl = action === 'sell' && pnlRaw !== '' ? parseFloat(pnlRaw) : null;
+
+  if (!date || !ticker || isNaN(shares) || isNaN(price)) {
+    alert('Please fill in date, ticker, shares and price.');
+    return;
+  }
+
+  trades.push({ date, ticker, action, shares, price, total, realizedPnl, broker });
+  save();
+
+  document.getElementById('tradeShares').value = '';
+  document.getElementById('tradePrice').value = '';
+  document.getElementById('tradeTotal').value = '';
+  document.getElementById('tradePnl').value = '';
+  render();
+}
+
+function deleteTrade(idx) {
+  trades.splice(idx, 1);
+  save(); render();
+}
+
+// ——— Trades CSV Import ———
+let tradesCsvRows = [];
+
+function showTradesCSVModal() {
+  tradesCsvRows = [];
+  document.getElementById('csvFile').value = '';
+  document.getElementById('csvPickLabel').classList.remove('has-file');
+  document.getElementById('csvDetected').textContent = '';
+  document.getElementById('csvPreviewWrap').style.display = 'none';
+  document.getElementById('csvImportBtn').style.display = 'none';
+  // Switch modal to trades mode
+  document.getElementById('csvImportModal').dataset.mode = 'trades';
+  document.querySelector('#csvImportModal h3').textContent = '📥 Import Trades from CSV';
+  document.querySelector('#csvImportModal p').textContent = 'Supports Trading 212 and IBKR activity statement exports. Realized P&L is estimated from your current average cost (edit manually if needed).';
+  document.getElementById('csvImportBtn').onclick = doTradesCSVImport;
+  document.getElementById('csvImportModal').classList.add('show');
+}
+
+function parseTradesCSV(text) {
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+
+  // ── IBKR ──
+  if (lines[0].startsWith('Statement,Header') || lines.some(l => l.startsWith('Trades,Header'))) {
+    // IBKR trades section: "Trades,Data,Stocks,USD,2025-01-10,...,Symbol,...,Quantity,Price,..."
+    const rows = [];
+    let headerFields = null;
+    for (const line of lines) {
+      if (line.startsWith('Trades,Header')) {
+        headerFields = parseCSVLine(line);
+        continue;
+      }
+      if (!line.startsWith('Trades,Data,Stocks,')) continue;
+      const f = parseCSVLine(line);
+      if (!headerFields) continue;
+      // Map fields by header position
+      const get = name => { const i = headerFields.indexOf(name); return i >= 0 ? f[i] : ''; };
+      const currency = get('Currency') || f[3];
+      const date = (get('Date/Time') || get('TradeDate') || f[6] || '').slice(0, 10);
+      const symbol = (get('Symbol') || f[5] || '').trim();
+      const qty = parseFloat(get('Quantity') || f[7] || 0);
+      const priceForeign = parseFloat(get('T. Price') || get('Price') || f[8] || 0);
+      const realizedPnlForeign = parseFloat(get('Realized P/L') || get('Realized P&L') || 0);
+      if (!date || !symbol || isNaN(qty) || qty === 0) continue;
+      const priceEUR = toEUR(priceForeign, currency);
+      const totalEUR = Math.abs(toEUR(qty * priceForeign, currency));
+      const realizedPnl = isNaN(realizedPnlForeign) || realizedPnlForeign === 0 ? null : toEUR(realizedPnlForeign, currency);
+      const ticker = matchTicker(symbol) || symbol;
+      rows.push({ date, ticker, action: qty > 0 ? 'buy' : 'sell', shares: Math.abs(qty), price: priceEUR, total: totalEUR, realizedPnl, broker: 'ibkr' });
+    }
+    return { broker: 'IBKR', rows };
+  }
+
+  // ── Trading 212 ──
+  const header = parseCSVLine(lines[0]);
+  if (header.includes('Type') && header.includes('Total Amount') && header.includes('FX Rate')) {
+    const dateIdx = header.indexOf('Date');
+    const tickerIdx = header.indexOf('Ticker');
+    const typeIdx = header.indexOf('Type');
+    const qtyIdx = header.indexOf('Quantity');
+    const priceIdx = header.indexOf('Price per share');
+    const amtIdx = header.indexOf('Total Amount');
+    const fxIdx = header.indexOf('FX Rate');
+
+    const rows = [];
+    for (let i = 1; i < lines.length; i++) {
+      const f = parseCSVLine(lines[i]);
+      const type = (f[typeIdx] || '').toUpperCase();
+      const isBuy = type.includes('BUY');
+      const isSell = type.includes('SELL');
+      if (!isBuy && !isSell) continue;
+
+      const date = (f[dateIdx] || '').slice(0, 10);
+      const ticker = (f[tickerIdx] || '').toUpperCase().trim();
+      const qty = parseFloat(f[qtyIdx]) || 0;
+      const fxRate = parseFloat(f[fxIdx]) || 1;
+
+      const priceStr = (f[priceIdx] || '').trim();
+      const priceParts = priceStr.split(' ');
+      const priceCurr = priceParts[0];
+      const priceRaw = parseFloat(priceParts[1]) || 0;
+      const priceEUR = priceCurr === 'EUR' ? priceRaw : priceRaw / fxRate;
+
+      const amtStr = (f[amtIdx] || '').trim();
+      const amtParts = amtStr.split(' ');
+      const amtRaw = parseFloat(amtParts[1]) || 0;
+      const amtCurr = amtParts[0];
+      const totalEUR = amtCurr === 'EUR' ? Math.abs(amtRaw) : Math.abs(amtRaw) / fxRate;
+
+      if (!date || !ticker || !qty) continue;
+
+      // Estimate realized P&L for sells using current avg cost
+      let realizedPnl = null;
+      if (isSell) {
+        const h = holdings.find(h => h.ticker === ticker);
+        if (h) {
+          const avgCostEUR = getHoldingCost(h) / (h.shares || 1);
+          realizedPnl = parseFloat(((priceEUR - avgCostEUR) * qty).toFixed(2));
+        }
+      }
+
+      rows.push({ date, ticker, action: isBuy ? 'buy' : 'sell', shares: Math.abs(qty), price: parseFloat(priceEUR.toFixed(4)), total: parseFloat(totalEUR.toFixed(2)), realizedPnl, broker: 't212' });
+    }
+    return { broker: 'Trading 212', rows };
+  }
+
+  return null;
+}
+
+function doTradesCSVImport() {
+  const newRows = tradesCsvRows.filter(r => !r.dup);
+  newRows.forEach(r => trades.push({ date: r.date, ticker: r.ticker, action: r.action, shares: r.shares, price: r.price, total: r.total, realizedPnl: r.realizedPnl, broker: r.broker }));
+  save();
+  closeCSVImportModal();
+  render();
+  showSyncBanner(`Imported ${newRows.length} trade${newRows.length !== 1 ? 's' : ''} from CSV.`, 'ok');
+  switchTab('trades');
 }
 
 // ——— Actions ———
@@ -1069,6 +1405,10 @@ function showCSVImportModal() {
   document.getElementById('csvDetected').textContent = '';
   document.getElementById('csvPreviewWrap').style.display = 'none';
   document.getElementById('csvImportBtn').style.display = 'none';
+  document.getElementById('csvImportModal').dataset.mode = 'dividends';
+  document.querySelector('#csvImportModal h3').textContent = '📥 Import Dividends from CSV';
+  document.querySelector('#csvImportModal p').textContent = 'Supports Trading 212 and IBKR activity statement exports. Duplicates are skipped automatically.';
+  document.getElementById('csvImportBtn').onclick = doCSVImport;
   document.getElementById('csvImportModal').classList.add('show');
 }
 function closeCSVImportModal() { document.getElementById('csvImportModal').classList.remove('show'); }
@@ -1179,7 +1519,8 @@ function handleCSVFile(e) {
   document.getElementById('csvPickLabel').classList.add('has-file');
   const reader = new FileReader();
   reader.onload = ev => {
-    const result = detectAndParseCSV(ev.target.result, file.name);
+    const mode = document.getElementById('csvImportModal').dataset.mode || 'dividends';
+    const result = mode === 'trades' ? parseTradesCSV(ev.target.result) : detectAndParseCSV(ev.target.result, file.name);
     const detectedEl = document.getElementById('csvDetected');
     if (!result) {
       detectedEl.innerHTML = '<span style="color:var(--red)">⚠️ Unrecognised format. Expected a Trading 212 or IBKR activity CSV.</span>';
@@ -1188,11 +1529,14 @@ function handleCSVFile(e) {
       return;
     }
 
-    // Mark duplicates
+    // Mark duplicates (compare against correct store depending on mode)
+    const mode = document.getElementById('csvImportModal').dataset.mode || 'dividends';
+    const existingStore = mode === 'trades' ? trades : dividends;
     csvParsedRows = result.rows.map(r => ({
       ...r,
-      dup: dividends.some(d => d.ticker === r.ticker && d.date === r.date)
+      dup: existingStore.some(d => d.ticker === r.ticker && d.date === r.date && (mode === 'dividends' || d.action === r.action))
     }));
+    tradesCsvRows = csvParsedRows; // share the same parsed list
 
     const newCount = csvParsedRows.filter(r => !r.dup).length;
     detectedEl.innerHTML = `<span style="color:var(--green)">✓ ${result.broker} format detected</span> &nbsp;·&nbsp; ${result.rows.length} dividend payment${result.rows.length !== 1 ? 's' : ''} found`;
@@ -1200,12 +1544,14 @@ function handleCSVFile(e) {
     // Build preview
     document.getElementById('csvPreviewLabel').textContent =
       `${newCount} new · ${csvParsedRows.length - newCount} already in your records`;
+    const mode2 = document.getElementById('csvImportModal').dataset.mode || 'dividends';
     document.getElementById('csvPreviewBody').innerHTML = csvParsedRows.map(r => `
       <tr style="opacity:${r.dup ? 0.4 : 1}">
         <td style="padding:5px 10px" class="mono">${r.date}</td>
         <td style="padding:5px 10px" class="mono">${esc(r.ticker)}</td>
+        ${mode2 === 'trades' ? `<td style="padding:5px 10px"><span class="action-tag ${r.action}">${r.action}</span></td>` : ''}
         <td style="padding:5px 10px"><span class="broker-tag ${r.broker}">${BROKER_LABELS[r.broker] || r.broker}</span></td>
-        <td style="padding:5px 10px;text-align:right" class="mono">${fmt(r.amount)}</td>
+        <td style="padding:5px 10px;text-align:right" class="mono">${fmt(r.amount ?? r.total ?? 0)}</td>
         <td style="padding:5px 10px;text-align:center">
           ${r.dup ? '<span class="csv-badge dup">already exists</span>' : '<span class="csv-badge new">new</span>'}
         </td>
@@ -1264,12 +1610,13 @@ function switchTab(tab) {
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
   document.getElementById('holdingsTab').style.display = tab === 'holdings' ? 'block' : 'none';
   document.getElementById('dividendsTab').style.display = tab === 'dividends' ? 'block' : 'none';
+  document.getElementById('tradesTab').style.display = tab === 'trades' ? 'block' : 'none';
 }
 
 // ——— Export / Import ———
 function exportData() {
   const filename = `portfolio-${new Date().toISOString().slice(0,10)}.json`;
-  const json = JSON.stringify({ holdings, dividends, prices }, null, 2);
+  const json = JSON.stringify({ holdings, dividends, trades, prices }, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
 
   // Use Web Share API on mobile if available (lets you AirDrop, WhatsApp, email etc.)
@@ -1314,6 +1661,7 @@ function importData() {
     if (!data.holdings && !data.dividends) throw new Error('Unrecognised format');
     if (data.holdings) holdings = data.holdings;
     if (data.dividends) dividends = data.dividends;
+    if (data.trades) trades = data.trades;
     if (data.prices) prices = data.prices;
     save();
     closeImportModal();
@@ -1330,6 +1678,7 @@ function esc(s) { const d = document.createElement('div'); d.textContent = s; re
 // ——— Init ———
 render();
 document.getElementById('divDate').valueAsDate = new Date();
+document.getElementById('tradeDate').valueAsDate = new Date();
 
 if (location.protocol === 'file:') {
   document.getElementById('fileBanner').style.display = 'flex';
