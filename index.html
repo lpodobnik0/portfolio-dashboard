@@ -243,6 +243,9 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 .sync-banner.ok { background: rgba(72,187,120,0.15); color: #68d391; border: 1px solid rgba(72,187,120,0.3); }
 .sync-banner.warn { background: rgba(246,173,85,0.15); color: #f6ad55; border: 1px solid rgba(246,173,85,0.3); }
 .currency-hint { font-size: 11px; opacity: 0.55; font-weight: 400; }
+.csv-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+.csv-badge.new { background: rgba(72,187,120,0.2); color: #68d391; }
+.csv-badge.dup { background: rgba(160,160,160,0.15); color: var(--text-muted); }
 
 /* Empty state */
 .empty {
@@ -489,7 +492,10 @@ td.mono { font-family: var(--mono); font-size: 13px; }
     <div class="add-section dividend-form">
       <div class="div-form-header">
         <h3>+ Add Dividend</h3>
-        <button class="btn-sync" onclick="syncDividends()" title="Import dividend history for all holdings from prices data">🔄 Auto-sync history</button>
+        <div style="display:flex;gap:8px">
+          <button class="btn-sync" onclick="syncDividends()" title="Import dividend history for all holdings from prices data">🔄 Auto-sync</button>
+          <button class="btn-sync" onclick="showCSVImportModal()" title="Import dividends from a Revolut, IBKR or Trading 212 CSV export">📥 Import CSV</button>
+        </div>
       </div>
       <div class="sync-banner" id="syncBanner" style="display:none"></div>
       <div class="form-row">
@@ -522,6 +528,44 @@ td.mono { font-family: var(--mono); font-size: 13px; }
         </div>
         <button class="btn-add" onclick="addDividend()">Add</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSV Dividend Import modal -->
+<div class="modal-overlay" id="csvImportModal">
+  <div class="modal" style="max-width:680px;width:95vw">
+    <h3>📥 Import Dividends from CSV</h3>
+    <p style="font-size:13px;color:var(--text-dim);margin-bottom:14px">
+      Supports <strong>Trading 212</strong> and <strong>IBKR</strong> activity statement exports. Duplicates are skipped automatically.
+    </p>
+
+    <label class="file-pick-btn" id="csvPickLabel">
+      <input type="file" id="csvFile" accept=".csv,text/csv" style="display:none" onchange="handleCSVFile(event)">
+      📂 Choose CSV file
+    </label>
+
+    <div id="csvDetected" style="margin:12px 0;font-size:13px;min-height:20px"></div>
+
+    <div id="csvPreviewWrap" style="display:none">
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:6px" id="csvPreviewLabel"></div>
+      <div style="max-height:260px;overflow-y:auto;border:1px solid var(--border);border-radius:8px">
+        <table style="width:100%;font-size:12px">
+          <thead><tr style="position:sticky;top:0;background:var(--card)">
+            <th style="padding:6px 10px;text-align:left">Date</th>
+            <th style="padding:6px 10px;text-align:left">Ticker</th>
+            <th style="padding:6px 10px;text-align:left">Broker</th>
+            <th style="padding:6px 10px;text-align:right">Amount (€)</th>
+            <th style="padding:6px 10px;text-align:center">Status</th>
+          </tr></thead>
+          <tbody id="csvPreviewBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="modal-actions" style="margin-top:16px">
+      <button class="btn-secondary" onclick="closeCSVImportModal()">Cancel</button>
+      <button class="btn-primary" id="csvImportBtn" style="display:none" onclick="doCSVImport()">Import</button>
     </div>
   </div>
 </div>
@@ -1013,6 +1057,180 @@ function showSyncBanner(msg, type) {
   el.className = 'sync-banner ' + type;
   el.style.display = 'block';
   setTimeout(() => { el.style.display = 'none'; }, 8000);
+}
+
+// ——— CSV Dividend Import ———
+let csvParsedRows = []; // [{date, ticker, broker, amount, dup}]
+
+function showCSVImportModal() {
+  csvParsedRows = [];
+  document.getElementById('csvFile').value = '';
+  document.getElementById('csvPickLabel').classList.remove('has-file');
+  document.getElementById('csvDetected').textContent = '';
+  document.getElementById('csvPreviewWrap').style.display = 'none';
+  document.getElementById('csvImportBtn').style.display = 'none';
+  document.getElementById('csvImportModal').classList.add('show');
+}
+function closeCSVImportModal() { document.getElementById('csvImportModal').classList.remove('show'); }
+
+function parseCSVLine(line) {
+  // Handles quoted fields with commas inside
+  const result = [];
+  let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { inQ = !inQ; }
+    else if (c === ',' && !inQ) { result.push(cur.trim()); cur = ''; }
+    else { cur += c; }
+  }
+  result.push(cur.trim());
+  return result;
+}
+
+function detectAndParseCSV(text, filename) {
+  const lines = text.split(/\r?\n/).filter(l => l.trim());
+
+  // ── IBKR detection ──────────────────────────────────────────────
+  if (lines[0].startsWith('Statement,Header') || lines.some(l => l.startsWith('Dividends,Header'))) {
+    const rows = [];
+    for (const line of lines) {
+      if (!line.startsWith('Dividends,Data,')) continue;
+      const f = parseCSVLine(line);
+      // f[2]=currency, f[3]=date, f[4]=description, f[5]=amount
+      const currency = f[2];
+      if (!currency || currency === 'Total' || f[3] === '') continue; // skip subtotals
+
+      const date = f[3]; // YYYY-MM-DD
+      const desc = f[4] || '';
+      const rawAmt = parseFloat(f[5]);
+      if (!date || isNaN(rawAmt) || rawAmt <= 0) continue;
+
+      // Extract ticker from "SYMBOL(ISIN) ..." — symbol is everything before first '('
+      const tickerMatch = desc.match(/^([^(]+)\(/);
+      const rawTicker = tickerMatch ? tickerMatch[1].trim() : '';
+      // Try to match to a known holding ticker (IBKR sometimes uses abbreviated symbols)
+      const ticker = matchTicker(rawTicker) || rawTicker;
+
+      // Convert to EUR using stored FX rates
+      const eurAmt = convertToEUR(rawAmt, currency);
+      rows.push({ date, ticker, broker: 'ibkr', amount: parseFloat(eurAmt.toFixed(4)), rawCurrency: currency });
+    }
+    return { broker: 'IBKR', rows };
+  }
+
+  // ── Trading 212 detection ────────────────────────────────────────
+  const header = parseCSVLine(lines[0]);
+  if (header.includes('Type') && header.includes('Total Amount') && header.includes('FX Rate')) {
+    const dateIdx = header.indexOf('Date');
+    const tickerIdx = header.indexOf('Ticker');
+    const typeIdx = header.indexOf('Type');
+    const amtIdx = header.indexOf('Total Amount');
+    const fxIdx = header.indexOf('FX Rate');
+
+    const rows = [];
+    for (let i = 1; i < lines.length; i++) {
+      const f = parseCSVLine(lines[i]);
+      if (!f[typeIdx] || !f[typeIdx].toUpperCase().includes('DIVIDEND')) continue;
+
+      const date = (f[dateIdx] || '').slice(0, 10); // ISO date, trim time
+      const ticker = (f[tickerIdx] || '').toUpperCase().trim();
+      const amtStr = (f[amtIdx] || '').trim(); // e.g. "USD 3.81" or "EUR 2.75"
+      const fxRate = parseFloat(f[fxIdx]) || 1;
+      if (!date || !ticker || !amtStr) continue;
+
+      const parts = amtStr.split(' ');
+      const currency = parts[0].toUpperCase();
+      const rawAmt = parseFloat(parts[1]);
+      if (isNaN(rawAmt) || rawAmt <= 0) continue;
+
+      // T212 gives us FX rate at the time — more accurate than today's rate
+      const eurAmt = currency === 'EUR' ? rawAmt : rawAmt / fxRate;
+      rows.push({ date, ticker, broker: 't212', amount: parseFloat(eurAmt.toFixed(4)), rawCurrency: currency });
+    }
+    return { broker: 'Trading 212', rows };
+  }
+
+  return null; // unrecognised
+}
+
+function matchTicker(raw) {
+  if (!raw) return null;
+  const u = raw.toUpperCase();
+  // Exact match first
+  const exact = holdings.find(h => h.ticker.toUpperCase() === u);
+  if (exact) return exact.ticker;
+  // IBKR uses "BRK B" instead of "BRK.B" — normalise
+  const norm = u.replace(/\s+/g, '.').replace(/_/g, '.');
+  const fuzzy = holdings.find(h => h.ticker.toUpperCase().replace(/\s+/g,'.')  === norm);
+  if (fuzzy) return fuzzy.ticker;
+  return null;
+}
+
+function convertToEUR(amount, currency) {
+  if (currency === 'EUR') return amount;
+  if (currency === 'GBp' || currency === 'GBX') { amount /= 100; currency = 'GBP'; }
+  const rate = fxRates[currency] || 1;
+  return amount / rate;
+}
+
+function handleCSVFile(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('csvPickLabel').classList.add('has-file');
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const result = detectAndParseCSV(ev.target.result, file.name);
+    const detectedEl = document.getElementById('csvDetected');
+    if (!result) {
+      detectedEl.innerHTML = '<span style="color:var(--red)">⚠️ Unrecognised format. Expected a Trading 212 or IBKR activity CSV.</span>';
+      document.getElementById('csvPreviewWrap').style.display = 'none';
+      document.getElementById('csvImportBtn').style.display = 'none';
+      return;
+    }
+
+    // Mark duplicates
+    csvParsedRows = result.rows.map(r => ({
+      ...r,
+      dup: dividends.some(d => d.ticker === r.ticker && d.date === r.date)
+    }));
+
+    const newCount = csvParsedRows.filter(r => !r.dup).length;
+    detectedEl.innerHTML = `<span style="color:var(--green)">✓ ${result.broker} format detected</span> &nbsp;·&nbsp; ${result.rows.length} dividend payment${result.rows.length !== 1 ? 's' : ''} found`;
+
+    // Build preview
+    document.getElementById('csvPreviewLabel').textContent =
+      `${newCount} new · ${csvParsedRows.length - newCount} already in your records`;
+    document.getElementById('csvPreviewBody').innerHTML = csvParsedRows.map(r => `
+      <tr style="opacity:${r.dup ? 0.4 : 1}">
+        <td style="padding:5px 10px" class="mono">${r.date}</td>
+        <td style="padding:5px 10px" class="mono">${esc(r.ticker)}</td>
+        <td style="padding:5px 10px"><span class="broker-tag ${r.broker}">${BROKER_LABELS[r.broker] || r.broker}</span></td>
+        <td style="padding:5px 10px;text-align:right" class="mono">${fmt(r.amount)}</td>
+        <td style="padding:5px 10px;text-align:center">
+          ${r.dup ? '<span class="csv-badge dup">already exists</span>' : '<span class="csv-badge new">new</span>'}
+        </td>
+      </tr>`).join('');
+
+    document.getElementById('csvPreviewWrap').style.display = 'block';
+    if (newCount > 0) {
+      const btn = document.getElementById('csvImportBtn');
+      btn.textContent = `Import ${newCount} new payment${newCount !== 1 ? 's' : ''}`;
+      btn.style.display = '';
+    } else {
+      document.getElementById('csvImportBtn').style.display = 'none';
+    }
+  };
+  reader.readAsText(file);
+}
+
+function doCSVImport() {
+  const toAdd = csvParsedRows.filter(r => !r.dup);
+  toAdd.forEach(r => dividends.push({ date: r.date, ticker: r.ticker, broker: r.broker, amount: r.amount }));
+  save();
+  closeCSVImportModal();
+  render();
+  showSyncBanner(`Imported ${toAdd.length} dividend payment${toAdd.length !== 1 ? 's' : ''} from CSV.`, 'ok');
+  switchTab('dividends');
 }
 
 function deleteDividend(idx) {
