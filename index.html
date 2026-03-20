@@ -1530,7 +1530,6 @@ function handleCSVFile(e) {
     }
 
     // Mark duplicates (compare against correct store depending on mode)
-    const mode = document.getElementById('csvImportModal').dataset.mode || 'dividends';
     const existingStore = mode === 'trades' ? trades : dividends;
     csvParsedRows = result.rows.map(r => ({
       ...r,
@@ -1539,17 +1538,17 @@ function handleCSVFile(e) {
     tradesCsvRows = csvParsedRows; // share the same parsed list
 
     const newCount = csvParsedRows.filter(r => !r.dup).length;
-    detectedEl.innerHTML = `<span style="color:var(--green)">✓ ${result.broker} format detected</span> &nbsp;·&nbsp; ${result.rows.length} dividend payment${result.rows.length !== 1 ? 's' : ''} found`;
+    const itemWord = mode === 'trades' ? 'trade' : 'dividend payment';
+    detectedEl.innerHTML = `<span style="color:var(--green)">✓ ${result.broker} format detected</span> &nbsp;·&nbsp; ${result.rows.length} ${itemWord}${result.rows.length !== 1 ? 's' : ''} found`;
 
     // Build preview
     document.getElementById('csvPreviewLabel').textContent =
       `${newCount} new · ${csvParsedRows.length - newCount} already in your records`;
-    const mode2 = document.getElementById('csvImportModal').dataset.mode || 'dividends';
     document.getElementById('csvPreviewBody').innerHTML = csvParsedRows.map(r => `
       <tr style="opacity:${r.dup ? 0.4 : 1}">
         <td style="padding:5px 10px" class="mono">${r.date}</td>
         <td style="padding:5px 10px" class="mono">${esc(r.ticker)}</td>
-        ${mode2 === 'trades' ? `<td style="padding:5px 10px"><span class="action-tag ${r.action}">${r.action}</span></td>` : ''}
+        ${mode === 'trades' ? `<td style="padding:5px 10px"><span class="action-tag ${r.action}">${r.action}</span></td>` : ''}
         <td style="padding:5px 10px"><span class="broker-tag ${r.broker}">${BROKER_LABELS[r.broker] || r.broker}</span></td>
         <td style="padding:5px 10px;text-align:right" class="mono">${fmt(r.amount ?? r.total ?? 0)}</td>
         <td style="padding:5px 10px;text-align:center">
