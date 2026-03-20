@@ -2,8 +2,8 @@ name: Fetch Stock Prices
 
 on:
   schedule:
-    # Every 30 min, daily, 4am–23:30 UTC = 6am–midnight CET (winter) / 6am–1:30am CEST (summer)
-    - cron: '0,30 4-23 * * *'
+    # Every 15 min, daily, 4am–23:45 UTC = 6am–midnight CET (winter) / 6am–1:45am CEST (summer)
+    - cron: '0,15,30,45 4-23 * * *'
   workflow_dispatch: # Allow manual trigger from the GitHub UI
 
 jobs:
