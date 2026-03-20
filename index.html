@@ -227,6 +227,22 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 
 /* Dividend add */
 .dividend-form { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.div-form-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.div-form-header h3 { margin: 0; }
+.btn-sync {
+  display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+  background: rgba(99,179,237,0.12); border: 1px solid rgba(99,179,237,0.35);
+  color: #63b3ed; border-radius: 8px; cursor: pointer; font-family: var(--font);
+  font-size: 13px; transition: all 0.2s;
+}
+.btn-sync:hover { background: rgba(99,179,237,0.22); border-color: #63b3ed; }
+.btn-sync:disabled { opacity: 0.5; cursor: default; }
+.sync-banner {
+  padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 14px;
+}
+.sync-banner.ok { background: rgba(72,187,120,0.15); color: #68d391; border: 1px solid rgba(72,187,120,0.3); }
+.sync-banner.warn { background: rgba(246,173,85,0.15); color: #f6ad55; border: 1px solid rgba(246,173,85,0.3); }
+.currency-hint { font-size: 11px; opacity: 0.55; font-weight: 400; }
 
 /* Empty state */
 .empty {
@@ -466,12 +482,16 @@ td.mono { font-family: var(--mono); font-size: 13px; }
       </table>
       <div class="empty" id="dividendsEmpty">
         <div class="icon">💰</div>
-        <p>No dividends recorded yet.</p>
+        <p>No dividends recorded yet. Hit <strong>Auto-sync</strong> to import history automatically.</p>
       </div>
     </div>
 
     <div class="add-section dividend-form">
-      <h3>+ Add Dividend</h3>
+      <div class="div-form-header">
+        <h3>+ Add Dividend</h3>
+        <button class="btn-sync" onclick="syncDividends()" title="Import dividend history for all holdings from prices data">🔄 Auto-sync history</button>
+      </div>
+      <div class="sync-banner" id="syncBanner" style="display:none"></div>
       <div class="form-row">
         <div class="form-group">
           <label>Date</label>
@@ -479,7 +499,9 @@ td.mono { font-family: var(--mono); font-size: 13px; }
         </div>
         <div class="form-group">
           <label>Ticker</label>
-          <input type="text" id="divTicker" placeholder="e.g. AAPL" style="width:120px">
+          <select id="divTicker" onchange="onDivTickerChange()" style="width:130px">
+            <option value="">— pick —</option>
+          </select>
         </div>
         <div class="form-group">
           <label>Broker</label>
@@ -491,7 +513,11 @@ td.mono { font-family: var(--mono); font-size: 13px; }
           </select>
         </div>
         <div class="form-group">
-          <label>Amount (€)</label>
+          <label>Per share <span id="divCurrLabel" class="currency-hint"></span></label>
+          <input type="number" id="divPerShare" placeholder="optional" step="any" style="width:110px" oninput="calcDivTotal()">
+        </div>
+        <div class="form-group">
+          <label>Total (€)</label>
           <input type="number" id="divAmount" placeholder="0.00" step="any" style="width:120px">
         </div>
         <button class="btn-add" onclick="addDividend()">Add</button>
@@ -534,6 +560,7 @@ let holdings = JSON.parse(localStorage.getItem('pf_holdings') || '[]');
 let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
+let divHistory = {}; // ticker -> [{date, amount (per share, native currency), currency}]
 let editingIdx = null; // null = adding new, number = editing existing
 let sortCol = localStorage.getItem('pf_sortCol') || 'value';
 let sortDir = parseInt(localStorage.getItem('pf_sortDir') || '-1');
@@ -577,6 +604,7 @@ async function loadPricesFromFile() {
     const data = await res.json();
     if (data.prices) Object.assign(prices, data.prices);
     if (data.fx) fxRates = { EUR: 1, ...data.fx };
+    if (data.div_history) divHistory = data.div_history;
     save();
     if (data.updated) {
       const d = new Date(data.updated);
@@ -772,6 +800,16 @@ function renderDividends() {
   const total = dividends.reduce((s, d) => s + d.amount, 0);
   totalRow.textContent = `Total: ${fmt(total)}`;
 
+  // Rebuild ticker dropdown from current holdings
+  const sel = document.getElementById('divTicker');
+  if (sel) {
+    const prev = sel.value;
+    const tickers = [...new Set(holdings.map(h => h.ticker))].sort();
+    sel.innerHTML = '<option value="">— pick holding —</option>' +
+      tickers.map(t => `<option value="${t}"${t === prev ? ' selected' : ''}>${t}</option>`).join('') +
+      '<option value="_other">Other (type below)…</option>';
+  }
+
   if (dividends.length === 0) {
     body.innerHTML = '';
     empty.style.display = 'block';
@@ -780,12 +818,13 @@ function renderDividends() {
   empty.style.display = 'none';
 
   const sorted = [...dividends].sort((a, b) => b.date.localeCompare(a.date));
-  body.innerHTML = sorted.map((d, i) => {
+  body.innerHTML = sorted.map((d) => {
     const origIdx = dividends.indexOf(d);
+    const autoTag = d.autoSync ? ' <span style="font-size:10px;opacity:0.45">auto</span>' : '';
     return `<tr>
       <td class="mono">${d.date}</td>
-      <td class="mono">${esc(d.ticker)}</td>
-      <td><span class="broker-tag ${d.broker}">${BROKER_LABELS[d.broker]}</span></td>
+      <td class="mono">${esc(d.ticker)}${autoTag}</td>
+      <td><span class="broker-tag ${d.broker}">${BROKER_LABELS[d.broker] || d.broker}</span></td>
       <td class="right mono">${fmt(d.amount)}</td>
       <td><button class="btn-delete" onclick="deleteDividend(${origIdx})" title="Remove">×</button></td>
     </tr>`;
@@ -859,23 +898,121 @@ function deleteHolding(idx) {
   save(); render();
 }
 
+// ——— Dividend helpers ———
+function onDivTickerChange() {
+  const sel = document.getElementById('divTicker');
+  const ticker = sel.value;
+  if (!ticker || ticker === '_other') {
+    document.getElementById('divCurrLabel').textContent = '';
+    return;
+  }
+  // Auto-set broker from matching holding
+  const h = holdings.find(h => h.ticker === ticker);
+  if (h) document.getElementById('divBroker').value = h.broker;
+  // Show native currency hint
+  const p = prices[ticker];
+  let curr = p?.currency || '';
+  if (curr === 'GBp' || curr === 'GBX') curr = 'GBp';
+  document.getElementById('divCurrLabel').textContent = curr ? `(${curr})` : '';
+  calcDivTotal();
+}
+
+function calcDivTotal() {
+  const ticker = document.getElementById('divTicker').value;
+  const perShare = parseFloat(document.getElementById('divPerShare').value);
+  if (!ticker || ticker === '_other' || isNaN(perShare) || perShare <= 0) return;
+  const h = holdings.find(h => h.ticker === ticker);
+  if (!h) return;
+  const p = prices[ticker];
+  let curr = p?.currency || 'USD';
+  let ps = perShare;
+  if (curr === 'GBp' || curr === 'GBX') { ps = ps / 100; curr = 'GBP'; }
+  const rate = curr === 'EUR' ? 1 : (fxRates[curr] || 1);
+  const totalEUR = (ps / rate) * h.shares;
+  document.getElementById('divAmount').value = totalEUR.toFixed(2);
+}
+
 function addDividend() {
   const date = document.getElementById('divDate').value;
-  const ticker = document.getElementById('divTicker').value.trim().toUpperCase();
+  const selVal = document.getElementById('divTicker').value;
+  const ticker = (selVal === '_other'
+    ? prompt('Enter ticker manually:')?.trim().toUpperCase()
+    : selVal?.toUpperCase()
+  );
   const broker = document.getElementById('divBroker').value;
   const amount = parseFloat(document.getElementById('divAmount').value);
 
-  if (!date || !ticker || isNaN(amount)) {
-    alert('Please fill in all fields.');
+  if (!date || !ticker || isNaN(amount) || amount <= 0) {
+    alert('Please fill in date, ticker, and a total amount (€).');
     return;
   }
 
   dividends.push({ date, ticker, broker, amount });
   save();
-
-  document.getElementById('divTicker').value = '';
+  document.getElementById('divPerShare').value = '';
   document.getElementById('divAmount').value = '';
   render();
+}
+
+async function syncDividends() {
+  const btn = document.querySelector('.btn-sync');
+  btn.disabled = true;
+  btn.textContent = '⏳ Syncing…';
+  try {
+    // Refresh prices.json first to get latest div_history
+    await loadPricesFromFile();
+
+    if (!divHistory || Object.keys(divHistory).length === 0) {
+      showSyncBanner('No dividend history in prices yet — the workflow will add it on next run.', 'warn');
+      return;
+    }
+
+    let added = 0, skipped = 0, noHolding = 0;
+    for (const [ticker, events] of Object.entries(divHistory)) {
+      const h = holdings.find(h => h.ticker === ticker);
+      if (!h) { noHolding += events.length; continue; }
+
+      const p = prices[ticker];
+      let curr = p?.currency || 'USD';
+      if (curr === 'GBp' || curr === 'GBX') curr = 'GBP';
+      const rate = curr === 'EUR' ? 1 : (fxRates[curr] || 1);
+
+      for (const ev of events) {
+        // Dedup by ticker + date
+        if (dividends.some(d => d.ticker === ticker && d.date === ev.date)) { skipped++; continue; }
+        // per-share div amount → EUR total based on current share count
+        let ps = ev.amount;
+        if (p?.currency === 'GBp' || p?.currency === 'GBX') ps /= 100;
+        const totalEUR = (ps / rate) * h.shares;
+        dividends.push({ date: ev.date, ticker, broker: h.broker, amount: parseFloat(totalEUR.toFixed(4)), autoSync: true });
+        added++;
+      }
+    }
+
+    save();
+    render();
+
+    if (added === 0 && noHolding === 0) {
+      showSyncBanner(`Already up to date — ${skipped} payment${skipped !== 1 ? 's' : ''} already recorded.`, 'ok');
+    } else {
+      const parts = [];
+      if (added > 0) parts.push(`Added ${added} payment${added !== 1 ? 's' : ''}`);
+      if (skipped > 0) parts.push(`${skipped} already existed`);
+      if (noHolding > 0) parts.push(`${noHolding} skipped (no matching holding)`);
+      showSyncBanner(parts.join(' · ') + '. ⚠️ Amounts use your current share count — adjust manually if your position size changed.', 'ok');
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🔄 Auto-sync history';
+  }
+}
+
+function showSyncBanner(msg, type) {
+  const el = document.getElementById('syncBanner');
+  el.textContent = msg;
+  el.className = 'sync-banner ' + type;
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 8000);
 }
 
 function deleteDividend(idx) {

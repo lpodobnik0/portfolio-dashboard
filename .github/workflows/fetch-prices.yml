@@ -52,6 +52,22 @@ jobs:
                   raise ValueError(f"no price field. Keys: {list(meta.keys())}")
               return {'price': price, 'currency': meta.get('currency', 'USD'), 'name': meta.get('shortName', ticker)}
 
+          def fetch_yahoo_dividends(key, ticker):
+              """Fetch up to 3 years of dividend history for a ticker from Yahoo Finance."""
+              import datetime
+              url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=3y&events=div'
+              req = urllib.request.Request(url, headers=HEADERS)
+              with urllib.request.urlopen(req, timeout=10) as r:
+                  data = json.loads(r.read())
+              result = data['chart']['result'][0]
+              events = result.get('events', {})
+              divs = events.get('dividends', {})
+              out = []
+              for ts, d in divs.items():
+                  dt = datetime.datetime.utcfromtimestamp(int(ts)).strftime('%Y-%m-%d')
+                  out.append({'date': dt, 'amount': d['amount']})
+              return sorted(out, key=lambda x: x['date'])
+
           def fetch_stooq(key, ticker):
               import csv, io
               url = f'https://stooq.com/q/l/?s={ticker}&f=sd2t2ohlcvn&h&e=csv'
@@ -90,6 +106,7 @@ jobs:
               return {'price': price, 'currency': 'EUR', 'name': key}
 
           prices = {}
+          div_history = {}
           for key, source_ticker in ticker_map.items():
               try:
                   upper = source_ticker.upper()
@@ -101,6 +118,18 @@ jobs:
                       result = fetch_yahoo(key, source_ticker)
                   prices[key] = result
                   print(f"  {key}: {result['price']} {result['currency']} ({result['name']})")
+
+                  # Fetch dividend history for Yahoo tickers only
+                  if not upper.endswith('.ZSE') and not upper.endswith('.ZS'):
+                      try:
+                          divs = fetch_yahoo_dividends(key, source_ticker)
+                          if divs:
+                              div_history[key] = divs
+                              print(f"    └─ {len(divs)} dividend payment(s) found")
+                      except Exception as de:
+                          print(f"    └─ div history skipped: {de}")
+                      time.sleep(0.2)
+
               except Exception as e:
                   print(f"  {key} ({source_ticker}): FAILED — {e}")
               time.sleep(0.3)
@@ -123,7 +152,8 @@ jobs:
           result = {
               'updated': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
               'prices': prices,
-              'fx': fx
+              'fx': fx,
+              'div_history': div_history
           }
 
           with open('prices.json', 'w') as f:
