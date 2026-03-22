@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22T06:01:52Z",
+  "updated": "2026-03-22T06:11:44Z",
   "prices": {
     "AGNC": {
       "price": 9.75,
@@ -165,6 +165,21 @@
       "price": 4.966,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
+    },
+    "HT-RA": {
+      "price": 40.2,
+      "currency": "EUR",
+      "name": "HT-RA"
+    },
+    "IG-R-A": {
+      "price": 56.4,
+      "currency": "EUR",
+      "name": "IG-R-A"
+    },
+    "TOK-R-A": {
+      "price": 17.75,
+      "currency": "EUR",
+      "name": "TOK-R-A"
     }
   },
   "fx": {
