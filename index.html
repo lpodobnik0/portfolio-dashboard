@@ -416,13 +416,13 @@ td.mono { font-family: var(--mono); font-size: 13px; }
         <thead>
           <tr id="holdingsHeader">
             <th class="sortable" onclick="setSort('ticker')">Ticker</th>
-            <th class="sortable" onclick="setSort('broker')">Broker</th>
-            <th class="sortable right" onclick="setSort('shares')">Shares</th>
-            <th class="sortable right" onclick="setSort('invested')">Invested</th>
-            <th class="sortable right" onclick="setSort('price')">Price</th>
             <th class="sortable right" onclick="setSort('value')">Value</th>
             <th class="sortable right" onclick="setSort('gainPct')">Gain %</th>
             <th class="sortable right" onclick="setSort('gainAbs')">Gain €</th>
+            <th class="sortable right" onclick="setSort('invested')">Invested</th>
+            <th class="sortable right" onclick="setSort('shares')">Shares</th>
+            <th class="sortable right" onclick="setSort('price')">Price</th>
+            <th class="sortable" onclick="setSort('broker')">Broker</th>
             <th></th>
           </tr>
         </thead>
@@ -908,13 +908,13 @@ function renderHoldings() {
 
     return `<tr>
       <td><div class="ticker">${esc(h.ticker)}</div><div class="name">${esc(h.name || (p?.name || ''))}</div></td>
-      <td><span class="broker-tag ${h.broker}">${BROKER_LABELS[h.broker]}</span></td>
-      <td class="right mono">${h.shares}</td>
-      <td class="right mono">${fmt(invested)}</td>
-      <td class="right mono">${priceStr}</td>
       <td class="right mono">${fmt(val)}</td>
       <td class="right"><span class="gain-pill ${cls}">${sign}${gain.pct.toFixed(2)}%</span></td>
       <td class="right"><span class="gain-pill ${cls}">${sign}${fmt(gain.abs)}</span></td>
+      <td class="right mono">${fmt(invested)}</td>
+      <td class="right mono">${h.shares}</td>
+      <td class="right mono">${priceStr}</td>
+      <td><span class="broker-tag ${h.broker}">${BROKER_LABELS[h.broker]}</span></td>
       <td style="white-space:nowrap">
         <button class="btn-edit" onclick="editHolding(${h._i})" title="Edit">✎</button>
         <button class="btn-delete" onclick="deleteHolding(${h._i})" title="Remove">×</button>
