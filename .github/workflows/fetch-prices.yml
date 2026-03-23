@@ -82,7 +82,7 @@ jobs:
               return {'price': price, 'currency': 'EUR', 'name': key}
 
           def fetch_zse(key, ticker):
-              import datetime
+              import datetime, re
               # ticker format: {ISIN}.ZSE  e.g. HRHT00RA0005.ZSE
               isin = ticker.upper().replace('.ZSE', '')
               today = datetime.date.today()
@@ -93,17 +93,33 @@ jobs:
               req = urllib.request.Request(url, headers=HEADERS)
               with urllib.request.urlopen(req, timeout=15) as r:
                   data = json.loads(r.read())
-              # Response is {"history": [...], "symbol": "...", ...}
               history = data.get('history') if isinstance(data, dict) else data
               if not history:
                   raise ValueError(f"empty ZSE history for ISIN {isin}")
-              # Sort by date descending, pick the most recent trading day
               records = sorted(history, key=lambda r: r.get('date', ''), reverse=True)
               latest = records[0]
               price = float(latest.get('last_price') or latest.get('vwap_price') or 0)
               if not price:
                   raise ValueError(f"no price in ZSE record: {latest}")
-              return {'price': price, 'currency': 'EUR', 'name': key}
+              result = {'price': price, 'currency': 'EUR', 'name': key}
+              # Scrape dividend info from ZSE web page (embedded as this.Papir JSON)
+              try:
+                  page_url = f'https://zse.hr/en/papir-311/310?isin={isin}'
+                  req2 = urllib.request.Request(page_url, headers=HEADERS)
+                  with urllib.request.urlopen(req2, timeout=15) as r2:
+                      page = r2.read().decode('utf-8')
+                  m = re.search(r'this\.Papir\s*=\s*(\{.+?\});', page, re.DOTALL)
+                  if m:
+                      papir = json.loads(m.group(1))
+                      div_val = float(papir.get('dividend_value') or 0)
+                      ex_date = (papir.get('dividend_ex_date') or '')[:10]
+                      if div_val and ex_date:
+                          result['dividendRate'] = div_val
+                          result['exDividendDate'] = ex_date
+                          print(f"    └─ ZSE dividend: {div_val} EUR, ex-date {ex_date}")
+              except Exception as de:
+                  print(f"    └─ ZSE dividend scrape skipped: {de}")
+              return result
 
           prices = {}
           div_history = {}
@@ -119,8 +135,12 @@ jobs:
                   prices[key] = result
                   print(f"  {key}: {result['price']} {result['currency']} ({result['name']})")
 
-                  # Fetch dividend history for Yahoo tickers only
-                  if not upper.endswith('.ZSE') and not upper.endswith('.ZS'):
+                  # Dividend history
+                  if upper.endswith('.ZSE'):
+                      # ZSE: use the dividend scraped from the web page
+                      if result.get('exDividendDate') and result.get('dividendRate'):
+                          div_history[key] = [{'date': result['exDividendDate'], 'amount': result['dividendRate']}]
+                  elif not upper.endswith('.ZS'):
                       try:
                           divs = fetch_yahoo_dividends(key, source_ticker)
                           if divs:

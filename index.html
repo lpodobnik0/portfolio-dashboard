@@ -882,25 +882,29 @@ function renderBrokerBar() {
 
 function getNextDivInfo(ticker) {
   const history = divHistory[ticker];
-  if (!history || history.length === 0) return { date: null, payout: null };
+  const p = prices[ticker];
+  if (!history || history.length === 0) return { date: null, amountEUR: null };
+
   const sorted = [...history].sort((a, b) => a.date.localeCompare(b.date));
   const last = sorted[sorted.length - 1];
-  // Estimate next date from average of recent intervals
+
   let nextDate = null;
   if (sorted.length >= 2) {
+    // Extrapolate from average interval of recent payments
     const recent = sorted.slice(-4);
     let totalDays = 0, count = 0;
     for (let i = 1; i < recent.length; i++) {
       totalDays += (new Date(recent[i].date) - new Date(recent[i-1].date)) / 86400000;
       count++;
     }
-    const avgDays = totalDays / count;
     const next = new Date(last.date);
-    next.setDate(next.getDate() + Math.round(avgDays));
+    next.setDate(next.getDate() + Math.round(totalDays / count));
     nextDate = next.toISOString().slice(0, 10);
+  } else if (p?.exDividendDate) {
+    // Single entry (ZSE annual stocks) — use the stored ex-date directly
+    nextDate = p.exDividendDate;
   }
-  // Convert dividend amount to EUR
-  const p = prices[ticker];
+
   let currency = p?.currency || 'USD';
   let amount = last.amount;
   if (currency === 'GBp' || currency === 'GBX') { amount /= 100; currency = 'GBP'; }
