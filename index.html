@@ -777,16 +777,62 @@ function getHoldingCost(h) {
 
 async function refreshPrices() {
   const btn = document.querySelector('.header-actions button');
-  btn.innerHTML = '<span class="spinner"></span> Loading...';
-  btn.disabled = true;
+  const timeEl = document.getElementById('refreshTime');
+  const token = localStorage.getItem('pf_syncToken');
 
+  if (token) {
+    // Trigger the GitHub Actions workflow, then poll for updated prices.json
+    btn.innerHTML = '<span class="spinner"></span> Triggering…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(
+        'https://api.github.com/repos/lpodobnik0/portfolio-dashboard/actions/workflows/fetch-prices.yml/dispatches',
+        { method: 'POST',
+          headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ref: 'main' }) }
+      );
+      if (res.status === 204) {
+        const prevData = await fetch('./prices.json?t=' + Date.now()).then(r => r.json()).catch(() => ({}));
+        const prevUpdated = prevData.updated || '';
+        let attempts = 0;
+        const poll = async () => {
+          attempts++;
+          btn.innerHTML = `<span class="spinner"></span> Waiting… ${attempts * 5}s`;
+          const data = await fetch('./prices.json?t=' + Date.now()).then(r => r.json()).catch(() => ({}));
+          if (data.updated && data.updated !== prevUpdated) {
+            if (data.prices) Object.assign(prices, data.prices);
+            if (data.fx) fxRates = { EUR: 1, ...data.fx };
+            if (data.div_history) divHistory = data.div_history;
+            save(); render();
+            const d = new Date(data.updated);
+            timeEl.textContent = `Prices updated just now (${d.toLocaleTimeString()})`;
+            timeEl.style.color = 'var(--green)';
+            setTimeout(() => timeEl.style.color = '', 4000);
+            btn.innerHTML = '↻ Refresh Prices';
+            btn.disabled = false;
+          } else if (attempts < 30) {
+            setTimeout(poll, 5000);
+          } else {
+            timeEl.textContent = 'Workflow triggered but prices.json not yet updated — check GitHub Actions';
+            timeEl.style.color = 'var(--yellow)';
+            btn.innerHTML = '↻ Refresh Prices';
+            btn.disabled = false;
+          }
+        };
+        setTimeout(poll, 8000); // give workflow time to start
+        return;
+      }
+    } catch(e) { /* fall through to simple reload */ }
+  }
+
+  // No token or dispatch failed — just re-read prices.json
+  btn.innerHTML = '<span class="spinner"></span> Loading…';
+  btn.disabled = true;
   const count = await loadPricesFromFile();
   if (count === 0) {
-    const timeEl = document.getElementById('refreshTime');
     timeEl.textContent = 'No prices yet — GitHub Actions may still be running for the first time';
     timeEl.style.color = 'var(--yellow)';
   }
-
   btn.innerHTML = '↻ Refresh Prices';
   btn.disabled = false;
   render();
