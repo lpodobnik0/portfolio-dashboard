@@ -362,6 +362,7 @@ td.mono { font-family: var(--mono); font-size: 13px; }
       <button onclick="refreshPrices()">↻ Refresh Prices</button>
       <button onclick="exportData()">Export</button>
       <button onclick="showImportModal()">Import</button>
+      <button onclick="showSyncModal()" title="Sync data between devices via encrypted GitHub storage">⇅ Sync</button>
       <button onclick="clearAllData()" style="color:var(--red);border-color:var(--red);" title="Delete all holdings and reset">Reset</button>
     </div>
   </div>
@@ -1688,6 +1689,234 @@ if (location.protocol === 'file:') {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(() => {});
   }
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SYNC MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="syncModal">
+  <div class="modal" style="max-width:460px">
+    <h3>⇅ Device Sync</h3>
+    <p style="font-size:13px;color:var(--text-dim);margin-bottom:20px;line-height:1.5">
+      Your data is encrypted locally before upload. GitHub only stores an unreadable blob — the password never leaves your device.
+    </p>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <!-- GitHub token -->
+      <div>
+        <label style="font-size:12px;color:var(--text-dim);display:block;margin-bottom:5px">GitHub Token</label>
+        <input id="syncToken" type="password" placeholder="ghp_…"
+          style="width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-family:var(--mono);font-size:13px">
+      </div>
+
+      <!-- Sync password -->
+      <div>
+        <label style="font-size:12px;color:var(--text-dim);display:block;margin-bottom:5px">Sync Password <span style="color:var(--text-muted)">(same on all devices)</span></label>
+        <input id="syncPass" type="password" placeholder="Choose a memorable password"
+          style="width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-family:var(--font);font-size:13px">
+      </div>
+
+      <!-- Remember toggle -->
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim);cursor:pointer">
+        <input type="checkbox" id="syncRemember" style="accent-color:var(--accent)">
+        Remember credentials on this device
+      </label>
+    </div>
+
+    <!-- Status line -->
+    <div id="syncStatus" style="margin-top:16px;font-size:13px;min-height:20px;color:var(--text-dim)"></div>
+
+    <div class="modal-actions" style="margin-top:20px;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap">
+      <button class="btn-secondary" onclick="closeSyncModal()">Close</button>
+      <button class="btn-secondary" id="syncPullBtn" onclick="syncPull()">🔄 Pull from sync</button>
+      <button class="btn-primary"   id="syncPushBtn" onclick="syncPush()">🔒 Push to sync</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+//  SYNC — AES-GCM encrypted via GitHub Contents API
+// ═══════════════════════════════════════════════
+const SYNC_REPO   = 'lpodobnik0/portfolio-dashboard';
+const SYNC_FILE   = 'portfolio.enc';
+const SYNC_API    = `https://api.github.com/repos/${SYNC_REPO}/contents/${SYNC_FILE}`;
+const PBKDF2_ITER = 120000;
+
+function showSyncModal() {
+  const t = localStorage.getItem('pf_syncToken') || '';
+  const p = localStorage.getItem('pf_syncPass')  || '';
+  document.getElementById('syncToken').value    = t;
+  document.getElementById('syncPass').value     = p;
+  document.getElementById('syncRemember').checked = !!(t || p);
+  document.getElementById('syncStatus').textContent = '';
+
+  const lastSync = localStorage.getItem('pf_lastSync');
+  if (lastSync) {
+    const d = new Date(lastSync);
+    document.getElementById('syncStatus').textContent =
+      `Last sync: ${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
+  }
+  document.getElementById('syncModal').classList.add('show');
+}
+function closeSyncModal() { document.getElementById('syncModal').classList.remove('show'); }
+
+function syncSetStatus(msg, color) {
+  const el = document.getElementById('syncStatus');
+  el.textContent = msg;
+  el.style.color = color || 'var(--text-dim)';
+}
+function syncSetBusy(busy) {
+  document.getElementById('syncPushBtn').disabled = busy;
+  document.getElementById('syncPullBtn').disabled = busy;
+}
+
+// ── Crypto helpers ──────────────────────────────
+async function syncDeriveKey(password, salt) {
+  const raw = await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']
+  );
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: PBKDF2_ITER, hash: 'SHA-256' },
+    raw, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']
+  );
+}
+
+async function syncEncrypt(obj, password) {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv   = crypto.getRandomValues(new Uint8Array(12));
+  const key  = await syncDeriveKey(password, salt);
+  const ct   = await crypto.subtle.encrypt(
+    { name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(obj))
+  );
+  const buf = new Uint8Array(16 + 12 + ct.byteLength);
+  buf.set(salt, 0); buf.set(iv, 16); buf.set(new Uint8Array(ct), 28);
+  return btoa(String.fromCharCode(...buf));
+}
+
+async function syncDecrypt(b64, password) {
+  const buf  = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  const salt = buf.slice(0, 16), iv = buf.slice(16, 28), ct = buf.slice(28);
+  const key  = await syncDeriveKey(password, salt);
+  const pt   = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct);
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+// ── GitHub API helpers ──────────────────────────
+async function ghGetFile(token) {
+  const res = await fetch(SYNC_API, {
+    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`GitHub ${res.status}`);
+  const d = await res.json();
+  return { content: atob(d.content.replace(/\n/g, '')), sha: d.sha };
+}
+
+async function ghPutFile(token, content, sha) {
+  const body = {
+    message: `sync: update portfolio ${new Date().toISOString().slice(0,16)}`,
+    content: btoa(unescape(encodeURIComponent(content))),
+    ...(sha ? { sha } : {})
+  };
+  const res = await fetch(SYNC_API, {
+    method: 'PUT',
+    headers: {
+      Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub ${res.status}`);
+  }
+}
+
+// ── Push ────────────────────────────────────────
+async function syncPush() {
+  const token = document.getElementById('syncToken').value.trim();
+  const pass  = document.getElementById('syncPass').value;
+  if (!token) return syncSetStatus('⚠ Enter your GitHub token.', 'var(--yellow)');
+  if (!pass)  return syncSetStatus('⚠ Enter a sync password.', 'var(--yellow)');
+
+  syncSetBusy(true);
+  syncSetStatus('Encrypting…', 'var(--text-dim)');
+  try {
+    const payload = {
+      holdings, dividends,
+      trades: typeof trades !== 'undefined' ? trades : [],
+      pushedAt: new Date().toISOString(),
+      device: navigator.userAgent.slice(0, 40)
+    };
+    const encrypted = await syncEncrypt(payload, pass);
+
+    syncSetStatus('Uploading…', 'var(--text-dim)');
+    const existing = await ghGetFile(token);
+    await ghPutFile(token, encrypted, existing?.sha);
+
+    if (document.getElementById('syncRemember').checked) {
+      localStorage.setItem('pf_syncToken', token);
+      localStorage.setItem('pf_syncPass', pass);
+    }
+    localStorage.setItem('pf_lastSync', new Date().toISOString());
+    syncSetStatus('✓ Pushed successfully — other devices can now Pull.', 'var(--green)');
+  } catch(e) {
+    syncSetStatus(`✗ ${e.message}`, 'var(--red)');
+  }
+  syncSetBusy(false);
+}
+
+// ── Pull ────────────────────────────────────────
+async function syncPull() {
+  const token = document.getElementById('syncToken').value.trim();
+  const pass  = document.getElementById('syncPass').value;
+  if (!token) return syncSetStatus('⚠ Enter your GitHub token.', 'var(--yellow)');
+  if (!pass)  return syncSetStatus('⚠ Enter your sync password.', 'var(--yellow)');
+
+  syncSetBusy(true);
+  syncSetStatus('Fetching from GitHub…', 'var(--text-dim)');
+  try {
+    const file = await ghGetFile(token);
+    if (!file) {
+      syncSetStatus('⚠ No sync data found. Push from your master device first.', 'var(--yellow)');
+      syncSetBusy(false); return;
+    }
+
+    syncSetStatus('Decrypting…', 'var(--text-dim)');
+    let payload;
+    try {
+      payload = await syncDecrypt(file.content, pass);
+    } catch {
+      syncSetStatus('✗ Wrong password or data is corrupted.', 'var(--red)');
+      syncSetBusy(false); return;
+    }
+
+    const pushedAt = payload.pushedAt ? new Date(payload.pushedAt).toLocaleString() : 'unknown time';
+    const device   = payload.device   || 'unknown device';
+    const ok = confirm(
+      `Replace ALL local data with sync from:\n${pushedAt}\n${device}\n\nThis cannot be undone.`
+    );
+    if (!ok) { syncSetBusy(false); syncSetStatus('Cancelled.', 'var(--text-dim)'); return; }
+
+    if (payload.holdings)  holdings  = payload.holdings;
+    if (payload.dividends) dividends = payload.dividends;
+    if (typeof trades !== 'undefined' && payload.trades) trades = payload.trades;
+    save();
+    render();
+
+    if (document.getElementById('syncRemember').checked) {
+      localStorage.setItem('pf_syncToken', token);
+      localStorage.setItem('pf_syncPass', pass);
+    }
+    localStorage.setItem('pf_lastSync', new Date().toISOString());
+    syncSetStatus(`✓ Pulled successfully (pushed ${pushedAt}).`, 'var(--green)');
+  } catch(e) {
+    syncSetStatus(`✗ ${e.message}`, 'var(--red)');
+  }
+  syncSetBusy(false);
 }
 </script>
 
