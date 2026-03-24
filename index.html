@@ -218,6 +218,8 @@ td.mono { font-family: var(--mono); font-size: 13px; }
   font-size: 13px; padding: 4px 8px; border-radius: 4px; transition: all 0.15s;
 }
 .btn-edit:hover { color: var(--accent); background: var(--accent-glow); }
+.btn-exclude { background: none; border: none; cursor: pointer; padding: 4px 6px; border-radius: 6px; font-size: 13px; color: var(--text-muted); transition: color 0.15s, background 0.15s; }
+.btn-exclude:hover { color: var(--yellow); background: var(--yellow-bg); }
 .add-section.editing { border-color: var(--accent); }
 .btn-cancel {
   background: none; border: 1px solid var(--border); color: var(--text-dim);
@@ -872,11 +874,18 @@ function getHoldingGain(h) {
   return { abs, pct };
 }
 
+function toggleExclude(idx) {
+  holdings[idx].excluded = !holdings[idx].excluded;
+  save();
+  render();
+}
+
 function renderSummary() {
   let totalVal = 0, totalCost = 0;
   holdings.forEach(h => {
+    if (h.excluded) return;
     totalVal += getHoldingValue(h);
-    totalCost += getHoldingCost(h); // safe — never NaN
+    totalCost += getHoldingCost(h);
   });
   const totalGainAbs = totalVal - totalCost;
   const totalGainPct = totalCost > 0 ? (totalGainAbs / totalCost) * 100 : 0;
@@ -908,6 +917,7 @@ function renderBrokerBar() {
   const byBroker = {};
   let total = 0;
   holdings.forEach(h => {
+    if (h.excluded) return;
     const v = getHoldingValue(h);
     byBroker[h.broker] = (byBroker[h.broker] || 0) + v;
     total += v;
@@ -1032,7 +1042,7 @@ function renderHoldings() {
     const yearly = getYearlyDiv(h.ticker, h.shares);
     const yearlyCell = yearly ? fmt(yearly) : '<span style="color:var(--text-muted)">—</span>';
 
-    return `<tr>
+    return `<tr style="${h.excluded ? 'opacity:0.35' : ''}">
       <td><div class="ticker">${esc(h.ticker)}</div><div class="name">${esc(h.name || (p?.name || ''))}</div></td>
       <td class="right mono">${fmt(val)}</td>
       <td class="right"><span class="gain-pill ${cls}">${sign}${gain.pct.toFixed(2)}%</span></td>
@@ -1046,6 +1056,7 @@ function renderHoldings() {
       <td class="right mono">${yearlyCell}</td>
       <td style="white-space:nowrap">
         <button class="btn-edit" onclick="editHolding(${h._i})" title="Edit">✎</button>
+        <button class="btn-exclude" onclick="toggleExclude(${h._i})" title="${h.excluded ? 'Include in totals' : 'Exclude from totals'}">${h.excluded ? '👁' : '◎'}</button>
         <button class="btn-delete" onclick="deleteHolding(${h._i})" title="Remove">×</button>
       </td>
     </tr>`;
