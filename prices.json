@@ -1,73 +1,73 @@
 {
-  "updated": "2026-03-31T17:31:03Z",
+  "updated": "2026-03-31T17:46:04Z",
   "prices": {
     "AGNC": {
-      "price": 9.96,
+      "price": 9.975,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 61.175,
+      "price": 61.29,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 209.31,
+      "price": 208.92,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "NVDA": {
-      "price": 173.26,
+      "price": 172.94,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 46.89,
+      "price": 46.9,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 28.749,
+      "price": 28.475,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.735,
+      "price": 5.66,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 6.835,
+      "price": 6.785,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 101.9,
+      "price": 101.675,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.58,
+      "price": 1.575,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 23.7,
+      "price": 23.55,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 61.43,
+      "price": 61.6,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 6.345,
+      "price": 6.305,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 477.625,
+      "price": 477.115,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -152,14 +152,9 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4676.3,
+      "price": 4691.2,
       "currency": "USD",
       "name": "Gold Jun 26"
-    },
-    "XAG": {
-      "price": 74.895,
-      "currency": "USD",
-      "name": "Silver May 26"
     },
     "IES": {
       "price": 5.161,
