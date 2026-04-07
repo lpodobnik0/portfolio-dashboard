@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-07T03:01:19Z",
+  "updated": "2026-04-07T03:15:57Z",
   "prices": {
     "AGNC": {
       "price": 10.2,
@@ -81,6 +81,11 @@
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
+    "VWCE": {
+      "price": 144.74,
+      "currency": "EUR",
+      "name": "Vanguard FTSE All-World U.ETF R"
+    },
     "VUAA": {
       "price": 126.62,
       "currency": "USD",
@@ -152,12 +157,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4676.4,
+      "price": 4671.7,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 72.65,
+      "price": 72.615,
       "currency": "USD",
       "name": "Silver May 26"
     },
