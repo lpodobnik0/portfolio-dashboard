@@ -47,7 +47,21 @@ jobs:
                        meta.get('previousClose'))
               if not price:
                   raise ValueError(f"no price field. Keys: {list(meta.keys())}")
-              return {'price': price, 'currency': meta.get('currency', 'USD'), 'name': meta.get('shortName', ticker)}
+              result = {'price': price, 'currency': meta.get('currency', 'USD'), 'name': meta.get('shortName', ticker)}
+              # ex-dividend date (prefer exDividendDate, fall back to dividendDate)
+              import datetime
+              for field in ('exDividendDate', 'dividendDate'):
+                  ts = meta.get(field)
+                  if ts and int(ts) > 0:
+                      result['exDividendDate'] = datetime.datetime.utcfromtimestamp(int(ts)).strftime('%Y-%m-%d')
+                      break
+              # annual dividend rate
+              for field in ('dividendRate', 'trailingAnnualDividendRate'):
+                  rate = meta.get(field)
+                  if rate and float(rate) > 0:
+                      result['dividendRate'] = float(rate)
+                      break
+              return result
 
           def fetch_yahoo_dividends(key, ticker):
               """Fetch up to 3 years of dividend history for a ticker from Yahoo Finance."""

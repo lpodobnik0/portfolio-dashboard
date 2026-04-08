@@ -948,9 +948,13 @@ function getNextDivInfo(ticker) {
   const sorted = [...history].sort((a, b) => a.date.localeCompare(b.date));
   const last = sorted[sorted.length - 1];
 
+  // Use Yahoo's declared ex-dividend date if it's in the future — most accurate
+  const today = new Date().toISOString().slice(0, 10);
   let nextDate = null;
-  if (sorted.length >= 2) {
-    // Extrapolate from average interval of recent payments
+  if (p?.exDividendDate && p.exDividendDate >= today) {
+    nextDate = p.exDividendDate;
+  } else if (sorted.length >= 2) {
+    // Fallback: extrapolate from average interval of recent payments
     const recent = sorted.slice(-4);
     let totalDays = 0, count = 0;
     for (let i = 1; i < recent.length; i++) {
@@ -961,7 +965,6 @@ function getNextDivInfo(ticker) {
     next.setDate(next.getDate() + Math.round(totalDays / count));
     nextDate = next.toISOString().slice(0, 10);
   } else if (p?.exDividendDate) {
-    // Single entry (ZSE annual stocks) — use the stored ex-date directly
     nextDate = p.exDividendDate;
   }
 
@@ -1036,8 +1039,13 @@ function renderHoldings() {
 
     const div = getNextDivInfo(h.ticker);
     const today = new Date().toISOString().slice(0, 10);
-    const divDateCls = div.date && div.date < today ? 'style="color:var(--text-muted)"' : '';
-    const nextDivCell = div.date ? `<span ${divDateCls}>${div.date}</span>` : '<span style="color:var(--text-muted)">—</span>';
+    const isDeclared = prices[h.ticker]?.exDividendDate && prices[h.ticker].exDividendDate >= today;
+    const isPast = div.date && div.date < today;
+    const divTitle = isDeclared ? 'Declared ex-dividend date' : 'Estimated (based on payment history)';
+    const divStyle = isPast ? 'color:var(--text-muted)' : (!isDeclared ? 'color:var(--yellow);opacity:0.8' : '');
+    const nextDivCell = div.date
+      ? `<span style="${divStyle}" title="${divTitle}">${div.date}${isDeclared ? '' : ' ~'}</span>`
+      : '<span style="color:var(--text-muted)">—</span>';
     const payoutCell = div.amountEUR ? fmt(div.amountEUR * h.shares) : '<span style="color:var(--text-muted)">—</span>';
     const yearly = getYearlyDiv(h.ticker, h.shares);
     const yearlyCell = yearly ? fmt(yearly) : '<span style="color:var(--text-muted)">—</span>';
