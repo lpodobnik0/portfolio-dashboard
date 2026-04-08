@@ -699,6 +699,7 @@ let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 let divHistory = {}; // ticker -> [{date, amount (per share, native currency), currency}]
+let nextDividends = {}; // ticker -> {exDate, payDate, rate, annualRate} from Nasdaq calendar
 let trades = JSON.parse(localStorage.getItem('pf_trades') || '[]'); // [{date,ticker,action,shares,price,total,realizedPnl,broker}]
 let editingIdx = null; // null = adding new, number = editing existing
 let sortCol = localStorage.getItem('pf_sortCol') || 'value';
@@ -748,6 +749,7 @@ async function loadPricesFromFile() {
     if (data.prices) Object.assign(prices, data.prices);
     if (data.fx) fxRates = { EUR: 1, ...data.fx };
     if (data.div_history) divHistory = data.div_history;
+    if (data.next_dividends) nextDividends = data.next_dividends;
     save();
     if (data.updated) {
       const d = new Date(data.updated);
@@ -948,8 +950,19 @@ function getNextDivInfo(ticker) {
   const sorted = [...history].sort((a, b) => a.date.localeCompare(b.date));
   const last = sorted[sorted.length - 1];
 
-  // Use Yahoo's declared ex-dividend date if it's in the future — most accurate
   const today = new Date().toISOString().slice(0, 10);
+
+  // 1st priority: Nasdaq dividend calendar (real declared date)
+  const nasdaqEntry = nextDividends[ticker];
+  if (nasdaqEntry?.exDate && nasdaqEntry.exDate >= today) {
+    let amount = nasdaqEntry.rate;
+    let currency = p?.currency || 'USD';
+    if (currency === 'GBp' || currency === 'GBX') { amount /= 100; currency = 'GBP'; }
+    const amountEUR = currency === 'EUR' ? amount : amount / (fxRates[currency] || 1);
+    return { date: nasdaqEntry.exDate, payDate: nasdaqEntry.payDate, amountEUR, declared: true };
+  }
+
+  // 2nd priority: ZSE/Yahoo stored ex-date
   let nextDate = null;
   if (p?.exDividendDate && p.exDividendDate >= today) {
     nextDate = p.exDividendDate;
@@ -972,7 +985,8 @@ function getNextDivInfo(ticker) {
   let amount = last.amount;
   if (currency === 'GBp' || currency === 'GBX') { amount /= 100; currency = 'GBP'; }
   const amountEUR = currency === 'EUR' ? amount : amount / (fxRates[currency] || 1);
-  return { date: nextDate, amountEUR };
+  const declared = !!(p?.exDividendDate && p.exDividendDate >= today && nextDate === p.exDividendDate);
+  return { date: nextDate, amountEUR, declared };
 }
 
 function getYearlyDiv(ticker, shares) {
@@ -1039,12 +1053,11 @@ function renderHoldings() {
 
     const div = getNextDivInfo(h.ticker);
     const today = new Date().toISOString().slice(0, 10);
-    const isDeclared = prices[h.ticker]?.exDividendDate && prices[h.ticker].exDividendDate >= today;
     const isPast = div.date && div.date < today;
-    const divTitle = isDeclared ? 'Declared ex-dividend date' : 'Estimated (based on payment history)';
-    const divStyle = isPast ? 'color:var(--text-muted)' : (!isDeclared ? 'color:var(--yellow);opacity:0.8' : '');
+    const divTitle = div.declared ? 'Declared ex-dividend date (Nasdaq)' : 'Estimated from payment history';
+    const divStyle = isPast ? 'color:var(--text-muted)' : (!div.declared ? 'color:var(--yellow);opacity:0.85' : '');
     const nextDivCell = div.date
-      ? `<span style="${divStyle}" title="${divTitle}">${div.date}${isDeclared ? '' : ' ~'}</span>`
+      ? `<span style="${divStyle}" title="${divTitle}">${div.date}${div.declared ? '' : ' ~'}</span>`
       : '<span style="color:var(--text-muted)">—</span>';
     const payoutCell = div.amountEUR ? fmt(div.amountEUR * h.shares) : '<span style="color:var(--text-muted)">—</span>';
     const yearly = getYearlyDiv(h.ticker, h.shares);
