@@ -1056,8 +1056,9 @@ function renderHoldings() {
     const isPast = div.date && div.date < today;
     const divTitle = div.declared ? 'Declared ex-dividend date (Nasdaq)' : 'Estimated from payment history';
     const divStyle = isPast ? 'color:var(--text-muted)' : (!div.declared ? 'color:var(--yellow);opacity:0.85' : '');
-    const nextDivCell = div.date
-      ? `<span style="${divStyle}" title="${divTitle}">${div.date}${div.declared ? '' : ' ~'}</span>`
+    const divDateFmt = div.date ? new Date(div.date + 'T00:00:00').toLocaleDateString('hr-HR') : null;
+    const nextDivCell = divDateFmt
+      ? `<span style="${divStyle}" title="${divTitle}">${divDateFmt}${div.declared ? '' : ' ~'}</span>`
       : '<span style="color:var(--text-muted)">—</span>';
     const payoutCell = div.amountEUR ? fmt(div.amountEUR * h.shares) : '<span style="color:var(--text-muted)">—</span>';
     const yearly = getYearlyDiv(h.ticker, h.shares);
