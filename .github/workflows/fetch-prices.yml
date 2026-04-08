@@ -15,7 +15,7 @@ jobs:
       - name: Fetch prices and FX rates
         run: |
           python3 << 'EOF'
-          import json, urllib.request, time, os
+          import json, urllib.request, time, os, datetime, re
 
           if not os.path.exists('tickers.txt'):
               print("tickers.txt not found — nothing to do")
