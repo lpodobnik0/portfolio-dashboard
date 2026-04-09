@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-09T08:31:00Z",
+  "updated": "2026-04-09T08:46:01Z",
   "prices": {
     "AGNC": {
       "price": 10.32,
@@ -82,22 +82,22 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 95.62,
+      "price": 95.6075,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 147.64,
+      "price": 147.62,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 130.14,
+      "price": 130.12,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.4681,
+      "price": 7.4593,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
@@ -112,47 +112,47 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 136.15,
+      "price": 136.25,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 119.0,
+      "price": 119.1,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 21.85,
+      "price": 21.87,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 8.87,
+      "price": 8.785,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 634.0,
+      "price": 634.2,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4429.0,
+      "price": 4421.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 260.7,
+      "price": 261.085,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 86.45,
+      "price": 86.46,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1422.4,
+      "price": 1425.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -162,17 +162,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4748.4,
+      "price": 4748.9,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 74.105,
+      "price": 74.09,
       "currency": "USD",
       "name": "Silver May 26"
     },
     "IES": {
-      "price": 5.61,
+      "price": 5.613,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -203,152 +203,6 @@
     "HRK": 7.5345
   },
   "div_history": {
-    "AGNC": [
-      {
-        "date": "2023-04-27",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-05-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-06-29",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-07-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-08-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-09-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-10-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-11-29",
-        "amount": 0.12
-      },
-      {
-        "date": "2023-12-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-01-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-02-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-03-27",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-04-29",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-05-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-06-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-07-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-08-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-09-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-10-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-11-29",
-        "amount": 0.12
-      },
-      {
-        "date": "2024-12-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-01-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-02-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-03-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-04-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-05-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-06-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-07-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-08-29",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-09-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-10-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-11-28",
-        "amount": 0.12
-      },
-      {
-        "date": "2025-12-31",
-        "amount": 0.12
-      },
-      {
-        "date": "2026-01-30",
-        "amount": 0.12
-      },
-      {
-        "date": "2026-02-27",
-        "amount": 0.12
-      },
-      {
-        "date": "2026-03-31",
-        "amount": 0.12
-      }
-    ],
     "O": [
       {
         "date": "2023-04-28",
