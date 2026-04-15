@@ -1,18 +1,13 @@
 {
-  "updated": "2026-04-15T14:05:16Z",
+  "updated": "2026-04-15T14:22:25Z",
   "prices": {
-    "O": {
-      "price": 63.51,
+    "NVDA": {
+      "price": 199.0,
       "currency": "USD",
-      "name": "Realty Income Corporation"
-    },
-    "QS": {
-      "price": 7.105,
-      "currency": "USD",
-      "name": "QuantumScape Corporation"
+      "name": "NVIDIA Corporation"
     },
     "BRK.B": {
-      "price": 475.18,
+      "price": 475.635,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -22,12 +17,12 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 97.475,
+      "price": 97.5525,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 150.62,
+      "price": 150.68,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -37,62 +32,17 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.5717,
+      "price": 7.5724,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
-    "EUNY": {
-      "price": 16.882,
-      "currency": "EUR",
-      "name": "iShsV-EM Dividend UCITS ETF   R"
-    },
-    "FUSA": {
-      "price": 12.968,
-      "currency": "EUR",
-      "name": "Fidelity US Quality Income ETFR"
-    },
-    "DG": {
-      "price": 134.45,
-      "currency": "EUR",
-      "name": "VINCI"
-    },
-    "ACS": {
-      "price": 123.8,
-      "currency": "EUR",
-      "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
-    },
-    "FORTUM": {
-      "price": 22.0,
-      "currency": "EUR",
-      "name": "Fortum Corporation"
-    },
-    "OVH": {
-      "price": 9.88,
-      "currency": "EUR",
-      "name": "OVH"
-    },
-    "AV": {
-      "price": 638.9,
-      "currency": "GBp",
-      "name": "AVIVA PLC ORD 32 17/19P"
-    },
-    "AVCN": {
-      "price": 0.15,
-      "currency": "CAD",
-      "name": "AVICANNA INC"
-    },
-    "XAU": {
-      "price": 4849.7,
-      "currency": "USD",
-      "name": "Gold Jun 26"
-    },
     "XAG": {
-      "price": 80.0,
+      "price": 80.425,
       "currency": "USD",
       "name": "Silver May 26"
     },
     "IES": {
-      "price": 5.783,
+      "price": 5.777,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -123,6 +73,56 @@
     "HRK": 7.5345
   },
   "div_history": {
+    "NVDA": [
+      {
+        "date": "2023-06-07",
+        "amount": 0.004
+      },
+      {
+        "date": "2023-09-06",
+        "amount": 0.004
+      },
+      {
+        "date": "2023-12-05",
+        "amount": 0.004
+      },
+      {
+        "date": "2024-03-05",
+        "amount": 0.004
+      },
+      {
+        "date": "2024-06-11",
+        "amount": 0.01
+      },
+      {
+        "date": "2024-09-12",
+        "amount": 0.01
+      },
+      {
+        "date": "2024-12-05",
+        "amount": 0.01
+      },
+      {
+        "date": "2025-03-12",
+        "amount": 0.01
+      },
+      {
+        "date": "2025-06-11",
+        "amount": 0.01
+      },
+      {
+        "date": "2025-09-11",
+        "amount": 0.01
+      },
+      {
+        "date": "2025-12-04",
+        "amount": 0.01
+      },
+      {
+        "date": "2026-03-11",
+        "amount": 0.01
+      }
+    ],
     "VUSA": [
       {
         "date": "2023-06-15",
@@ -171,130 +171,6 @@
       {
         "date": "2026-03-19",
         "amount": 0.246723
-      }
-    ],
-    "EUNY": [
-      {
-        "date": "2023-06-15",
-        "amount": 0.496996
-      },
-      {
-        "date": "2023-09-14",
-        "amount": 0.355163
-      },
-      {
-        "date": "2023-12-14",
-        "amount": 0.139707
-      },
-      {
-        "date": "2024-03-14",
-        "amount": 0.082476
-      },
-      {
-        "date": "2024-06-13",
-        "amount": 0.38045
-      },
-      {
-        "date": "2024-09-12",
-        "amount": 0.345744
-      },
-      {
-        "date": "2024-12-12",
-        "amount": 0.267521
-      },
-      {
-        "date": "2025-03-13",
-        "amount": 0.140818
-      },
-      {
-        "date": "2025-06-12",
-        "amount": 0.339304
-      },
-      {
-        "date": "2025-09-11",
-        "amount": 0.292548
-      },
-      {
-        "date": "2025-12-11",
-        "amount": 0.098155
-      },
-      {
-        "date": "2026-03-19",
-        "amount": 0.14913
-      }
-    ],
-    "DG": [
-      {
-        "date": "2023-04-25",
-        "amount": 3.0
-      },
-      {
-        "date": "2023-11-14",
-        "amount": 1.05
-      },
-      {
-        "date": "2024-04-23",
-        "amount": 3.45
-      },
-      {
-        "date": "2024-10-15",
-        "amount": 1.05
-      },
-      {
-        "date": "2025-04-22",
-        "amount": 3.7
-      },
-      {
-        "date": "2025-10-14",
-        "amount": 1.05
-      }
-    ],
-    "ACS": [
-      {
-        "date": "2023-07-04",
-        "amount": 1.482
-      },
-      {
-        "date": "2024-01-19",
-        "amount": 0.457
-      },
-      {
-        "date": "2024-07-02",
-        "amount": 1.555
-      },
-      {
-        "date": "2025-01-21",
-        "amount": 0.454
-      },
-      {
-        "date": "2025-07-01",
-        "amount": 1.557
-      },
-      {
-        "date": "2026-01-21",
-        "amount": 0.457
-      }
-    ],
-    "FORTUM": [
-      {
-        "date": "2023-09-29",
-        "amount": 0.45
-      },
-      {
-        "date": "2024-03-26",
-        "amount": 0.58
-      },
-      {
-        "date": "2024-10-01",
-        "amount": 0.57
-      },
-      {
-        "date": "2025-04-02",
-        "amount": 1.4
-      },
-      {
-        "date": "2026-04-01",
-        "amount": 0.74
       }
     ],
     "IES": [
