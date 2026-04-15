@@ -1,13 +1,78 @@
 {
-  "updated": "2026-04-15T14:22:25Z",
+  "updated": "2026-04-15T14:31:08Z",
   "prices": {
+    "AGNC": {
+      "price": 10.645,
+      "currency": "USD",
+      "name": "AGNC Investment Corp."
+    },
+    "O": {
+      "price": 63.709,
+      "currency": "USD",
+      "name": "Realty Income Corporation"
+    },
+    "AMZN": {
+      "price": 247.94,
+      "currency": "USD",
+      "name": "Amazon.com, Inc."
+    },
+    "MSFT": {
+      "price": 406.029,
+      "currency": "USD",
+      "name": "Microsoft Corporation"
+    },
     "NVDA": {
-      "price": 199.0,
+      "price": 199.268,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
+    "CRSP": {
+      "price": 58.202,
+      "currency": "USD",
+      "name": "CRISPR Therapeutics AG"
+    },
+    "IONQ": {
+      "price": 41.579,
+      "currency": "USD",
+      "name": "IonQ, Inc."
+    },
+    "LXEO": {
+      "price": 6.57,
+      "currency": "USD",
+      "name": "Lexeo Therapeutics, Inc."
+    },
+    "QUBT": {
+      "price": 9.175,
+      "currency": "USD",
+      "name": "Quantum Computing Inc."
+    },
+    "NBIS": {
+      "price": 158.72,
+      "currency": "USD",
+      "name": "Nebius Group N.V."
+    },
+    "LCTX": {
+      "price": 1.65,
+      "currency": "USD",
+      "name": "Lineage Cell Therapeutics, Inc."
+    },
+    "DOCS": {
+      "price": 23.525,
+      "currency": "USD",
+      "name": "Doximity, Inc."
+    },
+    "D": {
+      "price": 62.68,
+      "currency": "USD",
+      "name": "Dominion Energy, Inc."
+    },
+    "QS": {
+      "price": 7.198,
+      "currency": "USD",
+      "name": "QuantumScape Corporation"
+    },
     "BRK.B": {
-      "price": 475.635,
+      "price": 475.27,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -17,32 +82,97 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 97.5525,
+      "price": 97.54,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 150.68,
+      "price": 150.74,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 134.42,
+      "price": 134.54,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.5724,
+      "price": 7.5725,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
+    "EUNY": {
+      "price": 16.908,
+      "currency": "EUR",
+      "name": "iShsV-EM Dividend UCITS ETF   R"
+    },
+    "FUSA": {
+      "price": 12.974,
+      "currency": "EUR",
+      "name": "Fidelity US Quality Income ETFR"
+    },
+    "DG": {
+      "price": 134.15,
+      "currency": "EUR",
+      "name": "VINCI"
+    },
+    "ACS": {
+      "price": 123.5,
+      "currency": "EUR",
+      "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
+    },
+    "FORTUM": {
+      "price": 22.03,
+      "currency": "EUR",
+      "name": "Fortum Corporation"
+    },
+    "OVH": {
+      "price": 9.68,
+      "currency": "EUR",
+      "name": "OVH"
+    },
+    "AV": {
+      "price": 639.0,
+      "currency": "GBp",
+      "name": "AVIVA PLC ORD 32 17/19P"
+    },
+    "BATS": {
+      "price": 4208.0,
+      "currency": "GBp",
+      "name": "BRITISH AMERICAN TOBACCO PLC OR"
+    },
+    "LGEN": {
+      "price": 265.95,
+      "currency": "GBp",
+      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
+    },
+    "TW.": {
+      "price": 84.82,
+      "currency": "GBp",
+      "name": "TAYLOR WIMPEY PLC ORD 1P"
+    },
+    "DGE": {
+      "price": 1488.6,
+      "currency": "GBp",
+      "name": "DIAGEO PLC ORD 28 101/108P"
+    },
+    "AVCN": {
+      "price": 0.15,
+      "currency": "CAD",
+      "name": "AVICANNA INC"
+    },
+    "XAU": {
+      "price": 4847.7,
+      "currency": "USD",
+      "name": "Gold Jun 26"
+    },
     "XAG": {
-      "price": 80.425,
+      "price": 80.4,
       "currency": "USD",
       "name": "Silver May 26"
     },
     "IES": {
-      "price": 5.777,
+      "price": 5.779,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -73,6 +203,348 @@
     "HRK": 7.5345
   },
   "div_history": {
+    "AGNC": [
+      {
+        "date": "2023-04-27",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-05-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-06-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-07-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-08-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-09-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-10-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-11-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-12-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-01-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-02-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-03-27",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-04-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-05-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-06-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-07-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-08-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-09-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-10-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-11-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-12-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-01-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-02-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-03-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-04-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-05-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-06-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-07-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-08-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-09-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-10-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-11-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-12-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-01-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-02-27",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-03-31",
+        "amount": 0.12
+      }
+    ],
+    "O": [
+      {
+        "date": "2023-04-28",
+        "amount": 0.255
+      },
+      {
+        "date": "2023-05-31",
+        "amount": 0.255
+      },
+      {
+        "date": "2023-06-30",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-07-31",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-08-31",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-09-29",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-10-31",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-11-30",
+        "amount": 0.256
+      },
+      {
+        "date": "2023-12-29",
+        "amount": 0.257
+      },
+      {
+        "date": "2024-01-31",
+        "amount": 0.257
+      },
+      {
+        "date": "2024-02-29",
+        "amount": 0.257
+      },
+      {
+        "date": "2024-03-28",
+        "amount": 0.257
+      },
+      {
+        "date": "2024-04-30",
+        "amount": 0.257
+      },
+      {
+        "date": "2024-06-03",
+        "amount": 0.263
+      },
+      {
+        "date": "2024-07-01",
+        "amount": 0.263
+      },
+      {
+        "date": "2024-08-01",
+        "amount": 0.263
+      },
+      {
+        "date": "2024-09-03",
+        "amount": 0.263
+      },
+      {
+        "date": "2024-10-01",
+        "amount": 0.264
+      },
+      {
+        "date": "2024-11-01",
+        "amount": 0.264
+      },
+      {
+        "date": "2024-12-02",
+        "amount": 0.264
+      },
+      {
+        "date": "2025-01-02",
+        "amount": 0.264
+      },
+      {
+        "date": "2025-02-03",
+        "amount": 0.264
+      },
+      {
+        "date": "2025-03-03",
+        "amount": 0.268
+      },
+      {
+        "date": "2025-04-01",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-05-01",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-06-02",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-07-01",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-08-01",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-09-02",
+        "amount": 0.269
+      },
+      {
+        "date": "2025-10-01",
+        "amount": 0.27
+      },
+      {
+        "date": "2025-10-31",
+        "amount": 0.27
+      },
+      {
+        "date": "2025-11-28",
+        "amount": 0.27
+      },
+      {
+        "date": "2025-12-31",
+        "amount": 0.27
+      },
+      {
+        "date": "2026-01-30",
+        "amount": 0.27
+      },
+      {
+        "date": "2026-02-27",
+        "amount": 0.27
+      },
+      {
+        "date": "2026-03-31",
+        "amount": 0.271
+      }
+    ],
+    "MSFT": [
+      {
+        "date": "2023-05-17",
+        "amount": 0.68
+      },
+      {
+        "date": "2023-08-16",
+        "amount": 0.68
+      },
+      {
+        "date": "2023-11-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-02-14",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-05-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-08-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-11-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-02-20",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-05-15",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-08-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-11-20",
+        "amount": 0.91
+      },
+      {
+        "date": "2026-02-19",
+        "amount": 0.91
+      }
+    ],
     "NVDA": [
       {
         "date": "2023-06-07",
@@ -123,6 +595,56 @@
         "amount": 0.01
       }
     ],
+    "D": [
+      {
+        "date": "2023-06-01",
+        "amount": 0.668
+      },
+      {
+        "date": "2023-08-31",
+        "amount": 0.668
+      },
+      {
+        "date": "2023-11-30",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-02-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-05-31",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-08-30",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-11-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-02-28",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-05-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-09-05",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-12-05",
+        "amount": 0.668
+      },
+      {
+        "date": "2026-02-27",
+        "amount": 0.668
+      }
+    ],
     "VUSA": [
       {
         "date": "2023-06-15",
@@ -171,6 +693,280 @@
       {
         "date": "2026-03-19",
         "amount": 0.246723
+      }
+    ],
+    "EUNY": [
+      {
+        "date": "2023-06-15",
+        "amount": 0.496996
+      },
+      {
+        "date": "2023-09-14",
+        "amount": 0.355163
+      },
+      {
+        "date": "2023-12-14",
+        "amount": 0.139707
+      },
+      {
+        "date": "2024-03-14",
+        "amount": 0.082476
+      },
+      {
+        "date": "2024-06-13",
+        "amount": 0.38045
+      },
+      {
+        "date": "2024-09-12",
+        "amount": 0.345744
+      },
+      {
+        "date": "2024-12-12",
+        "amount": 0.267521
+      },
+      {
+        "date": "2025-03-13",
+        "amount": 0.140818
+      },
+      {
+        "date": "2025-06-12",
+        "amount": 0.339304
+      },
+      {
+        "date": "2025-09-11",
+        "amount": 0.292548
+      },
+      {
+        "date": "2025-12-11",
+        "amount": 0.098155
+      },
+      {
+        "date": "2026-03-19",
+        "amount": 0.14913
+      }
+    ],
+    "DG": [
+      {
+        "date": "2023-04-25",
+        "amount": 3.0
+      },
+      {
+        "date": "2023-11-14",
+        "amount": 1.05
+      },
+      {
+        "date": "2024-04-23",
+        "amount": 3.45
+      },
+      {
+        "date": "2024-10-15",
+        "amount": 1.05
+      },
+      {
+        "date": "2025-04-22",
+        "amount": 3.7
+      },
+      {
+        "date": "2025-10-14",
+        "amount": 1.05
+      }
+    ],
+    "ACS": [
+      {
+        "date": "2023-07-04",
+        "amount": 1.482
+      },
+      {
+        "date": "2024-01-19",
+        "amount": 0.457
+      },
+      {
+        "date": "2024-07-02",
+        "amount": 1.555
+      },
+      {
+        "date": "2025-01-21",
+        "amount": 0.454
+      },
+      {
+        "date": "2025-07-01",
+        "amount": 1.557
+      },
+      {
+        "date": "2026-01-21",
+        "amount": 0.457
+      }
+    ],
+    "FORTUM": [
+      {
+        "date": "2023-09-29",
+        "amount": 0.45
+      },
+      {
+        "date": "2024-03-26",
+        "amount": 0.58
+      },
+      {
+        "date": "2024-10-01",
+        "amount": 0.57
+      },
+      {
+        "date": "2025-04-02",
+        "amount": 1.4
+      },
+      {
+        "date": "2026-04-01",
+        "amount": 0.74
+      }
+    ],
+    "AV": [
+      {
+        "date": "2023-08-24",
+        "amount": 11.1
+      },
+      {
+        "date": "2024-04-11",
+        "amount": 22.300001
+      },
+      {
+        "date": "2024-09-05",
+        "amount": 11.900001
+      },
+      {
+        "date": "2025-04-10",
+        "amount": 23.800001
+      },
+      {
+        "date": "2025-08-28",
+        "amount": 13.099999
+      },
+      {
+        "date": "2026-03-26",
+        "amount": 26.199999
+      }
+    ],
+    "BATS": [
+      {
+        "date": "2023-07-13",
+        "amount": 57.72
+      },
+      {
+        "date": "2023-09-28",
+        "amount": 57.72
+      },
+      {
+        "date": "2023-12-21",
+        "amount": 57.72
+      },
+      {
+        "date": "2024-03-21",
+        "amount": 58.88
+      },
+      {
+        "date": "2024-06-27",
+        "amount": 58.88
+      },
+      {
+        "date": "2024-09-26",
+        "amount": 58.88
+      },
+      {
+        "date": "2024-12-19",
+        "amount": 58.88
+      },
+      {
+        "date": "2025-03-27",
+        "amount": 60.06
+      },
+      {
+        "date": "2025-06-26",
+        "amount": 60.06
+      },
+      {
+        "date": "2025-10-02",
+        "amount": 60.06
+      },
+      {
+        "date": "2025-12-29",
+        "amount": 60.06
+      },
+      {
+        "date": "2026-03-26",
+        "amount": 61.260002
+      }
+    ],
+    "LGEN": [
+      {
+        "date": "2023-04-27",
+        "amount": 13.93
+      },
+      {
+        "date": "2023-08-24",
+        "amount": 5.71
+      },
+      {
+        "date": "2024-04-25",
+        "amount": 14.63
+      },
+      {
+        "date": "2024-08-22",
+        "amount": 6.0
+      },
+      {
+        "date": "2025-04-24",
+        "amount": 15.360001
+      },
+      {
+        "date": "2025-08-21",
+        "amount": 6.12
+      }
+    ],
+    "TW.": [
+      {
+        "date": "2023-10-12",
+        "amount": 4.79
+      },
+      {
+        "date": "2024-03-28",
+        "amount": 4.79
+      },
+      {
+        "date": "2024-10-10",
+        "amount": 4.8
+      },
+      {
+        "date": "2025-03-27",
+        "amount": 4.66
+      },
+      {
+        "date": "2025-10-09",
+        "amount": 4.67
+      },
+      {
+        "date": "2026-04-02",
+        "amount": 2.95
+      }
+    ],
+    "DGE": [
+      {
+        "date": "2023-08-24",
+        "amount": 49.17
+      },
+      {
+        "date": "2024-02-29",
+        "amount": 32.05
+      },
+      {
+        "date": "2024-08-29",
+        "amount": 47.23
+      },
+      {
+        "date": "2025-02-27",
+        "amount": 31.48
+      },
+      {
+        "date": "2025-10-16",
+        "amount": 47.91
       }
     ],
     "IES": [
