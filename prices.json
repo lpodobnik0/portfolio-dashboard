@@ -1,38 +1,38 @@
 {
-  "updated": "2026-04-17T16:01:15Z",
+  "updated": "2026-04-17T16:16:02Z",
   "prices": {
     "AGNC": {
-      "price": 10.825,
+      "price": 10.846,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 65.015,
+      "price": 65.055,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 253.615,
+      "price": 253.87,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 428.13,
+      "price": 428.41,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 200.265,
+      "price": 201.045,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 58.9,
+      "price": 58.98,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 44.4,
+      "price": 44.59,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -42,37 +42,37 @@
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 9.645,
+      "price": 9.64,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 156.12,
+      "price": 157.1,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.675,
+      "price": 1.705,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 24.76,
+      "price": 24.63,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 62.52,
+      "price": 62.44,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 7.26,
+      "price": 7.27,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 479.035,
+      "price": 478.485,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -97,7 +97,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.6663,
+      "price": 7.6601,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4889.2,
+      "price": 4888.8,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 82.485,
+      "price": 82.43,
       "currency": "USD",
       "name": "Silver May 26"
     },
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.75574
+        "amount": 14.75752
       }
     ],
     "IES": [
