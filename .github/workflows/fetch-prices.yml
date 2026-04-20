@@ -15,7 +15,7 @@ jobs:
       - name: Fetch prices and FX rates
         run: |
           python3 << 'EOF'
-          import json, urllib.request, time, os, datetime, re
+          import json, urllib.request, urllib.parse, time, os, datetime, re, http.cookiejar
 
           if not os.path.exists('tickers.txt'):
               print("tickers.txt not found — nothing to do")
@@ -34,12 +34,44 @@ jobs:
 
           print(f"Fetching {len(ticker_map)} tickers: {ticker_map}")
 
-          HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+          HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+
+          # ── Yahoo Finance session (crumb auth) ───────────────────────────────
+          yahoo_opener = None
+          yahoo_crumb  = None
+
+          def init_yahoo_session():
+              global yahoo_opener, yahoo_crumb
+              jar = http.cookiejar.CookieJar()
+              yahoo_opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+              # Seed cookies
+              try:
+                  req = urllib.request.Request('https://fc.yahoo.com', headers=HEADERS)
+                  yahoo_opener.open(req, timeout=10)
+              except Exception:
+                  pass
+              # Fetch crumb
+              req2 = urllib.request.Request(
+                  'https://query1.finance.yahoo.com/v1/test/getcrumb', headers=HEADERS)
+              with yahoo_opener.open(req2, timeout=10) as r:
+                  yahoo_crumb = r.read().decode('utf-8').strip()
+              print(f"Yahoo session initialised, crumb={yahoo_crumb[:8]}…")
+
+          try:
+              init_yahoo_session()
+          except Exception as e:
+              print(f"WARNING: Yahoo session init failed ({e}) — requests may 401")
+
+          def yahoo_get(url):
+              """GET via the shared Yahoo opener (carries cookies + crumb)."""
+              sep = '&' if '?' in url else '?'
+              full = f"{url}{sep}crumb={urllib.parse.quote(yahoo_crumb or '')}"
+              req = urllib.request.Request(full, headers=HEADERS)
+              return yahoo_opener.open(req, timeout=10)
 
           def fetch_yahoo(key, ticker):
               url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d'
-              req = urllib.request.Request(url, headers=HEADERS)
-              with urllib.request.urlopen(req, timeout=10) as r:
+              with yahoo_get(url) as r:
                   data = json.loads(r.read())
               meta = data['chart']['result'][0]['meta']
               price = (meta.get('regularMarketPrice') or
@@ -49,7 +81,6 @@ jobs:
                   raise ValueError(f"no price field. Keys: {list(meta.keys())}")
               result = {'price': price, 'currency': meta.get('currency', 'USD'), 'name': meta.get('shortName', ticker)}
               # ex-dividend date (prefer exDividendDate, fall back to dividendDate)
-              import datetime
               for field in ('exDividendDate', 'dividendDate'):
                   ts = meta.get(field)
                   if ts and int(ts) > 0:
@@ -65,10 +96,8 @@ jobs:
 
           def fetch_yahoo_dividends(key, ticker):
               """Fetch up to 3 years of dividend history for a ticker from Yahoo Finance."""
-              import datetime
               url = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=3y&events=div'
-              req = urllib.request.Request(url, headers=HEADERS)
-              with urllib.request.urlopen(req, timeout=10) as r:
+              with yahoo_get(url) as r:
                   data = json.loads(r.read())
               result = data['chart']['result'][0]
               events = result.get('events', {})
