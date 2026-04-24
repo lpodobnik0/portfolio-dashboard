@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24T20:01:24Z",
+  "updated": "2026-04-24T20:15:52Z",
   "prices": {
     "AGNC": {
       "price": 11.02,
@@ -7,7 +7,7 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.32,
+      "price": 63.33,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
@@ -17,12 +17,12 @@
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 424.6,
+      "price": 424.62,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 208.26,
+      "price": 208.27,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
@@ -52,17 +52,17 @@
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.555,
+      "price": 1.55,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 23.99,
+      "price": 24.01,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 62.57,
+      "price": 62.58,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4732.0,
+      "price": 4727.0,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 76.05,
+      "price": 75.905,
       "currency": "USD",
       "name": "Silver May 26"
     },
@@ -978,7 +978,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7777405
+        "amount": 14.77906
       }
     ],
     "IES": [
