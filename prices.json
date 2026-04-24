@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24T10:45:51Z",
+  "updated": "2026-04-24T11:01:11Z",
   "prices": {
     "AGNC": {
       "price": 10.86,
@@ -82,12 +82,12 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 100.02,
+      "price": 100.01,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 153.26,
+      "price": 153.28,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -112,12 +112,12 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 128.25,
+      "price": 128.15,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 122.0,
+      "price": 121.8,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
@@ -132,27 +132,27 @@
       "name": "OVH"
     },
     "AV": {
-      "price": 631.8,
+      "price": 631.6,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4343.0,
+      "price": 4347.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 251.15,
+      "price": 251.204,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 83.54,
+      "price": 83.76,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1472.0,
+      "price": 1473.2,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -162,17 +162,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4692.0,
+      "price": 4695.6,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 74.745,
+      "price": 74.845,
       "currency": "USD",
       "name": "Silver May 26"
     },
     "IES": {
-      "price": 5.583,
+      "price": 5.588,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -978,7 +978,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.82716
+        "amount": 14.8226
       }
     ],
     "IES": [
