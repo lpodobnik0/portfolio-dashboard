@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-25T19:45:56Z",
+  "updated": "2026-04-25T20:01:49Z",
   "prices": {
     "AGNC": {
       "price": 11.02,
@@ -175,25 +175,6 @@
       "price": 5.659,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
-    },
-    "HT-RA": {
-      "price": 39.6,
-      "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.64,
-      "exDividendDate": "2025-06-06"
-    },
-    "IG-R-A": {
-      "price": 60.8,
-      "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
-    },
-    "TOK-R-A": {
-      "price": 16.8,
-      "currency": "EUR",
-      "name": "TOK-R-A"
     }
   },
   "fx": {
@@ -1005,18 +986,6 @@
       {
         "date": "2025-11-24",
         "amount": 0.186
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2025-06-06",
-        "amount": 1.64
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
       }
     ]
   },
