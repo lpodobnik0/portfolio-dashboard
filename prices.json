@@ -1,83 +1,83 @@
 {
-  "updated": "2026-04-28T19:31:05Z",
+  "updated": "2026-04-28T19:45:56Z",
   "prices": {
     "AGNC": {
-      "price": 11.08,
+      "price": 11.075,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.43,
+      "price": 63.38,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 259.59,
+      "price": 259.51,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 429.18,
+      "price": 429.29,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 214.09,
+      "price": 213.63,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 52.185,
+      "price": 52.135,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 42.88,
+      "price": 43.01,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.75,
+      "price": 5.765,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 8.435,
+      "price": 8.505,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 134.835,
+      "price": 134.54,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.585,
+      "price": 1.565,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 24.635,
+      "price": 24.6,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 62.88,
+      "price": 62.925,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 6.865,
+      "price": 6.91,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 477.025,
+      "price": 477.48,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
     "PINN": {
-      "price": 0.105,
+      "price": 0.1,
       "currency": "CAD",
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4608.0,
+      "price": 4611.4,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 73.575,
+      "price": 73.725,
       "currency": "USD",
       "name": "Silver May 26"
     },
@@ -966,7 +966,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7978
+        "amount": 14.798401
       }
     ],
     "IES": [
