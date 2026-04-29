@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-29T19:16:40Z",
+  "updated": "2026-04-29T19:31:09Z",
   "prices": {
     "AGNC": {
       "price": 10.935,
@@ -7,32 +7,32 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.375,
+      "price": 63.255,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 263.45,
+      "price": 262.79,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 424.987,
+      "price": 424.89,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 209.32,
+      "price": 209.26,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 50.8,
+      "price": 50.65,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 41.405,
+      "price": 41.44,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -42,37 +42,37 @@
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 8.165,
+      "price": 8.155,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 142.042,
+      "price": 142.5,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.475,
+      "price": 1.47,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 24.115,
+      "price": 23.95,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 62.68,
+      "price": 62.74,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 6.745,
+      "price": 6.72,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 475.26,
+      "price": 475.43,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4550.1,
+      "price": 4559.4,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 71.995,
+      "price": 72.22,
       "currency": "USD",
       "name": "Silver May 26"
     },
@@ -175,6 +175,25 @@
       "price": 5.722,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
+    },
+    "HT-RA": {
+      "price": 39.8,
+      "currency": "EUR",
+      "name": "HT-RA",
+      "dividendRate": 1.64,
+      "exDividendDate": "2025-06-06"
+    },
+    "IG-R-A": {
+      "price": 61.2,
+      "currency": "EUR",
+      "name": "IG-R-A",
+      "dividendRate": 2.6,
+      "exDividendDate": "2025-07-03"
+    },
+    "TOK-R-A": {
+      "price": 17.1,
+      "currency": "EUR",
+      "name": "TOK-R-A"
     }
   },
   "fx": {
@@ -943,7 +962,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8358
+        "amount": 14.8428
       }
     ],
     "IES": [
@@ -970,6 +989,18 @@
       {
         "date": "2025-11-24",
         "amount": 0.186
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2025-06-06",
+        "amount": 1.64
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2025-07-03",
+        "amount": 2.6
       }
     ]
   },
