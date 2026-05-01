@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-01T11:31:11Z",
+  "updated": "2026-05-01T11:46:02Z",
   "prices": {
     "AGNC": {
       "price": 11.02,
@@ -82,7 +82,7 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 100.55,
+      "price": 100.5375,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -92,7 +92,7 @@
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 139.18,
+      "price": 139.24,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -132,27 +132,27 @@
       "name": "OVH"
     },
     "AV": {
-      "price": 622.6,
+      "price": 623.1,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4290.0,
+      "price": 4287.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 253.65,
+      "price": 254.05,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 77.66,
+      "price": 77.67,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1484.6,
+      "price": 1485.4,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -162,7 +162,7 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4584.2,
+      "price": 4585.4,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.685201
+        "amount": 14.692
       }
     ],
     "IES": [
