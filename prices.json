@@ -1,53 +1,53 @@
 {
-  "updated": "2026-05-04T14:16:07Z",
+  "updated": "2026-05-04T14:31:17Z",
   "prices": {
     "AGNC": {
-      "price": 10.865,
+      "price": 10.835,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.802,
+      "price": 63.94,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 270.45,
+      "price": 271.98,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 416.96,
+      "price": 419.79,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 198.82,
+      "price": 197.56,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 53.28,
+      "price": 53.83,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 48.745,
+      "price": 48.26,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.85,
+      "price": 5.86,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 9.8,
+      "price": 9.71,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 172.206,
+      "price": 172.16,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
@@ -57,22 +57,22 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 25.4,
+      "price": 25.65,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 63.986,
+      "price": 63.81,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 7.285,
+      "price": 7.29,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 477.87,
+      "price": 478.415,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -87,7 +87,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 155.14,
+      "price": 155.26,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -97,37 +97,37 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.5634,
+      "price": 7.5128,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 16.692,
+      "price": 16.698,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 13.318,
+      "price": 13.332,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 126.3,
+      "price": 126.2,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 122.7,
+      "price": 122.6,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 21.6,
+      "price": 21.59,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 10.92,
+      "price": 10.9,
       "currency": "EUR",
       "name": "OVH"
     },
@@ -162,17 +162,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4569.9,
+      "price": 4586.9,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 74.235,
+      "price": 74.88,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 5.672,
+      "price": 5.67,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -184,7 +184,7 @@
       "exDividendDate": "2025-06-06"
     },
     "IG-R-A": {
-      "price": 61.2,
+      "price": 61.4,
       "currency": "EUR",
       "name": "IG-R-A",
       "dividendRate": 2.6,
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7522
+        "amount": 14.742399
       }
     ],
     "IES": [
