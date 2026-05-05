@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-05T20:01:15Z",
+  "updated": "2026-05-05T20:16:06Z",
   "prices": {
     "AGNC": {
       "price": 10.72,
@@ -7,22 +7,22 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.6,
+      "price": 63.57,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 273.523,
+      "price": 273.55,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 411.346,
+      "price": 411.38,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 196.497,
+      "price": 196.5,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
@@ -32,7 +32,7 @@
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 48.05,
+      "price": 48.0,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -52,17 +52,17 @@
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.455,
+      "price": 1.45,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 25.765,
+      "price": 25.77,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 63.0,
+      "price": 62.99,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -72,7 +72,7 @@
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 465.49,
+      "price": 465.52,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4567.0,
+      "price": 4567.2,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 73.315,
+      "price": 73.3,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7676
+        "amount": 14.769
       }
     ],
     "IES": [
