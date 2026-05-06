@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-06T07:46:00Z",
+  "updated": "2026-05-06T08:01:20Z",
   "prices": {
     "AGNC": {
       "price": 10.72,
@@ -61,6 +61,11 @@
       "currency": "USD",
       "name": "Doximity, Inc."
     },
+    "D": {
+      "price": 62.99,
+      "currency": "USD",
+      "name": "Dominion Energy, Inc."
+    },
     "QS": {
       "price": 7.26,
       "currency": "USD",
@@ -77,17 +82,17 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 101.58,
+      "price": 101.588,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 156.84,
+      "price": 156.94,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 140.36,
+      "price": 140.38,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -97,57 +102,57 @@
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 16.888,
+      "price": 16.906,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 13.362,
+      "price": 13.366,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 131.3,
+      "price": 131.25,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 137.5,
+      "price": 138.6,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 21.57,
+      "price": 21.49,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 11.76,
+      "price": 11.92,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 623.6,
+      "price": 622.8,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4429.52,
+      "price": 4438.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 250.95,
+      "price": 249.91,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 80.58,
+      "price": 80.74,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1522.913,
+      "price": 1542.2,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -157,17 +162,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4675.4,
+      "price": 4687.9,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 76.395,
+      "price": 76.625,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 5.902,
+      "price": 5.892,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -590,6 +595,56 @@
         "amount": 0.01
       }
     ],
+    "D": [
+      {
+        "date": "2023-06-01",
+        "amount": 0.668
+      },
+      {
+        "date": "2023-08-31",
+        "amount": 0.668
+      },
+      {
+        "date": "2023-11-30",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-02-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-05-31",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-08-30",
+        "amount": 0.668
+      },
+      {
+        "date": "2024-11-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-02-28",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-05-29",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-09-05",
+        "amount": 0.668
+      },
+      {
+        "date": "2025-12-05",
+        "amount": 0.668
+      },
+      {
+        "date": "2026-02-27",
+        "amount": 0.668
+      }
+    ],
     "VUSA": [
       {
         "date": "2023-06-15",
@@ -915,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.716001
+        "amount": 14.7042
       }
     ],
     "IES": [
