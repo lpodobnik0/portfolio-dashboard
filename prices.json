@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-06T20:01:31Z",
+  "updated": "2026-05-06T20:16:09Z",
   "prices": {
     "AGNC": {
       "price": 10.79,
@@ -12,17 +12,17 @@
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 274.953,
+      "price": 274.99,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 413.866,
+      "price": 413.96,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 207.665,
+      "price": 207.83,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
@@ -32,22 +32,22 @@
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 52.564,
+      "price": 52.57,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 6.21,
+      "price": 6.23,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 10.455,
+      "price": 10.46,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 194.98,
+      "price": 195.09,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
@@ -57,12 +57,12 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 25.675,
+      "price": 25.69,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 61.625,
+      "price": 61.64,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4707.7,
+      "price": 4705.5,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 77.97,
+      "price": 78.005,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7138
+        "amount": 14.710401
       }
     ],
     "IES": [
