@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-06T17:31:19Z",
+  "updated": "2026-05-06T17:46:00Z",
   "prices": {
     "AGNC": {
       "price": 10.785,
@@ -7,32 +7,32 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.9,
+      "price": 63.785,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 276.35,
+      "price": 276.57,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 413.443,
+      "price": 412.72,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 205.24,
+      "price": 205.88,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 55.09,
+      "price": 54.7,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 52.718,
+      "price": 53.02,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -42,17 +42,17 @@
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 10.275,
+      "price": 10.285,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 192.4,
+      "price": 193.345,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.435,
+      "price": 1.44,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
@@ -62,17 +62,17 @@
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 61.985,
+      "price": 61.84,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 7.935,
+      "price": 7.91,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 467.86,
+      "price": 467.51,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -162,7 +162,7 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4692.2,
+      "price": 4690.6,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
@@ -970,7 +970,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7094
+        "amount": 14.7192
       }
     ],
     "IES": [
