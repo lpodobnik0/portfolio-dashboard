@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-07T06:01:28Z",
+  "updated": "2026-05-07T06:15:59Z",
   "prices": {
     "AGNC": {
       "price": 10.79,
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4713.3,
+      "price": 4713.9,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 78.405,
+      "price": 78.47,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -179,16 +179,12 @@
     "HT-RA": {
       "price": 41.8,
       "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.64,
-      "exDividendDate": "2025-06-06"
+      "name": "HT-RA"
     },
     "IG-R-A": {
       "price": 61.6,
       "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
+      "name": "IG-R-A"
     },
     "TOK-R-A": {
       "price": 16.1,
@@ -970,7 +966,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.713
+        "amount": 14.7128
       }
     ],
     "IES": [
@@ -997,18 +993,6 @@
       {
         "date": "2025-11-24",
         "amount": 0.186
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2025-06-06",
-        "amount": 1.64
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
       }
     ]
   },
