@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-18T02:01:37Z",
+  "updated": "2026-05-18T02:15:58Z",
   "prices": {
     "AGNC": {
       "price": 10.34,
@@ -86,20 +86,10 @@
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
-    "VWCE": {
-      "price": 159.44,
-      "currency": "EUR",
-      "name": "Vanguard FTSE All-World U.ETF R"
-    },
     "VUAA": {
       "price": 143.3,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
-    },
-    "EXIO": {
-      "price": 7.638,
-      "currency": "EUR",
-      "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
       "price": 16.374,
@@ -162,12 +152,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4531.8,
+      "price": 4534.3,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 75.63,
+      "price": 75.24,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -970,7 +960,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.0252
+        "amount": 15.023201
       }
     ],
     "IES": [
