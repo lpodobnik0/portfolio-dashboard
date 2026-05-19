@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-18T21:46:02Z",
+  "updated": "2026-05-19T02:01:41Z",
   "prices": {
     "AGNC": {
       "price": 10.3,
@@ -167,7 +167,7 @@
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 78.12,
+      "price": 77.75,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -197,9 +197,9 @@
     }
   },
   "fx": {
-    "USD": 1.162024,
-    "GBP": 0.872174,
-    "CAD": 1.598045,
+    "USD": 1.164903,
+    "GBP": 0.868763,
+    "CAD": 1.600725,
     "HRK": 7.5345
   },
   "div_history": {
@@ -966,7 +966,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8892
+        "amount": 14.908
       }
     ],
     "IES": [
@@ -1032,5 +1032,5 @@
       "annualRate": 0.56
     }
   },
-  "div_calendar_date": "2026-05-18"
+  "div_calendar_date": "2026-05-19"
 }
