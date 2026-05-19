@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-19T20:16:08Z",
+  "updated": "2026-05-19T20:31:15Z",
   "prices": {
     "AGNC": {
       "price": 10.13,
@@ -72,7 +72,7 @@
       "name": "QuantumScape Corporation"
     },
     "BRK.B": {
-      "price": 480.55,
+      "price": 480.46,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -162,12 +162,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4485.4,
+      "price": 4489.0,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 74.035,
+      "price": 74.135,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -966,7 +966,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.926
+        "amount": 14.9254
       }
     ],
     "IES": [
