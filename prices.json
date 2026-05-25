@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-25T14:31:08Z",
+  "updated": "2026-05-25T14:45:59Z",
   "prices": {
     "AGNC": {
       "price": 10.21,
@@ -92,7 +92,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 162.76,
+      "price": 162.78,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -102,12 +102,12 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.921,
+      "price": 7.939,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 16.65,
+      "price": 16.644,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
@@ -117,7 +117,7 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 125.5,
+      "price": 125.7,
       "currency": "EUR",
       "name": "VINCI"
     },
@@ -132,7 +132,7 @@
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 11.63,
+      "price": 11.64,
       "currency": "EUR",
       "name": "OVH"
     },
@@ -162,7 +162,7 @@
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
     "AVCN": {
-      "price": 0.135,
+      "price": 0.125,
       "currency": "CAD",
       "name": "AVICANNA INC"
     },
@@ -177,26 +177,26 @@
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 5.733,
+      "price": 5.743,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
     "HT-RA": {
-      "price": 41.5,
+      "price": 41.1,
       "currency": "EUR",
       "name": "HT-RA",
       "dividendRate": 1.69,
       "exDividendDate": "2026-06-03"
     },
     "IG-R-A": {
-      "price": 60.2,
+      "price": 60.0,
       "currency": "EUR",
       "name": "IG-R-A",
       "dividendRate": 2.6,
       "exDividendDate": "2025-07-03"
     },
     "TOK-R-A": {
-      "price": 16.2,
+      "price": 16.1,
       "currency": "EUR",
       "name": "TOK-R-A"
     }
@@ -975,7 +975,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8184
+        "amount": 14.814
       }
     ],
     "IES": [
