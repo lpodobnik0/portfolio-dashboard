@@ -1,83 +1,83 @@
 {
-  "updated": "2026-05-28T19:31:11Z",
+  "updated": "2026-05-28T19:45:57Z",
   "prices": {
     "AGNC": {
-      "price": 10.525,
+      "price": 10.545,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 61.72,
+      "price": 61.795,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 274.015,
+      "price": 273.77,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 426.02,
+      "price": 426.33,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 214.16,
+      "price": 214.31,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 57.2,
+      "price": 56.591,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 69.78,
+      "price": 70.132,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.13,
+      "price": 5.115,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 12.19,
+      "price": 12.305,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 226.8,
+      "price": 227.41,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.34,
+      "price": 1.33,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 21.255,
+      "price": 21.15,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 67.74,
+      "price": 67.665,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 9.13,
+      "price": 9.14,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 12.255,
+      "price": 12.225,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 478.41,
+      "price": 478.005,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4532.2,
+      "price": 4530.6,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 75.86,
+      "price": 75.9,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -650,6 +650,106 @@
         "amount": 0.668
       }
     ],
+    "VUSA": [
+      {
+        "date": "2023-06-15",
+        "amount": 0.215695
+      },
+      {
+        "date": "2023-09-14",
+        "amount": 0.215481
+      },
+      {
+        "date": "2023-12-14",
+        "amount": 0.218821
+      },
+      {
+        "date": "2024-03-15",
+        "amount": 0.237384
+      },
+      {
+        "date": "2024-06-13",
+        "amount": 0.203074
+      },
+      {
+        "date": "2024-09-12",
+        "amount": 0.217488
+      },
+      {
+        "date": "2024-12-12",
+        "amount": 0.241252
+      },
+      {
+        "date": "2025-03-20",
+        "amount": 0.247161
+      },
+      {
+        "date": "2025-06-19",
+        "amount": 0.233053
+      },
+      {
+        "date": "2025-09-18",
+        "amount": 0.222219
+      },
+      {
+        "date": "2025-12-18",
+        "amount": 0.223298
+      },
+      {
+        "date": "2026-03-19",
+        "amount": 0.246723
+      }
+    ],
+    "EUNY": [
+      {
+        "date": "2023-06-15",
+        "amount": 0.496996
+      },
+      {
+        "date": "2023-09-14",
+        "amount": 0.355163
+      },
+      {
+        "date": "2023-12-14",
+        "amount": 0.139707
+      },
+      {
+        "date": "2024-03-14",
+        "amount": 0.082476
+      },
+      {
+        "date": "2024-06-13",
+        "amount": 0.38045
+      },
+      {
+        "date": "2024-09-12",
+        "amount": 0.345744
+      },
+      {
+        "date": "2024-12-12",
+        "amount": 0.267521
+      },
+      {
+        "date": "2025-03-13",
+        "amount": 0.140818
+      },
+      {
+        "date": "2025-06-12",
+        "amount": 0.339304
+      },
+      {
+        "date": "2025-09-11",
+        "amount": 0.292548
+      },
+      {
+        "date": "2025-12-11",
+        "amount": 0.098155
+      },
+      {
+        "date": "2026-03-19",
+        "amount": 0.14913
+      }
+    ],
     "DG": [
       {
         "date": "2023-11-14",
@@ -875,7 +975,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.878
+        "amount": 14.88
       }
     ],
     "IES": [
