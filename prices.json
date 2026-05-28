@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28T21:15:58Z",
+  "updated": "2026-05-28T21:31:04Z",
   "prices": {
     "AGNC": {
       "price": 10.55,
@@ -145,11 +145,6 @@
       "price": 4707.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
-    },
-    "LGEN": {
-      "price": 269.6,
-      "currency": "GBp",
-      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
       "price": 80.94,
@@ -900,32 +895,6 @@
         "amount": 61.260002
       }
     ],
-    "LGEN": [
-      {
-        "date": "2023-08-24",
-        "amount": 5.71
-      },
-      {
-        "date": "2024-04-25",
-        "amount": 14.63
-      },
-      {
-        "date": "2024-08-22",
-        "amount": 6.0
-      },
-      {
-        "date": "2025-04-24",
-        "amount": 15.360001
-      },
-      {
-        "date": "2025-08-21",
-        "amount": 6.12
-      },
-      {
-        "date": "2026-04-23",
-        "amount": 15.67
-      }
-    ],
     "TW.": [
       {
         "date": "2023-10-12",
@@ -950,32 +919,6 @@
       {
         "date": "2026-04-02",
         "amount": 2.95
-      }
-    ],
-    "DGE": [
-      {
-        "date": "2023-08-24",
-        "amount": 49.17
-      },
-      {
-        "date": "2024-02-29",
-        "amount": 32.05
-      },
-      {
-        "date": "2024-08-29",
-        "amount": 47.23
-      },
-      {
-        "date": "2025-02-27",
-        "amount": 31.48
-      },
-      {
-        "date": "2025-10-16",
-        "amount": 47.91
-      },
-      {
-        "date": "2026-04-16",
-        "amount": 14.8766
       }
     ],
     "IES": [
