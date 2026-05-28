@@ -1,83 +1,83 @@
 {
-  "updated": "2026-05-28T15:01:23Z",
+  "updated": "2026-05-28T15:16:49Z",
   "prices": {
     "AGNC": {
-      "price": 10.491,
+      "price": 10.49,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.29,
+      "price": 62.15,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 270.39,
+      "price": 269.47,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 424.771,
+      "price": 423.65,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 212.48,
+      "price": 212.315,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 54.88,
+      "price": 54.98,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 69.04,
+      "price": 70.03,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 5.04,
+      "price": 5.065,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 12.03,
+      "price": 12.01,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 225.035,
+      "price": 226.485,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.355,
+      "price": 1.36,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 20.76,
+      "price": 20.94,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 67.86,
+      "price": 67.76,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 9.01,
+      "price": 9.019,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 12.02,
+      "price": 11.99,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 479.47,
+      "price": 479.595,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -87,22 +87,22 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "VUSA": {
-      "price": 106.5375,
+      "price": 106.6,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 162.54,
+      "price": 162.56,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 145.52,
+      "price": 145.6,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.851,
+      "price": 7.825,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
@@ -112,52 +112,52 @@
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 13.802,
+      "price": 13.814,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 124.45,
+      "price": 124.1,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 125.1,
+      "price": 125.2,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 20.13,
+      "price": 20.18,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 12.81,
+      "price": 12.89,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 626.0,
+      "price": 624.4,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4706.0,
+      "price": 4705.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 269.6,
+      "price": 269.2,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 81.3,
+      "price": 81.22,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1587.5,
+      "price": 1580.205,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -167,38 +167,19 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4501.1,
+      "price": 4506.0,
       "currency": "USD",
       "name": "Gold Jun 26"
     },
     "XAG": {
-      "price": 74.925,
+      "price": 74.99,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 5.761,
+      "price": 5.75,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
-    },
-    "HT-RA": {
-      "price": 41.9,
-      "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
-    },
-    "IG-R-A": {
-      "price": 61.2,
-      "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
-    },
-    "TOK-R-A": {
-      "price": 16.4,
-      "currency": "EUR",
-      "name": "TOK-R-A"
     }
   },
   "fx": {
@@ -600,106 +581,6 @@
         "amount": 0.01
       }
     ],
-    "D": [
-      {
-        "date": "2023-06-01",
-        "amount": 0.668
-      },
-      {
-        "date": "2023-08-31",
-        "amount": 0.668
-      },
-      {
-        "date": "2023-11-30",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-02-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-05-31",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-08-30",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-11-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-02-28",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-05-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-09-05",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-12-05",
-        "amount": 0.668
-      },
-      {
-        "date": "2026-02-27",
-        "amount": 0.668
-      }
-    ],
-    "VUSA": [
-      {
-        "date": "2023-06-15",
-        "amount": 0.215695
-      },
-      {
-        "date": "2023-09-14",
-        "amount": 0.215481
-      },
-      {
-        "date": "2023-12-14",
-        "amount": 0.218821
-      },
-      {
-        "date": "2024-03-15",
-        "amount": 0.237384
-      },
-      {
-        "date": "2024-06-13",
-        "amount": 0.203074
-      },
-      {
-        "date": "2024-09-12",
-        "amount": 0.217488
-      },
-      {
-        "date": "2024-12-12",
-        "amount": 0.241252
-      },
-      {
-        "date": "2025-03-20",
-        "amount": 0.247161
-      },
-      {
-        "date": "2025-06-19",
-        "amount": 0.233053
-      },
-      {
-        "date": "2025-09-18",
-        "amount": 0.222219
-      },
-      {
-        "date": "2025-12-18",
-        "amount": 0.223298
-      },
-      {
-        "date": "2026-03-19",
-        "amount": 0.246723
-      }
-    ],
     "EUNY": [
       {
         "date": "2023-06-15",
@@ -926,32 +807,6 @@
         "amount": 15.67
       }
     ],
-    "TW.": [
-      {
-        "date": "2023-10-12",
-        "amount": 4.79
-      },
-      {
-        "date": "2024-03-28",
-        "amount": 4.79
-      },
-      {
-        "date": "2024-10-10",
-        "amount": 4.8
-      },
-      {
-        "date": "2025-03-27",
-        "amount": 4.66
-      },
-      {
-        "date": "2025-10-09",
-        "amount": 4.67
-      },
-      {
-        "date": "2026-04-02",
-        "amount": 2.95
-      }
-    ],
     "DGE": [
       {
         "date": "2023-08-24",
@@ -975,7 +830,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8852005
+        "amount": 14.8832
       }
     ],
     "IES": [
@@ -1002,18 +857,6 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
       }
     ]
   },
