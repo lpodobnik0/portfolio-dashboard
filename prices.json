@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-30T05:31:04Z",
+  "updated": "2026-05-30T05:45:58Z",
   "prices": {
     "AGNC": {
       "price": 10.41,
@@ -45,11 +45,6 @@
       "price": 11.96,
       "currency": "USD",
       "name": "Quantum Computing Inc."
-    },
-    "NBIS": {
-      "price": 231.09,
-      "currency": "USD",
-      "name": "Nebius Group N.V."
     },
     "LCTX": {
       "price": 1.33,
@@ -506,56 +501,6 @@
       {
         "date": "2026-05-29",
         "amount": 0.271
-      }
-    ],
-    "MSFT": [
-      {
-        "date": "2023-08-16",
-        "amount": 0.68
-      },
-      {
-        "date": "2023-11-15",
-        "amount": 0.75
-      },
-      {
-        "date": "2024-02-14",
-        "amount": 0.75
-      },
-      {
-        "date": "2024-05-15",
-        "amount": 0.75
-      },
-      {
-        "date": "2024-08-15",
-        "amount": 0.75
-      },
-      {
-        "date": "2024-11-21",
-        "amount": 0.83
-      },
-      {
-        "date": "2025-02-20",
-        "amount": 0.83
-      },
-      {
-        "date": "2025-05-15",
-        "amount": 0.83
-      },
-      {
-        "date": "2025-08-21",
-        "amount": 0.83
-      },
-      {
-        "date": "2025-11-20",
-        "amount": 0.91
-      },
-      {
-        "date": "2026-02-19",
-        "amount": 0.91
-      },
-      {
-        "date": "2026-05-21",
-        "amount": 0.91
       }
     ],
     "NVDA": [
