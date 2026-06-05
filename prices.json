@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-04T21:46:06Z",
+  "updated": "2026-06-05T02:01:29Z",
   "prices": {
     "AGNC": {
       "price": 10.29,
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4502.4,
+      "price": 4471.6,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 74.125,
+      "price": 72.89,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -202,9 +202,9 @@
     }
   },
   "fx": {
-    "USD": 1.160629,
-    "GBP": 0.864197,
-    "CAD": 1.6113,
+    "USD": 1.162077,
+    "GBP": 0.865118,
+    "CAD": 1.615348,
     "HRK": 7.5345
   },
   "div_history": {
@@ -975,7 +975,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8935995
+        "amount": 14.8977995
       }
     ],
     "IES": [
@@ -1017,13 +1017,6 @@
       }
     ]
   },
-  "next_dividends": {
-    "NVDA": {
-      "exDate": "2026-06-04",
-      "payDate": "2026-06-26",
-      "rate": 0.25,
-      "annualRate": 0.04
-    }
-  },
-  "div_calendar_date": "2026-06-04"
+  "next_dividends": {},
+  "div_calendar_date": "2026-06-05"
 }
