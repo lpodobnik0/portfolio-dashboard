@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-08T21:45:56Z",
+  "updated": "2026-06-09T02:02:12Z",
   "prices": {
     "AGNC": {
       "price": 10.11,
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4353.8,
+      "price": 4358.7,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 68.325,
+      "price": 68.145,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -180,31 +180,12 @@
       "price": 5.595,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
-    },
-    "HT-RA": {
-      "price": 39.2,
-      "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
-    },
-    "IG-R-A": {
-      "price": 61.2,
-      "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
-    },
-    "TOK-R-A": {
-      "price": 15.6,
-      "currency": "EUR",
-      "name": "TOK-R-A"
     }
   },
   "fx": {
-    "USD": 1.153318,
-    "GBP": 0.864055,
-    "CAD": 1.607359,
+    "USD": 1.153079,
+    "GBP": 0.86441,
+    "CAD": 1.608821,
     "HRK": 7.5345
   },
   "div_history": {
@@ -975,7 +956,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.9888
+        "amount": 14.9796
       }
     ],
     "IES": [
@@ -1003,20 +984,8 @@
         "date": "2026-05-18",
         "amount": 0.19
       }
-    ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
-      }
     ]
   },
   "next_dividends": {},
-  "div_calendar_date": "2026-06-08"
+  "div_calendar_date": "2026-06-09"
 }
