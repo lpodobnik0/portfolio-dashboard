@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-09T20:16:07Z",
+  "updated": "2026-06-09T20:31:13Z",
   "prices": {
     "AGNC": {
       "price": 10.31,
@@ -7,7 +7,7 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 61.24,
+      "price": 61.25,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4283.6,
+      "price": 4282.8,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 65.465,
+      "price": 65.43,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -975,7 +975,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.948601
+        "amount": 14.9452
       }
     ],
     "IES": [
