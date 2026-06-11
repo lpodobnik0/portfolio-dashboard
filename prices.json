@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-11T20:16:50Z",
+  "updated": "2026-06-11T20:31:52Z",
   "prices": {
     "AGNC": {
       "price": 10.3,
@@ -62,7 +62,7 @@
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 66.72,
+      "price": 66.69,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -72,7 +72,7 @@
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 9.56,
+      "price": 9.57,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4230.3,
+      "price": 4236.0,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 67.35,
+      "price": 67.44,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -956,7 +956,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.903801
+        "amount": 14.903001
       }
     ],
     "IES": [
