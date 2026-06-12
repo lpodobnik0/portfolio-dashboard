@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T20:02:05Z",
+  "updated": "2026-06-12T20:16:07Z",
   "prices": {
     "AGNC": {
       "price": 10.31,
@@ -7,7 +7,7 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.73,
+      "price": 62.72,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
@@ -32,7 +32,7 @@
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 57.84,
+      "price": 57.85,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -57,12 +57,12 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCS": {
-      "price": 20.03,
+      "price": 20.04,
       "currency": "USD",
       "name": "Doximity, Inc."
     },
     "D": {
-      "price": 67.895,
+      "price": 67.91,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -72,12 +72,12 @@
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 9.91,
+      "price": 9.89,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 489.14,
+      "price": 489.25,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -167,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4228.4,
+      "price": 4231.3,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 67.835,
+      "price": 67.99,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -180,6 +180,27 @@
       "price": 5.84,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
+    },
+    "HT-RA": {
+      "price": 39.4,
+      "currency": "EUR",
+      "name": "HT-RA",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
+    },
+    "IG-R-A": {
+      "price": 62.8,
+      "currency": "EUR",
+      "name": "IG-R-A",
+      "dividendRate": 2.6,
+      "exDividendDate": "2025-07-03"
+    },
+    "TOK-R-A": {
+      "price": 16.4,
+      "currency": "EUR",
+      "name": "TOK-R-A",
+      "dividendRate": 0.37,
+      "exDividendDate": "2026-06-18"
     }
   },
   "fx": {
@@ -956,7 +977,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.913401
+        "amount": 14.9168005
       }
     ],
     "IES": [
@@ -983,6 +1004,24 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2025-07-03",
+        "amount": 2.6
+      }
+    ],
+    "TOK-R-A": [
+      {
+        "date": "2026-06-18",
+        "amount": 0.37
       }
     ]
   },
