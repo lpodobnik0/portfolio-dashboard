@@ -432,6 +432,13 @@ td.mono { font-family: var(--mono); font-size: 13px; }
           </tr>
         </thead>
         <tbody id="holdingsBody"></tbody>
+        <tfoot id="holdingsFoot" style="display:none">
+          <tr style="border-top:1px solid var(--border);color:var(--text-dim);font-size:13px">
+            <td colspan="10" class="right" style="padding:10px 16px">Yearly dividends</td>
+            <td class="right mono" id="holdingsYearlyTotal" style="padding:10px 16px"></td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
       <div class="empty" id="holdingsEmpty">
         <div class="icon">📊</div>
@@ -1083,6 +1090,20 @@ function renderHoldings() {
       </td>
     </tr>`;
   }).join('');
+
+  // Yearly dividends footer
+  const yearlyTotal = holdings.reduce((sum, h) => {
+    const y = getYearlyDiv(h.ticker, h.shares);
+    return sum + (y || 0);
+  }, 0);
+  const foot = document.getElementById('holdingsFoot');
+  const footCell = document.getElementById('holdingsYearlyTotal');
+  if (yearlyTotal > 0) {
+    footCell.textContent = fmt(yearlyTotal);
+    foot.style.display = '';
+  } else {
+    foot.style.display = 'none';
+  }
 
   // Update header arrows after body is set
   try {
