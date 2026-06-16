@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T20:16:18Z",
+  "updated": "2026-06-16T20:32:09Z",
   "prices": {
     "AGNC": {
       "price": 10.56,
@@ -62,7 +62,7 @@
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 68.54,
+      "price": 68.5,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -172,7 +172,7 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4354.6,
+      "price": 4354.4,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
@@ -189,30 +189,22 @@
     "HT-RA": {
       "price": 40.8,
       "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
+      "name": "HT-RA"
     },
     "IG-R-A": {
       "price": 66.0,
       "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
+      "name": "IG-R-A"
     },
     "TOK-R-A": {
       "price": 16.5,
       "currency": "EUR",
-      "name": "TOK-R-A",
-      "dividendRate": 0.37,
-      "exDividendDate": "2026-06-18"
+      "name": "TOK-R-A"
     },
     "BSQR": {
       "price": 30.0,
       "currency": "EUR",
-      "name": "BSQR",
-      "dividendRate": 2.3,
-      "exDividendDate": "2025-07-14"
+      "name": "BSQR"
     }
   },
   "fx": {
@@ -981,7 +973,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8988
+        "amount": 14.8964
       }
     ],
     "IES": [
@@ -1008,30 +1000,6 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
-      }
-    ],
-    "TOK-R-A": [
-      {
-        "date": "2026-06-18",
-        "amount": 0.37
-      }
-    ],
-    "BSQR": [
-      {
-        "date": "2025-07-14",
-        "amount": 2.3
       }
     ]
   },
