@@ -1,63 +1,68 @@
 {
-  "updated": "2026-06-16T13:47:47Z",
+  "updated": "2026-06-16T14:01:39Z",
   "prices": {
     "AGNC": {
-      "price": 10.555,
+      "price": 10.56,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.16,
+      "price": 62.03,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 247.24,
+      "price": 246.88,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 393.87,
+      "price": 394.69,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 209.54,
+      "price": 209.01,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 52.34,
+      "price": 51.53,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 60.85,
+      "price": 59.445,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 4.7,
+      "price": 4.55,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 10.915,
+      "price": 10.615,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
+    "NBIS": {
+      "price": 275.58,
+      "currency": "USD",
+      "name": "Nebius Group N.V."
+    },
     "LCTX": {
-      "price": 1.26,
+      "price": 1.255,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 180.51,
+      "price": 183.3,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 68.54,
+      "price": 68.37,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -67,12 +72,12 @@
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 10.745,
+      "price": 10.45,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 495.57,
+      "price": 493.73,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -82,22 +87,22 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "NGEN": {
-      "price": 1.87,
+      "price": 1.865,
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 106.995,
+      "price": 107.02,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 164.66,
+      "price": 164.74,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 145.86,
+      "price": 145.955,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -107,57 +112,57 @@
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 16.628,
+      "price": 16.626,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 13.988,
+      "price": 14.008,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 128.25,
+      "price": 128.2,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 125.4,
+      "price": 125.1,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.65,
+      "price": 19.635,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 16.96,
+      "price": 17.11,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 631.2,
+      "price": 632.6,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4588.0,
+      "price": 4580.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 282.45,
+      "price": 282.2,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 77.32,
+      "price": 77.14,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1500.0,
+      "price": 1508.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -167,19 +172,47 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4359.5,
+      "price": 4360.0,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 70.61,
+      "price": 70.4,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 6.032,
+      "price": 6.014,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
+    },
+    "HT-RA": {
+      "price": 39.8,
+      "currency": "EUR",
+      "name": "HT-RA",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
+    },
+    "IG-R-A": {
+      "price": 65.0,
+      "currency": "EUR",
+      "name": "IG-R-A",
+      "dividendRate": 2.6,
+      "exDividendDate": "2025-07-03"
+    },
+    "TOK-R-A": {
+      "price": 16.5,
+      "currency": "EUR",
+      "name": "TOK-R-A",
+      "dividendRate": 0.37,
+      "exDividendDate": "2026-06-18"
+    },
+    "BSQR": {
+      "price": 30.0,
+      "currency": "EUR",
+      "name": "BSQR",
+      "dividendRate": 2.3,
+      "exDividendDate": "2025-07-14"
     }
   },
   "fx": {
@@ -189,6 +222,152 @@
     "HRK": 7.5345
   },
   "div_history": {
+    "AGNC": [
+      {
+        "date": "2023-06-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-07-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-08-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-09-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-10-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-11-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2023-12-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-01-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-02-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-03-27",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-04-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-05-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-06-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-07-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-08-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-09-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-10-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-11-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2024-12-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-01-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-02-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-03-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-04-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-05-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-06-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-07-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-08-29",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-09-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-10-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-11-28",
+        "amount": 0.12
+      },
+      {
+        "date": "2025-12-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-01-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-02-27",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-03-31",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-04-30",
+        "amount": 0.12
+      },
+      {
+        "date": "2026-05-29",
+        "amount": 0.12
+      }
+    ],
     "O": [
       {
         "date": "2023-06-30",
@@ -333,6 +512,56 @@
       {
         "date": "2026-05-29",
         "amount": 0.271
+      }
+    ],
+    "MSFT": [
+      {
+        "date": "2023-08-16",
+        "amount": 0.68
+      },
+      {
+        "date": "2023-11-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-02-14",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-05-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-08-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-11-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-02-20",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-05-15",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-08-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-11-20",
+        "amount": 0.91
+      },
+      {
+        "date": "2026-02-19",
+        "amount": 0.91
+      },
+      {
+        "date": "2026-05-21",
+        "amount": 0.91
       }
     ],
     "NVDA": [
@@ -752,7 +981,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.910001
+        "amount": 14.909
       }
     ],
     "IES": [
@@ -779,6 +1008,30 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2025-07-03",
+        "amount": 2.6
+      }
+    ],
+    "TOK-R-A": [
+      {
+        "date": "2026-06-18",
+        "amount": 0.37
+      }
+    ],
+    "BSQR": [
+      {
+        "date": "2025-07-14",
+        "amount": 2.3
       }
     ]
   },
