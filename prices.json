@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-17T10:46:42Z",
+  "updated": "2026-06-17T11:02:26Z",
   "prices": {
     "AGNC": {
       "price": 10.56,
@@ -91,13 +91,18 @@
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
+    "VUSA": {
+      "price": 106.5,
+      "currency": "GBP",
+      "name": "VANGUARD FUNDS PLC VANGUARD S&P"
+    },
     "VWCE": {
-      "price": 164.32,
+      "price": 164.38,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 145.22,
+      "price": 145.28,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -117,47 +122,47 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 129.45,
+      "price": 129.65,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 128.0,
+      "price": 128.2,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.695,
+      "price": 19.71,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 17.14,
+      "price": 17.12,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 643.0,
+      "price": 642.98,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4503.0,
+      "price": 4501.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 283.0,
+      "price": 282.725,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 78.055,
+      "price": 78.28,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1511.5,
+      "price": 1514.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -167,47 +172,19 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4348.8,
+      "price": 4353.4,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 70.015,
+      "price": 70.15,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 6.067,
+      "price": 6.062,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
-    },
-    "HT-RA": {
-      "price": 40.8,
-      "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
-    },
-    "IG-R-A": {
-      "price": 66.0,
-      "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 2.6,
-      "exDividendDate": "2025-07-03"
-    },
-    "TOK-R-A": {
-      "price": 16.5,
-      "currency": "EUR",
-      "name": "TOK-R-A",
-      "dividendRate": 0.37,
-      "exDividendDate": "2026-06-18"
-    },
-    "BSQR": {
-      "price": 30.0,
-      "currency": "EUR",
-      "name": "BSQR",
-      "dividendRate": 2.3,
-      "exDividendDate": "2025-07-14"
     }
   },
   "fx": {
@@ -659,6 +636,52 @@
         "amount": 0.668
       }
     ],
+    "VUSA": [
+      {
+        "date": "2023-09-14",
+        "amount": 0.215481
+      },
+      {
+        "date": "2023-12-14",
+        "amount": 0.218821
+      },
+      {
+        "date": "2024-03-15",
+        "amount": 0.237384
+      },
+      {
+        "date": "2024-06-13",
+        "amount": 0.203074
+      },
+      {
+        "date": "2024-09-12",
+        "amount": 0.217488
+      },
+      {
+        "date": "2024-12-12",
+        "amount": 0.241252
+      },
+      {
+        "date": "2025-03-20",
+        "amount": 0.247161
+      },
+      {
+        "date": "2025-06-19",
+        "amount": 0.233053
+      },
+      {
+        "date": "2025-09-18",
+        "amount": 0.222219
+      },
+      {
+        "date": "2025-12-18",
+        "amount": 0.223298
+      },
+      {
+        "date": "2026-03-19",
+        "amount": 0.246723
+      }
+    ],
     "EUNY": [
       {
         "date": "2023-09-14",
@@ -930,7 +953,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.9102
+        "amount": 14.9116
       }
     ],
     "IES": [
@@ -957,30 +980,6 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2025-07-03",
-        "amount": 2.6
-      }
-    ],
-    "TOK-R-A": [
-      {
-        "date": "2026-06-18",
-        "amount": 0.37
-      }
-    ],
-    "BSQR": [
-      {
-        "date": "2025-07-14",
-        "amount": 2.3
       }
     ]
   },
