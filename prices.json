@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T09:16:14Z",
+  "updated": "2026-06-19T09:31:27Z",
   "prices": {
     "AGNC": {
       "price": 10.38,
@@ -92,12 +92,12 @@
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 107.27,
+      "price": 107.2,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 165.66,
+      "price": 165.52,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -117,12 +117,12 @@
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 13.984,
+      "price": 13.992,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 130.1,
+      "price": 130.0,
       "currency": "EUR",
       "name": "VINCI"
     },
@@ -142,27 +142,27 @@
       "name": "OVH"
     },
     "AV": {
-      "price": 626.6,
+      "price": 626.4,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4419.0,
+      "price": 4387.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 282.0,
+      "price": 281.2,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 79.86,
+      "price": 79.58,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1539.0,
+      "price": 1532.125,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -172,7 +172,7 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4183.2,
+      "price": 4184.1,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
@@ -182,7 +182,7 @@
       "name": "Silver Jul 26"
     },
     "IES": {
-      "price": 6.203,
+      "price": 6.195,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -981,7 +981,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.1138
+        "amount": 15.114201
       }
     ],
     "IES": [
