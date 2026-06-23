@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T20:17:10Z",
+  "updated": "2026-06-23T20:31:36Z",
   "prices": {
     "AGNC": {
       "price": 10.44,
@@ -57,7 +57,7 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 157.21,
+      "price": 157.18,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4130.1,
+      "price": 4128.0,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 61.69,
+      "price": 61.575,
       "currency": "USD",
       "name": "Silver Jul 26"
     },
@@ -185,6 +185,34 @@
       "price": 6.131,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
+    },
+    "HT-RA": {
+      "price": 42.0,
+      "currency": "EUR",
+      "name": "HT-RA",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
+    },
+    "IG-R-A": {
+      "price": 66.4,
+      "currency": "EUR",
+      "name": "IG-R-A",
+      "dividendRate": 2.6,
+      "exDividendDate": "2025-07-03"
+    },
+    "TOK-R-A": {
+      "price": 16.4,
+      "currency": "EUR",
+      "name": "TOK-R-A",
+      "dividendRate": 0.37,
+      "exDividendDate": "2026-06-18"
+    },
+    "BSQR": {
+      "price": 30.0,
+      "currency": "EUR",
+      "name": "BSQR",
+      "dividendRate": 2.3,
+      "exDividendDate": "2025-07-14"
     }
   },
   "fx": {
@@ -961,7 +989,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.149601
+        "amount": 15.1488
       }
     ],
     "IES": [
@@ -988,6 +1016,30 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2025-07-03",
+        "amount": 2.6
+      }
+    ],
+    "TOK-R-A": [
+      {
+        "date": "2026-06-18",
+        "amount": 0.37
+      }
+    ],
+    "BSQR": [
+      {
+        "date": "2025-07-14",
+        "amount": 2.3
       }
     ]
   },
