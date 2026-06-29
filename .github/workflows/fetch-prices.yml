@@ -153,10 +153,13 @@ jobs:
                       papir = json.loads(m.group(1))
                       div_val = float(papir.get('dividend_value') or 0)
                       ex_date = (papir.get('dividend_ex_date') or '')[:10]
-                      if div_val and ex_date:
+                      cutoff = (datetime.datetime.utcnow() - datetime.timedelta(days=548)).strftime('%Y-%m-%d')
+                      if div_val and ex_date and ex_date >= cutoff:
                           result['dividendRate'] = div_val
                           result['exDividendDate'] = ex_date
                           print(f"    └─ ZSE dividend: {div_val} EUR, ex-date {ex_date}")
+                      elif div_val and ex_date:
+                          print(f"    └─ ZSE dividend skipped (stale ex-date {ex_date})")
               except Exception as de:
                   print(f"    └─ ZSE dividend scrape skipped: {de}")
               return result
