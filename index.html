@@ -84,6 +84,19 @@ body::before {
 .header-actions button:hover { border-color: var(--accent); color: var(--text); }
 .header .refresh-time { font-size: 11px; color: var(--text-muted); font-family: var(--mono); }
 
+/* Portfolio A/B toggle */
+.pf-toggle {
+  display: inline-flex; gap: 2px; margin-left: 12px; vertical-align: middle;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 3px;
+}
+.pf-toggle button {
+  padding: 3px 12px; border-radius: 6px; border: none; cursor: pointer;
+  font-size: 12px; font-weight: 600; font-family: var(--font); letter-spacing: 0.3px;
+  background: none; color: var(--text-muted); transition: all 0.15s;
+}
+.pf-toggle button.active { background: var(--accent); color: #fff; }
+.pf-toggle button:hover:not(.active) { color: var(--text); }
+
 /* Summary cards row */
 .summary-row {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -356,9 +369,15 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 
 <div class="app">
   <div class="header">
-    <div>
-      <h1>Portfolio Dashboard</h1>
-      <div class="refresh-time" id="refreshTime">—</div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <div>
+        <h1>Portfolio Dashboard</h1>
+        <div class="refresh-time" id="refreshTime">—</div>
+      </div>
+      <div class="pf-toggle" id="pfToggle">
+        <button id="pfBtnA" onclick="switchPortfolio('A')" class="active">A</button>
+        <button id="pfBtnB" onclick="switchPortfolio('B')">B</button>
+      </div>
     </div>
     <div class="header-actions">
       <button onclick="refreshPrices()">↻ Refresh Prices</button>
@@ -700,14 +719,18 @@ td.mono { font-family: var(--mono); font-size: 13px; }
 </div>
 
 <script>
+// ——— Portfolio A/B ———
+let activePortfolio = localStorage.getItem('pf_active') || 'A';
+function pfKey(base) { return activePortfolio === 'A' ? `pf_${base}` : `pf_B_${base}`; }
+
 // ——— State ———
-let holdings = JSON.parse(localStorage.getItem('pf_holdings') || '[]');
-let dividends = JSON.parse(localStorage.getItem('pf_dividends') || '[]');
+let holdings = JSON.parse(localStorage.getItem(pfKey('holdings')) || '[]');
+let dividends = JSON.parse(localStorage.getItem(pfKey('dividends')) || '[]');
 let prices = JSON.parse(localStorage.getItem('pf_prices') || '{}');
 let fxRates = JSON.parse(localStorage.getItem('pf_fx') || '{"USD":1.08,"EUR":1,"GBP":0.85,"CAD":1.56,"HRK":7.53}');
 let divHistory = {}; // ticker -> [{date, amount (per share, native currency), currency}]
 let nextDividends = {}; // ticker -> {exDate, payDate, rate, annualRate} from Nasdaq calendar
-let trades = JSON.parse(localStorage.getItem('pf_trades') || '[]'); // [{date,ticker,action,shares,price,total,realizedPnl,broker}]
+let trades = JSON.parse(localStorage.getItem(pfKey('trades')) || '[]'); // [{date,ticker,action,shares,price,total,realizedPnl,broker}]
 let editingIdx = null; // null = adding new, number = editing existing
 let sortCol = localStorage.getItem('pf_sortCol') || 'value';
 let sortDir = parseInt(localStorage.getItem('pf_sortDir') || '-1');
@@ -740,11 +763,27 @@ const BROKER_COLORS = { revolut: '#0666eb', ibkr: '#d32f2f', zse: '#2e7d32', t21
 const BROKER_LABELS = { revolut: 'Revolut', ibkr: 'IBKR', zse: 'ZSE', t212: 'Trading 212' };
 
 function save() {
-  localStorage.setItem('pf_holdings', JSON.stringify(holdings));
-  localStorage.setItem('pf_dividends', JSON.stringify(dividends));
-  localStorage.setItem('pf_trades', JSON.stringify(trades));
+  localStorage.setItem(pfKey('holdings'), JSON.stringify(holdings));
+  localStorage.setItem(pfKey('dividends'), JSON.stringify(dividends));
+  localStorage.setItem(pfKey('trades'), JSON.stringify(trades));
   localStorage.setItem('pf_prices', JSON.stringify(prices));
   localStorage.setItem('pf_fx', JSON.stringify(fxRates));
+}
+
+function switchPortfolio(name) {
+  if (name === activePortfolio) return;
+  save();
+  activePortfolio = name;
+  localStorage.setItem('pf_active', name);
+  holdings  = JSON.parse(localStorage.getItem(pfKey('holdings'))  || '[]');
+  dividends = JSON.parse(localStorage.getItem(pfKey('dividends')) || '[]');
+  trades    = JSON.parse(localStorage.getItem(pfKey('trades'))    || '[]');
+  divHistory = {};
+  nextDividends = {};
+  editingIdx = null;
+  document.getElementById('pfBtnA').classList.toggle('active', name === 'A');
+  document.getElementById('pfBtnB').classList.toggle('active', name === 'B');
+  render();
 }
 
 // ——— Price loading from prices.json (updated by GitHub Actions every 30 min) ———
@@ -1859,6 +1898,8 @@ function fmt(n) { return '€' + n.toLocaleString('de-DE', { minimumFractionDigi
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
 // ——— Init ———
+document.getElementById('pfBtnA').classList.toggle('active', activePortfolio === 'A');
+document.getElementById('pfBtnB').classList.toggle('active', activePortfolio === 'B');
 render();
 document.getElementById('divDate').valueAsDate = new Date();
 document.getElementById('tradeDate').valueAsDate = new Date();
