@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T12:31:58Z",
+  "updated": "2026-06-30T12:46:23Z",
   "prices": {
     "AGNC": {
       "price": 11.0,
@@ -92,17 +92,17 @@
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 106.595,
+      "price": 106.607,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 164.82,
+      "price": 164.7,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 143.68,
+      "price": 143.56,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -112,7 +112,7 @@
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 15.814,
+      "price": 15.802,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
@@ -122,47 +122,47 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 127.65,
+      "price": 127.575,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 128.1,
+      "price": 127.8,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 20.18,
+      "price": 20.15,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 14.49,
+      "price": 14.46,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 651.6,
+      "price": 651.0,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4730.0,
+      "price": 4734.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 287.3,
+      "price": 286.9,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 81.38,
+      "price": 81.42,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1549.5,
+      "price": 1541.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -172,17 +172,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4037.2,
+      "price": 4029.3,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 59.235,
+      "price": 58.865,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
     "IES": {
-      "price": 5.956,
+      "price": 5.954,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -1061,7 +1061,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.135
+        "amount": 15.125001
       }
     ],
     "IES": [
