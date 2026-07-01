@@ -1,83 +1,83 @@
 {
-  "updated": "2026-07-01T13:16:22Z",
+  "updated": "2026-07-01T13:31:36Z",
   "prices": {
     "AGNC": {
-      "price": 10.9,
+      "price": 10.8,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 61.96,
+      "price": 62.155,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 238.34,
+      "price": 238.5,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 373.02,
+      "price": 378.31,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 200.09,
+      "price": 194.635,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 54.54,
+      "price": 54.68,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 53.26,
+      "price": 52.38,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 4.655,
+      "price": 4.69,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 9.7,
+      "price": 9.63,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 276.17,
+      "price": 242.25,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.31,
+      "price": 1.324,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 157.03,
+      "price": 150.5,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 68.29,
+      "price": 68.37,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 7.56,
+      "price": 7.52,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 10.03,
+      "price": 10.265,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 500.39,
+      "price": 501.15,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -87,37 +87,37 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "NGEN": {
-      "price": 2.06,
+      "price": 2.068,
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 106.98,
+      "price": 107.048,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 165.3,
+      "price": 165.28,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 144.32,
+      "price": 144.26,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 7.827,
+      "price": 7.82,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
     "EUNY": {
-      "price": 15.728,
+      "price": 15.702,
       "currency": "EUR",
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 14.15,
+      "price": 14.16,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
@@ -127,42 +127,42 @@
       "name": "VINCI"
     },
     "ACS": {
-      "price": 127.0,
+      "price": 126.7,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.745,
+      "price": 19.695,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 14.73,
+      "price": 14.85,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 651.0,
+      "price": 650.4,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4597.0,
+      "price": 4621.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 284.8,
+      "price": 284.6,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 79.1,
+      "price": 79.17,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1483.5,
+      "price": 1487.5,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -172,17 +172,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4033.3,
+      "price": 4042.1,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 59.015,
+      "price": 59.02,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
     "IES": {
-      "price": 5.97,
+      "price": 5.965,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -437,10 +437,6 @@
       }
     ],
     "O": [
-      {
-        "date": "2023-07-03",
-        "amount": 0.256
-      },
       {
         "date": "2023-07-31",
         "amount": 0.256
@@ -1065,7 +1061,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.124001
+        "amount": 15.0884
       }
     ],
     "IES": [
