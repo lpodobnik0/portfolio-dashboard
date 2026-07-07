@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T20:19:20Z",
+  "updated": "2026-07-07T20:31:55Z",
   "prices": {
     "AGNC": {
       "price": 11.12,
@@ -57,7 +57,7 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 137.12,
+      "price": 137.04,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4125.0,
+      "price": 4119.1,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 60.715,
+      "price": 60.525,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1053,7 +1053,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.970799
+        "amount": 14.971
       }
     ],
     "IES": [
