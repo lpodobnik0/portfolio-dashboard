@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T06:46:24Z",
+  "updated": "2026-07-09T07:12:09Z",
   "prices": {
     "AGNC": {
       "price": 10.94,
@@ -132,7 +132,7 @@
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.595,
+      "price": 19.685,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4114.2,
+      "price": 4116.6,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 59.355,
+      "price": 59.435,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -976,6 +976,10 @@
       {
         "date": "2026-03-26",
         "amount": 61.260002
+      },
+      {
+        "date": "2026-07-09",
+        "amount": 61.260002
       }
     ],
     "LGEN": [
@@ -1053,7 +1057,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.896999
+        "amount": 14.9018
       }
     ],
     "IES": [
