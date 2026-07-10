@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T18:01:51Z",
+  "updated": "2026-07-10T18:16:25Z",
   "prices": {
     "AGNC": {
       "price": 11.125,
@@ -7,74 +7,79 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 63.03,
+      "price": 62.93,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 245.02,
+      "price": 245.45,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 383.56,
+      "price": 383.99,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 210.59,
+      "price": 210.05,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 53.655,
+      "price": 54.04,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 43.32,
+      "price": 43.43,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 4.77,
+      "price": 4.76,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 8.785,
+      "price": 8.782,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 222.57,
+      "price": 222.99,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.285,
+      "price": 1.29,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 131.54,
+      "price": 131.96,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 69.94,
+      "price": 70.0,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 6.66,
+      "price": 6.675,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 8.98,
+      "price": 8.995,
       "currency": "USD",
       "name": "NuScale Power Corporation"
+    },
+    "BRK.B": {
+      "price": 492.8,
+      "currency": "USD",
+      "name": "Berkshire Hathaway Inc. New"
     },
     "PINN": {
       "price": 0.11,
@@ -82,7 +87,7 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "NGEN": {
-      "price": 1.875,
+      "price": 1.885,
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
@@ -167,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4112.9,
+      "price": 4111.4,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 60.07,
+      "price": 59.975,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -849,6 +854,32 @@
         "amount": 3.95
       }
     ],
+    "ACS": [
+      {
+        "date": "2024-01-19",
+        "amount": 0.457
+      },
+      {
+        "date": "2024-07-02",
+        "amount": 1.555
+      },
+      {
+        "date": "2025-01-21",
+        "amount": 0.454
+      },
+      {
+        "date": "2025-07-01",
+        "amount": 1.557
+      },
+      {
+        "date": "2026-01-21",
+        "amount": 0.457
+      },
+      {
+        "date": "2026-06-29",
+        "amount": 1.866
+      }
+    ],
     "FORTUM": [
       {
         "date": "2023-09-29",
@@ -869,6 +900,32 @@
       {
         "date": "2026-04-01",
         "amount": 0.74
+      }
+    ],
+    "AV": [
+      {
+        "date": "2023-08-24",
+        "amount": 11.1
+      },
+      {
+        "date": "2024-04-11",
+        "amount": 22.300001
+      },
+      {
+        "date": "2024-09-05",
+        "amount": 11.900001
+      },
+      {
+        "date": "2025-04-10",
+        "amount": 23.800001
+      },
+      {
+        "date": "2025-08-28",
+        "amount": 13.099999
+      },
+      {
+        "date": "2026-03-26",
+        "amount": 26.199999
       }
     ],
     "BATS": [
@@ -1000,7 +1057,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.9242
+        "amount": 14.9256
       }
     ],
     "IES": [
