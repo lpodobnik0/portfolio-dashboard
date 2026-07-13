@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T07:02:04Z",
+  "updated": "2026-07-13T07:16:40Z",
   "prices": {
     "AGNC": {
       "price": 11.13,
@@ -92,7 +92,7 @@
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 106.695,
+      "price": 106.745,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -102,7 +102,7 @@
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 145.92,
+      "price": 145.58,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -122,47 +122,47 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 119.0,
+      "price": 118.65,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 120.0,
+      "price": 118.5,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.6,
+      "price": 19.58,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 14.47,
+      "price": 14.235,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 661.4,
+      "price": 662.45,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4462.0,
+      "price": 4493.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 291.0,
+      "price": 292.68,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 78.74,
+      "price": 78.788,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1524.0,
+      "price": 1531.5,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -172,54 +172,68 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4064.7,
+      "price": 4060.6,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.355,
+      "price": 58.405,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
     "IES": {
-      "price": 6.259,
+      "price": 6.243,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
     "HT-RA": {
       "price": 41.1,
       "currency": "EUR",
-      "name": "HT-RA"
+      "name": "HT-RA",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
     },
     "HT-R-A": {
       "price": 41.1,
       "currency": "EUR",
-      "name": "HT-R-A"
+      "name": "HT-R-A",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
     },
     "IG-R-A": {
       "price": 71.6,
       "currency": "EUR",
-      "name": "IG-R-A"
+      "name": "IG-R-A",
+      "dividendRate": 3.0,
+      "exDividendDate": "2026-07-22"
     },
     "TOK-R-A": {
       "price": 17.0,
       "currency": "EUR",
-      "name": "TOK-R-A"
+      "name": "TOK-R-A",
+      "dividendRate": 0.37,
+      "exDividendDate": "2026-06-18"
     },
     "BSQR": {
       "price": 28.8,
       "currency": "EUR",
-      "name": "BSQR"
+      "name": "BSQR",
+      "dividendRate": 2.3,
+      "exDividendDate": "2025-07-14"
     },
     "DLKV-R-A": {
       "price": 17.8,
       "currency": "EUR",
-      "name": "DLKV-R-A"
+      "name": "DLKV-R-A",
+      "dividendRate": 0.11,
+      "exDividendDate": "2026-07-09"
     },
     "KODT-R-A": {
       "price": 4550.0,
       "currency": "EUR",
-      "name": "KODT-R-A"
+      "name": "KODT-R-A",
+      "dividendRate": 94.7,
+      "exDividendDate": "2026-06-23"
     },
     "KOEI-R-A": {
       "price": 999.0,
@@ -1047,7 +1061,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.945801
+        "amount": 14.9408
       }
     ],
     "IES": [
@@ -1074,6 +1088,48 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "HT-R-A": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2026-07-22",
+        "amount": 3.0
+      }
+    ],
+    "TOK-R-A": [
+      {
+        "date": "2026-06-18",
+        "amount": 0.37
+      }
+    ],
+    "BSQR": [
+      {
+        "date": "2025-07-14",
+        "amount": 2.3
+      }
+    ],
+    "DLKV-R-A": [
+      {
+        "date": "2026-07-09",
+        "amount": 0.11
+      }
+    ],
+    "KODT-R-A": [
+      {
+        "date": "2026-06-23",
+        "amount": 94.7
       }
     ],
     "KOEI-R-A": [
