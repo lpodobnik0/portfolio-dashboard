@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T06:46:21Z",
+  "updated": "2026-07-13T07:02:04Z",
   "prices": {
     "AGNC": {
       "price": 11.13,
@@ -132,7 +132,7 @@
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.545,
+      "price": 19.6,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4067.4,
+      "price": 4064.7,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.39,
+      "price": 58.355,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -189,51 +189,37 @@
     "HT-RA": {
       "price": 41.1,
       "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
+      "name": "HT-RA"
     },
     "HT-R-A": {
       "price": 41.1,
       "currency": "EUR",
-      "name": "HT-R-A",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
+      "name": "HT-R-A"
     },
     "IG-R-A": {
       "price": 71.6,
       "currency": "EUR",
-      "name": "IG-R-A",
-      "dividendRate": 3.0,
-      "exDividendDate": "2026-07-22"
+      "name": "IG-R-A"
     },
     "TOK-R-A": {
       "price": 17.0,
       "currency": "EUR",
-      "name": "TOK-R-A",
-      "dividendRate": 0.37,
-      "exDividendDate": "2026-06-18"
+      "name": "TOK-R-A"
     },
     "BSQR": {
       "price": 28.8,
       "currency": "EUR",
-      "name": "BSQR",
-      "dividendRate": 2.3,
-      "exDividendDate": "2025-07-14"
+      "name": "BSQR"
     },
     "DLKV-R-A": {
       "price": 17.8,
       "currency": "EUR",
-      "name": "DLKV-R-A",
-      "dividendRate": 0.11,
-      "exDividendDate": "2026-07-09"
+      "name": "DLKV-R-A"
     },
     "KODT-R-A": {
       "price": 4550.0,
       "currency": "EUR",
-      "name": "KODT-R-A",
-      "dividendRate": 94.7,
-      "exDividendDate": "2026-06-23"
+      "name": "KODT-R-A"
     },
     "KOEI-R-A": {
       "price": 999.0,
@@ -1061,7 +1047,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.9418
+        "amount": 14.945801
       }
     ],
     "IES": [
@@ -1088,48 +1074,6 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
-      }
-    ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "HT-R-A": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
-    "IG-R-A": [
-      {
-        "date": "2026-07-22",
-        "amount": 3.0
-      }
-    ],
-    "TOK-R-A": [
-      {
-        "date": "2026-06-18",
-        "amount": 0.37
-      }
-    ],
-    "BSQR": [
-      {
-        "date": "2025-07-14",
-        "amount": 2.3
-      }
-    ],
-    "DLKV-R-A": [
-      {
-        "date": "2026-07-09",
-        "amount": 0.11
-      }
-    ],
-    "KODT-R-A": [
-      {
-        "date": "2026-06-23",
-        "amount": 94.7
       }
     ],
     "KOEI-R-A": [
