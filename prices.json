@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T21:02:00Z",
+  "updated": "2026-07-15T21:16:23Z",
   "prices": {
     "AGNC": {
       "price": 11.32,
@@ -40,11 +40,6 @@
       "price": 4.74,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
-    },
-    "QUBT": {
-      "price": 8.04,
-      "currency": "USD",
-      "name": "Quantum Computing Inc."
     },
     "NBIS": {
       "price": 199.51,
@@ -172,12 +167,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4069.5,
+      "price": 4066.9,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.18,
+      "price": 58.1,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1057,7 +1052,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7778
+        "amount": 14.7754
       }
     ],
     "IES": [
