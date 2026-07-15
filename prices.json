@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T21:32:11Z",
+  "updated": "2026-07-15T21:46:23Z",
   "prices": {
     "AGNC": {
       "price": 11.32,
@@ -15,6 +15,11 @@
       "price": 254.96,
       "currency": "USD",
       "name": "Amazon.com, Inc."
+    },
+    "MSFT": {
+      "price": 395.63,
+      "currency": "USD",
+      "name": "Microsoft Corporation"
     },
     "NVDA": {
       "price": 212.5,
@@ -40,11 +45,6 @@
       "price": 8.04,
       "currency": "USD",
       "name": "Quantum Computing Inc."
-    },
-    "NBIS": {
-      "price": 199.51,
-      "currency": "USD",
-      "name": "Nebius Group N.V."
     },
     "LCTX": {
       "price": 1.22,
@@ -577,6 +577,56 @@
         "amount": 0.271
       }
     ],
+    "MSFT": [
+      {
+        "date": "2023-08-16",
+        "amount": 0.68
+      },
+      {
+        "date": "2023-11-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-02-14",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-05-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-08-15",
+        "amount": 0.75
+      },
+      {
+        "date": "2024-11-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-02-20",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-05-15",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-08-21",
+        "amount": 0.83
+      },
+      {
+        "date": "2025-11-20",
+        "amount": 0.91
+      },
+      {
+        "date": "2026-02-19",
+        "amount": 0.91
+      },
+      {
+        "date": "2026-05-21",
+        "amount": 0.91
+      }
+    ],
     "NVDA": [
       {
         "date": "2023-09-06",
@@ -803,32 +853,6 @@
         "amount": 3.95
       }
     ],
-    "ACS": [
-      {
-        "date": "2024-01-19",
-        "amount": 0.457
-      },
-      {
-        "date": "2024-07-02",
-        "amount": 1.555
-      },
-      {
-        "date": "2025-01-21",
-        "amount": 0.454
-      },
-      {
-        "date": "2025-07-01",
-        "amount": 1.557
-      },
-      {
-        "date": "2026-01-21",
-        "amount": 0.457
-      },
-      {
-        "date": "2026-06-29",
-        "amount": 1.866
-      }
-    ],
     "FORTUM": [
       {
         "date": "2023-09-29",
@@ -1002,7 +1026,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7754
+        "amount": 14.7758
       }
     ],
     "IES": [
