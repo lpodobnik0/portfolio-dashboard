@@ -2085,9 +2085,13 @@ async function syncPush() {
   syncSetBusy(true);
   syncSetStatus('Encrypting…', 'var(--text-dim)');
   try {
+    const readPf = (pf) => ({
+      holdings:  JSON.parse(localStorage.getItem(pf === 'A' ? 'pf_holdings'   : 'pf_B_holdings')  || '[]'),
+      dividends: JSON.parse(localStorage.getItem(pf === 'A' ? 'pf_dividends'  : 'pf_B_dividends') || '[]'),
+      trades:    JSON.parse(localStorage.getItem(pf === 'A' ? 'pf_trades'     : 'pf_B_trades')    || '[]'),
+    });
     const payload = {
-      holdings, dividends,
-      trades: typeof trades !== 'undefined' ? trades : [],
+      portfolios: { A: readPf('A'), B: readPf('B') },
       pushedAt: new Date().toISOString(),
       device: navigator.userAgent.slice(0, 40)
     };
@@ -2141,10 +2145,34 @@ async function syncPull() {
     );
     if (!ok) { syncSetBusy(false); syncSetStatus('Cancelled.', 'var(--text-dim)'); return; }
 
-    if (payload.holdings)  holdings  = payload.holdings;
-    if (payload.dividends) dividends = payload.dividends;
-    if (typeof trades !== 'undefined' && payload.trades) trades = payload.trades;
-    save();
+    if (payload.portfolios) {
+      // New format: restore both A and B directly to localStorage
+      const pfs = payload.portfolios;
+      if (pfs.A) {
+        localStorage.setItem('pf_holdings',   JSON.stringify(pfs.A.holdings  || []));
+        localStorage.setItem('pf_dividends',  JSON.stringify(pfs.A.dividends || []));
+        localStorage.setItem('pf_trades',     JSON.stringify(pfs.A.trades    || []));
+      }
+      if (pfs.B) {
+        localStorage.setItem('pf_B_holdings',  JSON.stringify(pfs.B.holdings  || []));
+        localStorage.setItem('pf_B_dividends', JSON.stringify(pfs.B.dividends || []));
+        localStorage.setItem('pf_B_trades',    JSON.stringify(pfs.B.trades    || []));
+      }
+      // Reload current portfolio into memory
+      holdings  = JSON.parse(localStorage.getItem(pfKey('holdings'))  || '[]');
+      dividends = JSON.parse(localStorage.getItem(pfKey('dividends')) || '[]');
+      trades    = JSON.parse(localStorage.getItem(pfKey('trades'))    || '[]');
+    } else {
+      // Legacy format: single portfolio — restore into A
+      localStorage.setItem('pf_holdings',  JSON.stringify(payload.holdings  || []));
+      localStorage.setItem('pf_dividends', JSON.stringify(payload.dividends || []));
+      localStorage.setItem('pf_trades',    JSON.stringify(payload.trades    || []));
+      if (activePortfolio === 'A') {
+        holdings  = payload.holdings  || [];
+        dividends = payload.dividends || [];
+        trades    = payload.trades    || [];
+      }
+    }
     render();
 
     if (document.getElementById('syncRemember').checked) {
