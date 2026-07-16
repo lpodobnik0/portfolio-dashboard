@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T21:46:23Z",
+  "updated": "2026-07-16T02:02:09Z",
   "prices": {
     "AGNC": {
       "price": 11.32,
@@ -45,6 +45,11 @@
       "price": 8.04,
       "currency": "USD",
       "name": "Quantum Computing Inc."
+    },
+    "NBIS": {
+      "price": 199.51,
+      "currency": "USD",
+      "name": "Nebius Group N.V."
     },
     "LCTX": {
       "price": 1.22,
@@ -167,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4066.9,
+      "price": 4045.5,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.1,
+      "price": 57.38,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -279,9 +284,9 @@
     }
   },
   "fx": {
-    "USD": 1.141862,
-    "GBP": 0.852883,
-    "CAD": 1.606605,
+    "USD": 1.14492,
+    "GBP": 0.848693,
+    "CAD": 1.608477,
     "HRK": 7.5345
   },
   "div_history": {
@@ -853,6 +858,32 @@
         "amount": 3.95
       }
     ],
+    "ACS": [
+      {
+        "date": "2024-01-19",
+        "amount": 0.457
+      },
+      {
+        "date": "2024-07-02",
+        "amount": 1.555
+      },
+      {
+        "date": "2025-01-21",
+        "amount": 0.454
+      },
+      {
+        "date": "2025-07-01",
+        "amount": 1.557
+      },
+      {
+        "date": "2026-01-21",
+        "amount": 0.457
+      },
+      {
+        "date": "2026-06-29",
+        "amount": 1.866
+      }
+    ],
     "FORTUM": [
       {
         "date": "2023-09-29",
@@ -1026,7 +1057,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7758
+        "amount": 14.786201
       }
     ],
     "IES": [
@@ -1148,5 +1179,5 @@
       "annualRate": 3.64
     }
   },
-  "div_calendar_date": "2026-07-15"
+  "div_calendar_date": "2026-07-16"
 }
