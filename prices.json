@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T05:46:40Z",
+  "updated": "2026-07-16T06:02:20Z",
   "prices": {
     "AGNC": {
       "price": 11.32,
@@ -107,7 +107,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 8.126,
+      "price": 8.133,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4033.3,
+      "price": 4035.0,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 57.285,
+      "price": 57.495,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1057,7 +1057,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.777201
+        "amount": 14.7782
       }
     ],
     "IES": [
