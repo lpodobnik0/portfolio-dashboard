@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T21:46:45Z",
+  "updated": "2026-07-18T02:03:45Z",
   "prices": {
     "AGNC": {
       "price": 11.22,
@@ -189,9 +189,7 @@
     "HT-RA": {
       "price": 40.5,
       "currency": "EUR",
-      "name": "HT-RA",
-      "dividendRate": 1.69,
-      "exDividendDate": "2026-06-03"
+      "name": "HT-RA"
     },
     "HT-R-A": {
       "price": 40.5,
@@ -286,9 +284,9 @@
     }
   },
   "fx": {
-    "USD": 1.144845,
-    "GBP": 0.848793,
-    "CAD": 1.606469,
+    "USD": 1.143581,
+    "GBP": 0.850267,
+    "CAD": 1.603127,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1088,12 +1086,6 @@
         "amount": 0.19
       }
     ],
-    "HT-RA": [
-      {
-        "date": "2026-06-03",
-        "amount": 1.69
-      }
-    ],
     "HT-R-A": [
       {
         "date": "2026-06-03",
@@ -1187,5 +1179,5 @@
       "annualRate": 3.64
     }
   },
-  "div_calendar_date": "2026-07-17"
+  "div_calendar_date": "2026-07-18"
 }
