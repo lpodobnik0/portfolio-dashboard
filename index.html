@@ -2033,7 +2033,9 @@ async function syncEncrypt(obj, password) {
   );
   const buf = new Uint8Array(16 + 12 + ct.byteLength);
   buf.set(salt, 0); buf.set(iv, 16); buf.set(new Uint8Array(ct), 28);
-  return btoa(String.fromCharCode(...buf));
+  let binary = '';
+  for (let i = 0; i < buf.byteLength; i++) binary += String.fromCharCode(buf[i]);
+  return btoa(binary);
 }
 
 async function syncDecrypt(b64, password) {
@@ -2085,6 +2087,7 @@ async function syncPush() {
   syncSetBusy(true);
   syncSetStatus('Encrypting…', 'var(--text-dim)');
   try {
+    save(); // flush current in-memory state before reading from localStorage
     const readPf = (pf) => ({
       holdings:  JSON.parse(localStorage.getItem(pf === 'A' ? 'pf_holdings'   : 'pf_B_holdings')  || '[]'),
       dividends: JSON.parse(localStorage.getItem(pf === 'A' ? 'pf_dividends'  : 'pf_B_dividends') || '[]'),
@@ -2162,6 +2165,8 @@ async function syncPull() {
       holdings  = JSON.parse(localStorage.getItem(pfKey('holdings'))  || '[]');
       dividends = JSON.parse(localStorage.getItem(pfKey('dividends')) || '[]');
       trades    = JSON.parse(localStorage.getItem(pfKey('trades'))    || '[]');
+      divHistory = {};
+      nextDividends = {};
     } else {
       // Legacy format: single portfolio — restore into A
       localStorage.setItem('pf_holdings',  JSON.stringify(payload.holdings  || []));
