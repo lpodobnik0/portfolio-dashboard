@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T20:46:27Z",
+  "updated": "2026-07-27T21:02:07Z",
   "prices": {
     "AGNC": {
       "price": 10.64,
@@ -121,6 +121,11 @@
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
+    "DG": {
+      "price": 117.9,
+      "currency": "EUR",
+      "name": "VINCI"
+    },
     "ACS": {
       "price": 108.9,
       "currency": "EUR",
@@ -167,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4080.1,
+      "price": 4079.4,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.705,
+      "price": 58.72,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -829,6 +834,32 @@
         "amount": 0.280604
       }
     ],
+    "DG": [
+      {
+        "date": "2023-11-14",
+        "amount": 1.05
+      },
+      {
+        "date": "2024-04-23",
+        "amount": 3.45
+      },
+      {
+        "date": "2024-10-15",
+        "amount": 1.05
+      },
+      {
+        "date": "2025-04-22",
+        "amount": 3.7
+      },
+      {
+        "date": "2025-10-14",
+        "amount": 1.05
+      },
+      {
+        "date": "2026-04-21",
+        "amount": 3.95
+      }
+    ],
     "ACS": [
       {
         "date": "2024-01-19",
@@ -1028,7 +1059,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.0524
+        "amount": 15.0378
       }
     ],
     "IES": [
