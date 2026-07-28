@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T21:46:32Z",
+  "updated": "2026-07-28T02:02:13Z",
   "prices": {
     "AGNC": {
       "price": 10.64,
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4078.6,
+      "price": 4046.6,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 58.695,
+      "price": 57.5,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -256,13 +256,6 @@
       "dividendRate": 13.52,
       "exDividendDate": "2026-06-15"
     },
-    "INA-R-A": {
-      "price": 515.0,
-      "currency": "EUR",
-      "name": "INA-R-A",
-      "dividendRate": 16.8,
-      "exDividendDate": "2026-06-16"
-    },
     "ADPL-R-A": {
       "price": 27.1,
       "currency": "EUR",
@@ -286,9 +279,9 @@
     }
   },
   "fx": {
-    "USD": 1.138971,
-    "GBP": 0.853693,
-    "CAD": 1.604547,
+    "USD": 1.137915,
+    "GBP": 0.855227,
+    "CAD": 1.605669,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1059,7 +1052,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 15.0454
+        "amount": 15.0458
       }
     ],
     "IES": [
@@ -1148,12 +1141,6 @@
         "amount": 13.52
       }
     ],
-    "INA-R-A": [
-      {
-        "date": "2026-06-16",
-        "amount": 16.8
-      }
-    ],
     "ADPL-R-A": [
       {
         "date": "2026-07-22",
@@ -1187,5 +1174,5 @@
       "annualRate": 3.64
     }
   },
-  "div_calendar_date": "2026-07-27"
+  "div_calendar_date": "2026-07-28"
 }
