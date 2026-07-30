@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T20:16:45Z",
+  "updated": "2026-07-30T20:31:53Z",
   "prices": {
     "AGNC": {
       "price": 10.92,
@@ -52,7 +52,7 @@
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.12,
+      "price": 1.11,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4173.8,
+      "price": 4172.3,
       "currency": "USD",
       "name": "Gold Aug 26"
     },
     "XAG": {
-      "price": 59.53,
+      "price": 59.46,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1055,7 +1055,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.846601
+        "amount": 14.8526
       }
     ],
     "IES": [
