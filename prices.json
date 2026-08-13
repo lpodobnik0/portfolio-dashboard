@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T05:16:39Z",
+  "updated": "2026-08-13T05:31:49Z",
   "prices": {
     "AGNC": {
       "price": 10.88,
@@ -154,7 +154,7 @@
     "LGEN": {
       "price": 302.6,
       "currency": "GBp",
-      "name": "LGEN.L"
+      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
       "price": 85.12,
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4453.0,
+      "price": 4460.7,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 65.545,
+      "price": 65.64,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1026,7 +1026,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.8192005
+        "amount": 14.8184
       }
     ],
     "IES": [
