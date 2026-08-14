@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T20:02:01Z",
+  "updated": "2026-08-14T20:16:26Z",
   "prices": {
     "AGNC": {
       "price": 10.96,
@@ -7,7 +7,7 @@
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 62.745,
+      "price": 62.74,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
@@ -32,7 +32,7 @@
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 46.33,
+      "price": 46.26,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
@@ -57,12 +57,12 @@
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 129.93,
+      "price": 129.92,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 68.76,
+      "price": 68.77,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -77,7 +77,7 @@
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 503.99,
+      "price": 504.03,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -154,7 +154,7 @@
     "LGEN": {
       "price": 305.0,
       "currency": "GBp",
-      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
+      "name": "LGEN.L"
     },
     "TW.": {
       "price": 85.94,
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4432.0,
+      "price": 4428.7,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 64.9,
+      "price": 64.85,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1026,7 +1026,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.777401
+        "amount": 14.7762
       }
     ],
     "IES": [
