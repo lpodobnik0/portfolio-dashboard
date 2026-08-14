@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T09:46:34Z",
+  "updated": "2026-08-14T10:02:04Z",
   "prices": {
     "AGNC": {
       "price": 10.96,
@@ -92,17 +92,17 @@
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 109.4225,
+      "price": 109.4275,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 169.66,
+      "price": 169.7,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 150.84,
+      "price": 150.78,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -122,47 +122,47 @@
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 121.15,
+      "price": 121.3,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 108.8,
+      "price": 108.9,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 19.745,
+      "price": 19.775,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 17.35,
+      "price": 17.26,
       "currency": "EUR",
       "name": "OVH"
     },
     "AV": {
-      "price": 719.0,
+      "price": 720.8,
       "currency": "GBp",
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4215.0,
+      "price": 4219.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 300.485,
+      "price": 300.5,
       "currency": "GBp",
-      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
+      "name": "LGEN.L"
     },
     "TW.": {
-      "price": 86.44,
+      "price": 86.56,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1753.675,
+      "price": 1760.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -177,12 +177,12 @@
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 64.91,
+      "price": 64.89,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
     "IES": {
-      "price": 6.905,
+      "price": 6.908,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -1026,7 +1026,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7894
+        "amount": 14.7872
       }
     ],
     "IES": [
