@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T21:46:34Z",
+  "updated": "2026-08-17T02:02:03Z",
   "prices": {
     "AGNC": {
       "price": 10.96,
@@ -154,7 +154,7 @@
     "LGEN": {
       "price": 305.0,
       "currency": "GBp",
-      "name": "LGEN.L"
+      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
       "price": 85.94,
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4437.3,
+      "price": 4449.9,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 65.108,
+      "price": 65.91,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -279,9 +279,9 @@
     }
   },
   "fx": {
-    "USD": 1.156407,
-    "GBP": 0.854657,
-    "CAD": 1.605462,
+    "USD": 1.157181,
+    "GBP": 0.854582,
+    "CAD": 1.605485,
     "HRK": 7.5345
   },
   "div_history": {
@@ -853,6 +853,32 @@
         "amount": 3.95
       }
     ],
+    "ACS": [
+      {
+        "date": "2024-01-19",
+        "amount": 0.457
+      },
+      {
+        "date": "2024-07-02",
+        "amount": 1.555
+      },
+      {
+        "date": "2025-01-21",
+        "amount": 0.454
+      },
+      {
+        "date": "2025-07-01",
+        "amount": 1.557
+      },
+      {
+        "date": "2026-01-21",
+        "amount": 0.457
+      },
+      {
+        "date": "2026-06-29",
+        "amount": 1.866
+      }
+    ],
     "FORTUM": [
       {
         "date": "2023-09-29",
@@ -1026,7 +1052,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7712
+        "amount": 14.7542
       }
     ],
     "IES": [
@@ -1154,5 +1180,5 @@
       "annualRate": 0.56
     }
   },
-  "div_calendar_date": "2026-08-16"
+  "div_calendar_date": "2026-08-17"
 }
