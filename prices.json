@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T20:16:44Z",
+  "updated": "2026-08-19T20:31:40Z",
   "prices": {
     "AGNC": {
       "price": 11.08,
@@ -62,7 +62,7 @@
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 68.33,
+      "price": 68.29,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -77,7 +77,7 @@
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 499.8,
+      "price": 499.62,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4565.9,
+      "price": 4569.3,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 66.42,
+      "price": 66.525,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
@@ -1055,7 +1055,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.7012
+        "amount": 14.7022
       }
     ],
     "IES": [
