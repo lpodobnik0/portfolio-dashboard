@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T21:46:45Z",
+  "updated": "2026-08-22T02:02:19Z",
   "prices": {
     "AGNC": {
       "price": 10.89,
@@ -154,7 +154,7 @@
     "LGEN": {
       "price": 284.0,
       "currency": "GBp",
-      "name": "LEGAL & GENERAL GROUP PLC ORD 2"
+      "name": "LGEN.L"
     },
     "TW.": {
       "price": 82.82,
@@ -286,9 +286,9 @@
     }
   },
   "fx": {
-    "USD": 1.168175,
-    "GBP": 0.856976,
-    "CAD": 1.610122,
+    "USD": 1.16819,
+    "GBP": 0.856021,
+    "CAD": 1.608479,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1191,5 +1191,5 @@
       "annualRate": 0.56
     }
   },
-  "div_calendar_date": "2026-08-21"
+  "div_calendar_date": "2026-08-22"
 }
