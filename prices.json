@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27T07:02:12Z",
+  "updated": "2026-08-27T07:17:04Z",
   "prices": {
     "AGNC": {
       "price": 10.81,
@@ -107,7 +107,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "EXIO": {
-      "price": 8.492,
+      "price": 8.493,
       "currency": "EUR",
       "name": "iShares EURO STOXX Select Divid"
     },
@@ -132,7 +132,7 @@
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 20.25,
+      "price": 20.32,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
@@ -157,7 +157,7 @@
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 85.76,
+      "price": 85.58,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
@@ -172,17 +172,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4656.6,
+      "price": 4658.0,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 68.57,
+      "price": 68.53,
       "currency": "USD",
       "name": "Silver Sep 26"
     },
     "IES": {
-      "price": 6.861,
+      "price": 6.853,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -1051,7 +1051,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.714001
+        "amount": 14.7112
       }
     ],
     "IES": [
