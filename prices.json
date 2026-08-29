@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T21:46:28Z",
+  "updated": "2026-08-29T02:02:21Z",
   "prices": {
     "AGNC": {
       "price": 10.9,
@@ -286,9 +286,9 @@
     }
   },
   "fx": {
-    "USD": 1.16514,
-    "GBP": 0.857222,
-    "CAD": 1.614089,
+    "USD": 1.160971,
+    "GBP": 0.856353,
+    "CAD": 1.611322,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1177,7 +1177,13 @@
       "payDate": "2026-09-15",
       "rate": 0.14,
       "annualRate": 0.56
+    },
+    "NVDA": {
+      "exDate": "2026-09-10",
+      "payDate": "2026-10-01",
+      "rate": 0.25,
+      "annualRate": 1.0
     }
   },
-  "div_calendar_date": "2026-08-28"
+  "div_calendar_date": "2026-08-29"
 }
