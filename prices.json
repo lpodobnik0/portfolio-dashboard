@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T11:02:10Z",
+  "updated": "2026-08-31T11:16:29Z",
   "prices": {
     "AGNC": {
       "price": 10.9,
@@ -97,7 +97,7 @@
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 167.52,
+      "price": 167.56,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
@@ -117,27 +117,27 @@
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 14.502,
+      "price": 14.516,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 114.15,
+      "price": 114.3,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 103.2,
+      "price": 103.4,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 20.88,
+      "price": 20.9,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 15.23,
+      "price": 15.21,
       "currency": "EUR",
       "name": "OVH"
     },
@@ -172,17 +172,17 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4502.8,
+      "price": 4504.1,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 67.87,
+      "price": 67.935,
       "currency": "USD",
       "name": "Silver Dec 26"
     },
     "IES": {
-      "price": 6.79,
+      "price": 6.797,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
@@ -1051,7 +1051,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.770599
+        "amount": 14.7698
       }
     ],
     "IES": [
