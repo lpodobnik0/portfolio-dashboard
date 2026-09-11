@@ -1,83 +1,83 @@
 {
-  "updated": "2026-09-11T13:31:39Z",
+  "updated": "2026-09-11T13:46:43Z",
   "prices": {
     "AGNC": {
-      "price": 10.26,
+      "price": 10.23,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 59.655,
+      "price": 59.54,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 254.615,
+      "price": 255.898,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 495.343,
+      "price": 495.155,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 220.375,
+      "price": 219.845,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 52.48,
+      "price": 52.69,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
     "IONQ": {
-      "price": 37.095,
+      "price": 36.54,
       "currency": "USD",
       "name": "IonQ, Inc."
     },
     "LXEO": {
-      "price": 4.41,
+      "price": 4.43,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 7.925,
+      "price": 7.85,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 233.89,
+      "price": 229.83,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.02,
+      "price": 1.024,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 134.38,
+      "price": 134.13,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 65.605,
+      "price": 65.44,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
     "QS": {
-      "price": 5.25,
+      "price": 5.2,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 9.64,
+      "price": 9.265,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 509.41,
+      "price": 508.445,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -87,22 +87,22 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "NGEN": {
-      "price": 2.2,
+      "price": 2.19,
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
     "VUSA": {
-      "price": 107.535,
+      "price": 107.55,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
     "VWCE": {
-      "price": 166.8,
+      "price": 166.7,
       "currency": "EUR",
       "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
-      "price": 148.22,
+      "price": 148.1,
       "currency": "USD",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
     },
@@ -117,27 +117,27 @@
       "name": "iShsV-EM Dividend UCITS ETF   R"
     },
     "FUSA": {
-      "price": 14.36,
+      "price": 14.336,
       "currency": "EUR",
       "name": "Fidelity US Quality Income ETFR"
     },
     "DG": {
-      "price": 111.8,
+      "price": 111.75,
       "currency": "EUR",
       "name": "VINCI"
     },
     "ACS": {
-      "price": 98.3,
+      "price": 98.05,
       "currency": "EUR",
       "name": "ACS,ACTIVIDADES DE CONSTRUCCION"
     },
     "FORTUM": {
-      "price": 24.08,
+      "price": 24.14,
       "currency": "EUR",
       "name": "Fortum Corporation"
     },
     "OVH": {
-      "price": 14.64,
+      "price": 14.7,
       "currency": "EUR",
       "name": "OVH"
     },
@@ -147,22 +147,22 @@
       "name": "AVIVA PLC ORD 32 17/19P"
     },
     "BATS": {
-      "price": 4142.0,
+      "price": 4143.0,
       "currency": "GBp",
       "name": "BRITISH AMERICAN TOBACCO PLC OR"
     },
     "LGEN": {
-      "price": 288.5,
+      "price": 288.6,
       "currency": "GBp",
       "name": "LEGAL & GENERAL GROUP PLC ORD 2"
     },
     "TW.": {
-      "price": 77.74,
+      "price": 77.88,
       "currency": "GBp",
       "name": "TAYLOR WIMPEY PLC ORD 1P"
     },
     "DGE": {
-      "price": 1611.0,
+      "price": 1614.0,
       "currency": "GBp",
       "name": "DIAGEO PLC ORD 28 101/108P"
     },
@@ -172,89 +172,117 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4424.5,
+      "price": 4437.9,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 65.35,
+      "price": 65.58,
       "currency": "USD",
       "name": "Silver Dec 26"
     },
     "IES": {
-      "price": 6.809,
+      "price": 6.813,
       "currency": "EUR",
       "name": "INTESA SANPAOLO"
     },
     "HT-RA": {
       "price": 40.3,
       "currency": "EUR",
-      "name": "HT-RA"
+      "name": "HT-RA",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
     },
     "HT-R-A": {
       "price": 40.3,
       "currency": "EUR",
-      "name": "HT-R-A"
+      "name": "HT-R-A",
+      "dividendRate": 1.69,
+      "exDividendDate": "2026-06-03"
     },
     "IG-R-A": {
       "price": 64.0,
       "currency": "EUR",
-      "name": "IG-R-A"
+      "name": "IG-R-A",
+      "dividendRate": 3.0,
+      "exDividendDate": "2026-07-22"
     },
     "TOK-R-A": {
       "price": 16.7,
       "currency": "EUR",
-      "name": "TOK-R-A"
+      "name": "TOK-R-A",
+      "dividendRate": 0.37,
+      "exDividendDate": "2026-06-18"
     },
     "BSQR": {
       "price": 29.0,
       "currency": "EUR",
-      "name": "BSQR"
+      "name": "BSQR",
+      "dividendRate": 0.17,
+      "exDividendDate": "2026-08-27"
     },
     "DLKV-R-A": {
       "price": 14.9,
       "currency": "EUR",
-      "name": "DLKV-R-A"
+      "name": "DLKV-R-A",
+      "dividendRate": 0.11,
+      "exDividendDate": "2026-07-09"
     },
     "KODT-R-A": {
       "price": 4250.0,
       "currency": "EUR",
-      "name": "KODT-R-A"
+      "name": "KODT-R-A",
+      "dividendRate": 94.7,
+      "exDividendDate": "2026-06-23"
     },
     "KOEI-R-A": {
       "price": 1018.0,
       "currency": "EUR",
-      "name": "KOEI-R-A"
+      "name": "KOEI-R-A",
+      "dividendRate": 4.0,
+      "exDividendDate": "2026-06-25"
     },
     "JNAF-R-A": {
       "price": 785.0,
       "currency": "EUR",
-      "name": "JNAF-R-A"
+      "name": "JNAF-R-A",
+      "dividendRate": 20.21,
+      "exDividendDate": "2026-07-31"
     },
     "ERNT-R-A": {
       "price": 211.0,
       "currency": "EUR",
-      "name": "ERNT-R-A"
+      "name": "ERNT-R-A",
+      "dividendRate": 13.52,
+      "exDividendDate": "2026-06-15"
     },
     "INA-R-A": {
       "price": 510.0,
       "currency": "EUR",
-      "name": "INA-R-A"
+      "name": "INA-R-A",
+      "dividendRate": 16.8,
+      "exDividendDate": "2026-06-16"
     },
     "ADPL-R-A": {
       "price": 24.5,
       "currency": "EUR",
-      "name": "ADPL-R-A"
+      "name": "ADPL-R-A",
+      "dividendRate": 0.8,
+      "exDividendDate": "2026-07-22"
     },
     "PODR-R-A": {
       "price": 160.0,
       "currency": "EUR",
-      "name": "PODR-R-A"
+      "name": "PODR-R-A",
+      "dividendRate": 3.2,
+      "exDividendDate": "2026-06-29"
     },
     "ZABA-R-A": {
       "price": 22.9,
       "currency": "EUR",
-      "name": "ZABA-R-A"
+      "name": "ZABA-R-A",
+      "dividendRate": 1.27,
+      "exDividendDate": "2026-04-15"
     }
   },
   "fx": {
@@ -1027,7 +1055,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.790601
+        "amount": 14.791599
       }
     ],
     "IES": [
@@ -1054,6 +1082,90 @@
       {
         "date": "2026-05-18",
         "amount": 0.19
+      }
+    ],
+    "HT-RA": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "HT-R-A": [
+      {
+        "date": "2026-06-03",
+        "amount": 1.69
+      }
+    ],
+    "IG-R-A": [
+      {
+        "date": "2026-07-22",
+        "amount": 3.0
+      }
+    ],
+    "TOK-R-A": [
+      {
+        "date": "2026-06-18",
+        "amount": 0.37
+      }
+    ],
+    "BSQR": [
+      {
+        "date": "2026-08-27",
+        "amount": 0.17
+      }
+    ],
+    "DLKV-R-A": [
+      {
+        "date": "2026-07-09",
+        "amount": 0.11
+      }
+    ],
+    "KODT-R-A": [
+      {
+        "date": "2026-06-23",
+        "amount": 94.7
+      }
+    ],
+    "KOEI-R-A": [
+      {
+        "date": "2026-06-25",
+        "amount": 4.0
+      }
+    ],
+    "JNAF-R-A": [
+      {
+        "date": "2026-07-31",
+        "amount": 20.21
+      }
+    ],
+    "ERNT-R-A": [
+      {
+        "date": "2026-06-15",
+        "amount": 13.52
+      }
+    ],
+    "INA-R-A": [
+      {
+        "date": "2026-06-16",
+        "amount": 16.8
+      }
+    ],
+    "ADPL-R-A": [
+      {
+        "date": "2026-07-22",
+        "amount": 0.8
+      }
+    ],
+    "PODR-R-A": [
+      {
+        "date": "2026-06-29",
+        "amount": 3.2
+      }
+    ],
+    "ZABA-R-A": [
+      {
+        "date": "2026-04-15",
+        "amount": 1.27
       }
     ]
   },
