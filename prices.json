@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T21:46:39Z",
+  "updated": "2026-09-12T02:02:10Z",
   "prices": {
     "AGNC": {
       "price": 10.15,
@@ -286,9 +286,9 @@
     }
   },
   "fx": {
-    "USD": 1.161795,
-    "GBP": 0.859286,
-    "CAD": 1.60608,
+    "USD": 1.160069,
+    "GBP": 0.857908,
+    "CAD": 1.608239,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1169,6 +1169,13 @@
       }
     ]
   },
-  "next_dividends": {},
-  "div_calendar_date": "2026-09-11"
+  "next_dividends": {
+    "AGNC": {
+      "exDate": "2026-09-30",
+      "payDate": "2026-10-09",
+      "rate": 0.12,
+      "annualRate": 1.44
+    }
+  },
+  "div_calendar_date": "2026-09-12"
 }
