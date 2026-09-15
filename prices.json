@@ -1,83 +1,73 @@
 {
-  "updated": "2026-09-15T16:46:35Z",
+  "updated": "2026-09-15T17:02:31Z",
   "prices": {
     "AGNC": {
-      "price": 10.055,
+      "price": 10.03,
       "currency": "USD",
       "name": "AGNC Investment Corp."
     },
     "O": {
-      "price": 58.732,
+      "price": 58.795,
       "currency": "USD",
       "name": "Realty Income Corporation"
     },
     "AMZN": {
-      "price": 249.12,
+      "price": 249.28,
       "currency": "USD",
       "name": "Amazon.com, Inc."
     },
     "MSFT": {
-      "price": 500.64,
+      "price": 501.18,
       "currency": "USD",
       "name": "Microsoft Corporation"
     },
     "NVDA": {
-      "price": 212.085,
+      "price": 211.755,
       "currency": "USD",
       "name": "NVIDIA Corporation"
     },
     "CRSP": {
-      "price": 51.75,
+      "price": 51.88,
       "currency": "USD",
       "name": "CRISPR Therapeutics AG"
     },
-    "IONQ": {
-      "price": 37.445,
-      "currency": "USD",
-      "name": "IonQ, Inc."
-    },
     "LXEO": {
-      "price": 4.18,
+      "price": 4.2,
       "currency": "USD",
       "name": "Lexeo Therapeutics, Inc."
     },
     "QUBT": {
-      "price": 7.93,
+      "price": 7.96,
       "currency": "USD",
       "name": "Quantum Computing Inc."
     },
     "NBIS": {
-      "price": 209.37,
+      "price": 209.78,
       "currency": "USD",
       "name": "Nebius Group N.V."
     },
     "LCTX": {
-      "price": 1.04,
+      "price": 1.045,
       "currency": "USD",
       "name": "Lineage Cell Therapeutics, Inc."
     },
     "DOCN": {
-      "price": 116.45,
+      "price": 116.67,
       "currency": "USD",
       "name": "DigitalOcean Holdings, Inc."
     },
-    "D": {
-      "price": 64.18,
-      "currency": "USD",
-      "name": "Dominion Energy, Inc."
-    },
     "QS": {
-      "price": 5.095,
+      "price": 5.125,
       "currency": "USD",
       "name": "QuantumScape Corporation"
     },
     "SMR": {
-      "price": 8.545,
+      "price": 8.635,
       "currency": "USD",
       "name": "NuScale Power Corporation"
     },
     "BRK.B": {
-      "price": 514.77,
+      "price": 514.75,
       "currency": "USD",
       "name": "Berkshire Hathaway Inc. New"
     },
@@ -87,7 +77,7 @@
       "name": "PINNACLE SILVER AND GOLD CORP"
     },
     "NGEN": {
-      "price": 2.145,
+      "price": 2.15,
       "currency": "USD",
       "name": "NervGen Pharma Corp."
     },
@@ -95,11 +85,6 @@
       "price": 106.7775,
       "currency": "GBP",
       "name": "VANGUARD FUNDS PLC VANGUARD S&P"
-    },
-    "VWCE": {
-      "price": 165.36,
-      "currency": "EUR",
-      "name": "Vanguard FTSE All-World U.ETF R"
     },
     "VUAA": {
       "price": 146.7,
@@ -172,12 +157,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4331.8,
+      "price": 4337.3,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 63.835,
+      "price": 63.975,
       "currency": "USD",
       "name": "Silver Dec 26"
     },
@@ -684,56 +669,6 @@
         "amount": 0.25
       }
     ],
-    "D": [
-      {
-        "date": "2023-11-30",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-02-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-05-31",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-08-30",
-        "amount": 0.668
-      },
-      {
-        "date": "2024-11-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-02-28",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-05-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-09-05",
-        "amount": 0.668
-      },
-      {
-        "date": "2025-12-05",
-        "amount": 0.668
-      },
-      {
-        "date": "2026-02-27",
-        "amount": 0.668
-      },
-      {
-        "date": "2026-05-29",
-        "amount": 0.668
-      },
-      {
-        "date": "2026-09-04",
-        "amount": 0.668
-      }
-    ],
     "VUSA": [
       {
         "date": "2023-12-14",
@@ -778,52 +713,6 @@
       {
         "date": "2026-06-18",
         "amount": 0.244174
-      }
-    ],
-    "EUNY": [
-      {
-        "date": "2023-12-14",
-        "amount": 0.139707
-      },
-      {
-        "date": "2024-03-14",
-        "amount": 0.082476
-      },
-      {
-        "date": "2024-06-13",
-        "amount": 0.38045
-      },
-      {
-        "date": "2024-09-12",
-        "amount": 0.345744
-      },
-      {
-        "date": "2024-12-12",
-        "amount": 0.267521
-      },
-      {
-        "date": "2025-03-13",
-        "amount": 0.140818
-      },
-      {
-        "date": "2025-06-12",
-        "amount": 0.339304
-      },
-      {
-        "date": "2025-09-11",
-        "amount": 0.292548
-      },
-      {
-        "date": "2025-12-11",
-        "amount": 0.098155
-      },
-      {
-        "date": "2026-03-19",
-        "amount": 0.14913
-      },
-      {
-        "date": "2026-06-18",
-        "amount": 0.280604
       }
     ],
     "DG": [
@@ -926,56 +815,6 @@
         "amount": 14.0
       }
     ],
-    "BATS": [
-      {
-        "date": "2023-09-28",
-        "amount": 57.72
-      },
-      {
-        "date": "2023-12-21",
-        "amount": 57.72
-      },
-      {
-        "date": "2024-03-21",
-        "amount": 58.88
-      },
-      {
-        "date": "2024-06-27",
-        "amount": 58.88
-      },
-      {
-        "date": "2024-09-26",
-        "amount": 58.88
-      },
-      {
-        "date": "2024-12-19",
-        "amount": 58.88
-      },
-      {
-        "date": "2025-03-27",
-        "amount": 60.06
-      },
-      {
-        "date": "2025-06-26",
-        "amount": 60.06
-      },
-      {
-        "date": "2025-10-02",
-        "amount": 60.06
-      },
-      {
-        "date": "2025-12-29",
-        "amount": 60.06
-      },
-      {
-        "date": "2026-03-26",
-        "amount": 61.260002
-      },
-      {
-        "date": "2026-07-09",
-        "amount": 61.260002
-      }
-    ],
     "LGEN": [
       {
         "date": "2024-04-25",
@@ -1047,7 +886,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.839601
+        "amount": 14.833799
       }
     ],
     "IES": [
