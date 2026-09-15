@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T20:16:24Z",
+  "updated": "2026-09-15T20:31:48Z",
   "prices": {
     "AGNC": {
       "price": 9.96,
@@ -62,7 +62,7 @@
       "name": "DigitalOcean Holdings, Inc."
     },
     "D": {
-      "price": 63.88,
+      "price": 63.87,
       "currency": "USD",
       "name": "Dominion Energy, Inc."
     },
@@ -172,12 +172,12 @@
       "name": "AVICANNA INC"
     },
     "XAU": {
-      "price": 4336.9,
+      "price": 4336.4,
       "currency": "USD",
       "name": "Gold Dec 26"
     },
     "XAG": {
-      "price": 64.195,
+      "price": 64.165,
       "currency": "USD",
       "name": "Silver Dec 26"
     },
@@ -1047,7 +1047,7 @@
       },
       {
         "date": "2026-04-16",
-        "amount": 14.845
+        "amount": 14.8436
       }
     ],
     "IES": [
