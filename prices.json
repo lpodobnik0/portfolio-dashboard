@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09T21:46:32Z",
+  "updated": "2026-10-10T02:01:58Z",
   "prices": {
     "AGNC": {
       "price": 8.67,
@@ -286,9 +286,9 @@
     }
   },
   "fx": {
-    "USD": 1.120765,
-    "GBP": 0.847633,
-    "CAD": 1.595139,
+    "USD": 1.120597,
+    "GBP": 0.847057,
+    "CAD": 1.596665,
     "HRK": 7.5345
   },
   "div_history": {
@@ -1170,6 +1170,12 @@
     ]
   },
   "next_dividends": {
+    "AGNC": {
+      "exDate": "2026-10-30",
+      "payDate": "2026-11-10",
+      "rate": 0.12,
+      "annualRate": 1.44
+    },
     "MSFT": {
       "exDate": "2026-11-19",
       "payDate": "2026-12-10",
@@ -1177,5 +1183,5 @@
       "annualRate": 3.64
     }
   },
-  "div_calendar_date": "2026-10-09"
+  "div_calendar_date": "2026-10-10"
 }
